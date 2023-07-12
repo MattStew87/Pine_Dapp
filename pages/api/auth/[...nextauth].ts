@@ -3,8 +3,6 @@ import CredentialsProvider from "next-auth/providers/credentials"
 import { getCsrfToken } from "next-auth/react"
 import { SiweMessage } from "siwe"
 
-// For more information on each option (and a full list of options) go to
-// https://next-auth.js.org/configuration/options
 export default async function auth(req: any, res: any) {
   const providers = [
     CredentialsProvider({
@@ -34,11 +32,13 @@ export default async function auth(req: any, res: any) {
 
           if (result.success) {
             return {
-              id: siwe.address, 
+              id: siwe.address,
             }
           }
+          console.error("SIWE verification failed", result);
           return null
         } catch (e) {
+          console.error("Error in authorize function", e);
           return null
         }
       },
@@ -48,25 +48,28 @@ export default async function auth(req: any, res: any) {
   const isDefaultSigninPage =
     req.method === "GET" && req.query.nextauth.includes("signin")
 
-  // Hide Sign-In with Ethereum from default sign page
   if (isDefaultSigninPage) {
     providers.pop()
   }
 
-  return await NextAuth(req, res, {
-    // https://next-auth.js.org/configuration/providers/oauth
-    providers,
-    session: {
-      strategy: "jwt",
-    },
-    secret: process.env.NEXTAUTH_SECRET,
-    callbacks: {
-      async session({ session, token }: { session: any; token: any }) {
-        session.address = token.sub
-        session.user.name = token.sub
-        session.user.image = "https://www.fillmurray.com/128/128"
-        return session
+  try {
+    return await NextAuth(req, res, {
+      providers,
+      session: {
+        strategy: "jwt",
       },
-    },
-  })
+      secret: process.env.NEXTAUTH_SECRET,
+      callbacks: {
+        async session({ session, token }: { session: any; token: any }) {
+          session.address = token.sub
+          session.user.name = token.sub
+          session.user.image = "https://www.fillmurray.com/128/128"
+          return session
+        },
+      },
+    })
+  } catch (e) {
+    console.error("Error in NextAuth function", e);
+    throw e; // re-throw the error to ensure the request fails
+  }
 }
