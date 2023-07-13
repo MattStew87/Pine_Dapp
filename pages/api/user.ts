@@ -1,57 +1,33 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { PrismaClient, User } from '@prisma/client';
-
-const prisma = new PrismaClient();
+import { sql } from '@vercel/postgres';
 
 export default async function handle(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {
     const { discord, twitter, wallet } = req.body as { discord: string, twitter: string, wallet: string };
 
     try {
-      const existingUser = await prisma.user.findUnique({
-        where: {
-          wallet: wallet,
-        },
-      });
+      // Create the Users table if it doesn't exist
+      await sql`
+        CREATE TABLE IF NOT EXISTS Users (
+          id SERIAL PRIMARY KEY,
+          discord VARCHAR(255),
+          twitter VARCHAR(255),
+          wallet VARCHAR(255) UNIQUE,
+          createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        );
+      `;
 
-      if (existingUser) {
-        const updatedUser: User = await prisma.user.update({
-          where: {
-            wallet: wallet,
-          },
-          data: {
-            discord,
-            twitter,
-          },
-        });
+      // Insert the new user into the Users table or update existing user
+      const result = await sql`
+        INSERT INTO Users (discord, twitter, wallet)
+        VALUES (${discord}, ${twitter}, ${wallet})
+        ON CONFLICT (wallet) DO UPDATE SET
+        discord = EXCLUDED.discord,
+        twitter = EXCLUDED.twitter
+        RETURNING *;
+      `;
 
-        res.json(updatedUser);
-        return;
-      }
-
-      const existingDiscordOrTwitterUser = await prisma.user.findFirst({
-        where: {
-          OR: [
-            { discord: discord },
-            { twitter: twitter },
-          ],
-        },
-      });
-
-      if (existingDiscordOrTwitterUser) {
-        res.status(400).json({ error: 'A user with this discord or twitter already exists' });
-        return;
-      }
-
-      const result: User = await prisma.user.create({
-        data: {
-          discord,
-          twitter,
-          wallet,
-        },
-      });
-
-      res.json(result);
+      res.json(result.rows[0]);
     } catch (error: any) {
       res.status(500).json({ error: 'An error occurred while creating or updating the user', details: error.message });
     }
