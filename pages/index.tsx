@@ -31,9 +31,6 @@ const Home: NextPage = () => {
         <meta property="og:image" content="http://digipunk.netii.net/images/radar.gif" />
         <meta property="og:url" content="http://digipunk.netii.net" />
         <link rel="icon" href="https://pbs.twimg.com/profile_images/1659657965417160704/spa6XX5m_400x400.png" type="image/x-icon" />
-        <link rel="stylesheet" href="https://storage.googleapis.com/pinedao/" />
-        <script src="https://storage.googleapis.com/pinedao/"></script>
-        <script src="https://storage.googleapis.com/pinedao/"></script>
       </Head>
       <div>
         <div
