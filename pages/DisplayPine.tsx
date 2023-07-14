@@ -26,30 +26,52 @@ const DisplayPine = () => {
   // grabs Pine NFT informatin
   async function fetchTokenData(tokenIndex: number): Promise<{ imageUrl: string; tokenId: number } | null> {
     const balance = await readContract({
+      address: Pine_NFT_Address,
+      abi: Badges_ABI,
+      functionName: 'balanceOf',
+      args: [address, tokenIndex]
+    }) as number;
+  
+    if (balance > 0) {
+      // User is a Pine Holder, update the database
+      try {
+        const response = await fetch('/api/pineHolder', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({}),
+        });
+  
+        if (!response.ok) {
+          throw new Error('Response was not ok');
+        }
+  
+        const responseData = await response.json();
+  
+        console.log(responseData);
+      } catch (error) {
+        console.error('An error occurred:', error);
+      }
+  
+      const ipfsHash = await readContract({
         address: Pine_NFT_Address,
         abi: Badges_ABI,
-        functionName: 'balanceOf',
-        args: [address, tokenIndex]
-    }) as number;
-
-    if (balance > 0) {
-        const ipfsHash = await readContract({
-            address: Pine_NFT_Address,
-            abi: Badges_ABI,
-            functionName: 'uri',
-            args: [tokenIndex]
-        }) as string;
-
-        const ipfsUrl = `https://ipfs.io/ipfs/${ipfsHash}`;
-        const response = await fetch(ipfsUrl);
-        const metadata = await response.json();
-        const imageUrl = metadata.image;
-
-        return { imageUrl, tokenId: tokenIndex };
+        functionName: 'uri',
+        args: [tokenIndex]
+      }) as string;
+  
+      const ipfsUrl = `https://ipfs.io/ipfs/${ipfsHash}`;
+      const response = await fetch(ipfsUrl);
+      const metadata = await response.json();
+      const imageUrl = metadata.image;
+  
+      return { imageUrl, tokenId: tokenIndex };
     }
-
+  
     return null;
   }
+  
 
   // Fetch Pine NFTs when isConnected or address changes 
   useEffect(() => {
@@ -78,7 +100,7 @@ const DisplayPine = () => {
              catch (error) {
                 console.error('Failed to fetch Pine NFTs:', error);
                 break;
-              }
+              } 
         }
 
         setPineNFTs(PineNFTArray);

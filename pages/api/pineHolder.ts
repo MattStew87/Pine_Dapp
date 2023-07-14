@@ -1,11 +1,11 @@
-// pages/api/user.ts
+// pages/api/pineHolder.ts
 
 import { NextApiRequest, NextApiResponse } from 'next';
 import { sql } from '@vercel/postgres';
 
 export default async function handle(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {
-    const { discord, twitter, wallet } = req.body as { discord: string, twitter: string, wallet: string };
+    const { wallet } = req.body as { wallet: string };
 
     try {
       // Create the Users table if it doesn't exist
@@ -18,14 +18,13 @@ export default async function handle(req: NextApiRequest, res: NextApiResponse) 
           Pine_Holder BOOLEAN DEFAULT FALSE
         );
       `;
- 
+
       // Insert the new user into the Users table or update existing user
       const result = await sql`
-        INSERT INTO Users (discord, twitter, wallet)
-        VALUES (${discord}, ${twitter}, ${wallet})
+        INSERT INTO Users (wallet, Pine_Holder)
+        VALUES (${wallet}, true)
         ON CONFLICT (wallet) DO UPDATE SET
-        discord = EXCLUDED.discord,
-        twitter = EXCLUDED.twitter
+        Pine_Holder = EXCLUDED.Pine_Holder,
         RETURNING *;
       `;
 

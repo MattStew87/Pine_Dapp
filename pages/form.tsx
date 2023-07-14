@@ -16,7 +16,7 @@ const CreateUserForm: React.FC = () => {
       return;
     }
 
-    const data = { discord, twitter, wallet: address || '' };
+    const data = { discord, twitter, wallet: address || ''};
 
     try {
       const response = await fetch('/api/user', {
@@ -48,7 +48,7 @@ const CreateUserForm: React.FC = () => {
 
     switch (name) {
       case 'discord':
-        setDiscord(value);
+        setDiscord(value); 
         break;
       case 'twitter':
         setTwitter(value);
