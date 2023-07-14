@@ -40,7 +40,7 @@ const DisplayPine = () => {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({}),
+          body: JSON.stringify({wallet: address}),
         });
   
         if (!response.ok) {

@@ -24,7 +24,7 @@ export default async function handle(req: NextApiRequest, res: NextApiResponse) 
         INSERT INTO Users (wallet, Pine_Holder)
         VALUES (${wallet}, true)
         ON CONFLICT (wallet) DO UPDATE SET
-        Pine_Holder = EXCLUDED.Pine_Holder,
+        Pine_Holder = EXCLUDED.Pine_Holder
         RETURNING *;
       `;
 
