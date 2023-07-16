@@ -1,5 +1,7 @@
 // pages/api/user.ts
 
+// Creates a new table if one does not already exist
+// Otherwise updates users twitter, discord, and wallet informaiton
 import { NextApiRequest, NextApiResponse } from 'next';
 import { sql } from '@vercel/postgres';
 

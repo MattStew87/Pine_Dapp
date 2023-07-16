@@ -3,19 +3,31 @@ import { ConnectButton, useConnectModal } from '@rainbow-me/rainbowkit';
 import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { useAccount } from 'wagmi';
+
+// Main Page Components 
 import DisplayPine from './DisplayPine';
 import LeaderBoard from './LeaderBoard';
+import SubmitContent from './submitContent';
 
 const Home: NextPage = () => {
   const { openConnectModal } = useConnectModal();
   const { isConnected } = useAccount();
   const router = useRouter();
 
+  // Authenticate/connect user before logging discord and twitter information
   const handleFormButtonClick = () => {
     if (!isConnected) {
       openConnectModal?.();
     } else {
       router.push('/form');
+    }
+  };
+  // Authenticate/connect user submitting content 
+  const handleContentButtonClick = () => {
+    if (!isConnected) {
+      openConnectModal?.();
+    } else {
+      router.push('/submitContent');
     }
   };
 
@@ -41,14 +53,24 @@ const Home: NextPage = () => {
           }}
         >
           <ConnectButton />
-          <button onClick={handleFormButtonClick}>Go to form</button>
         </div>
+
+        <div> 
+        <button onClick={handleContentButtonClick}>Submit Content</button>
+        </div>
+
+        <div> 
+        <button onClick={handleFormButtonClick}>Go to form</button>
+        </div>
+
         <div> 
           <DisplayPine />
         </div>
+
         <div> 
           <LeaderBoard />
         </div>
+        
       </div>
     </>
   );

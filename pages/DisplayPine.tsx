@@ -46,10 +46,10 @@ const DisplayPine = () => {
         if (!response.ok) {
           throw new Error('Response was not ok');
         }
-  
+        
         const responseData = await response.json();
-  
-        console.log(responseData);
+        
+        //console.log(responseData);
       } catch (error) {
         console.error('An error occurred:', error);
       }
