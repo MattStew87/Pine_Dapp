@@ -1,0 +1,48 @@
+<table class="table table-hover table-nowrap">
+    <thead class="table-light">
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Created at</th>
+            <th scope="col">Position</th>
+            <th scope="col">Worked hours</th>
+            <th scope="col">Performance</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% if content %}
+        {% for item in content.slice(0, limit) %}
+        <tr>
+            <td>
+                <img alt="..." src="{{ item.img.src }}" class="avatar avatar-sm rounded-circle me-2">
+                <a class="text-heading text-primary-hover font-semibold" href="#">
+                    {{ item.name }}
+                </a>
+            </td>
+            <td>
+                {{ item.date }}
+            </td>
+            <td>
+                <span class="badge text-uppercase bg-soft-primary text-primary rounded-pill">{{ item.role }}</span>
+            </td>
+            <td>
+                {{ item.hours }} hrs
+            </td>
+            <td>
+                <div class="w-20">
+                    <div data-toggle="spark-chart" data-type="line" data-height="30" data-color="{{ item.chart.color if item.chart.color else 'primary' }}" data-dataset="{{ item.chart.dataset if item.chart.dataset else '[47, 94, 24, 18, 26, 65, 31, 47, 10, 44, 45]' }}"></div>
+                </div>
+            </td>
+            <td class="text-end">
+                <a href="#" class="btn btn-sm btn-square btn-neutral">
+                    <i class="bi bi-pencil"></i>
+                </a>
+                <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover">
+                    <i class="bi bi-trash"></i>
+                </button>
+            </td>
+        </tr>
+        {% endfor %}
+        {% endif %}
+    </tbody>
+</table>

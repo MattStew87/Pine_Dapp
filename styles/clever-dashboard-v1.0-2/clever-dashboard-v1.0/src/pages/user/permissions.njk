@@ -1,0 +1,161 @@
+---
+layout: base
+navbar: false
+headerNav: false
+title: Roles and Permissions
+permalink: 'pages/user/permissions.html'
+---
+
+<!-- Offcanvas -->
+{% inject "components/offcanvas-create-role.njk", {
+    users: users.slice(0, 5),
+    permissions: [
+        {
+            name: 'Projects',
+            text: 'Select the permissions you want to add to all the projects in this account.',
+            view: true,
+            edit: true,
+            publish: false
+        },
+        {
+            name: 'Users',
+            text: 'Select the permissions you want to add to all the users in this account.',
+            view: false,
+            edit: true,
+            publish: false
+        },
+        {
+            name: 'Payments',
+            text: 'Select the permissions you want to add to all the projects in this account.',
+            view: true,
+            edit: true,
+            publish: false
+        }
+    ]
+} %}
+
+<!-- Modal -->
+{% inject "components/modal-export.njk" %}
+
+<!-- Add users modal -->
+{% inject "components/modal-add-users.njk", {
+    users: users.slice(0, 10)
+} %}
+
+<!-- Container -->
+<div class="container-fluid">
+    <div class="vstack gap-6">
+        <!-- Roles -->
+        <div class="card">
+            <div class="card-header pb-0">
+                <div class="d-flex align-items-center">
+                    <h5 class="me-auto">Manage Roles</h5>
+                    <div class="dropdown">
+                        <a class="text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="bi bi-three-dots-vertical"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="#!" class="dropdown-item">
+                                Action
+                            </a>
+                            <a href="#!" class="dropdown-item">
+                                Another action
+                            </a>
+                            <a href="#!" class="dropdown-item">
+                                Something else here
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-sm text-muted mt-1">
+                    Manage your account's roles and give your admins only the required permissions.
+                </p>
+            </div>
+            <div class="card-body">
+                <div class="row g-4">
+                    <div class="col-xl-3 col-sm-6">
+                        {% inject "components/card-info-3.njk", {
+                            title: 'Admin',
+                            surtitle: '5 Members',
+                            link: {
+                                url: '#modalAddUsers',
+                                hasModal: true,
+                                text: 'Edit members'
+                            }
+                        } %}
+                    </div>
+                    <div class="col-xl-3 col-sm-6">
+                        {% inject "components/card-info-3.njk", {
+                            title: 'Editor',
+                            surtitle: '15 Members',
+                            link: {
+                                url: '#modalAddUsers',
+                                hasModal: true,
+                                text: 'Edit members'
+                            }
+                        } %}
+                    </div>
+                    <div class="col-xl-3 col-sm-6">
+                        {% inject "components/card-info-3.njk", {
+                            title: 'Publisher',
+                            surtitle: '3 Members',
+                            link: {
+                                url: '#modalAddUsers',
+                                hasModal: true,
+                                text: 'Edit members'
+                            }
+                        } %}
+                    </div>
+                    <div class="col-xl-3 col-sm-6">
+                        {% inject "components/card-info-3.njk", {
+                            title: 'Manager',
+                            surtitle: '2 Members',
+                            link: {
+                                url: '#modalAddUsers',
+                                hasModal: true,
+                                text: 'Edit members'
+                            }
+                        } %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Table -->
+        <div class="card">
+            <div class="card-header d-flex align-items-center">
+                <h5 class="me-auto">Admin Users</h5>
+                {% inject "components/dropdown-more.njk" %}
+            </div>
+            <div class="px-4 py-4 border-top border-bottom d-flex flex-column flex-sm-row gap-3">
+                <div class="scrollable-x">
+                    <div class="btn-group" style="min-width: 700px;">
+                        <a href="#" class="btn btn-sm btn-neutral text-primary" aria-current="page">View all</a>
+                        <a href="#" class="btn btn-sm btn-neutral">Admin <span class="text-muted text-xs">(5)</span></a>
+                        <a href="#" class="btn btn-sm btn-neutral">Publisher <span class="text-muted text-xs">(3)</span></a>
+                        <a href="#" class="btn btn-sm btn-neutral">Manager <span class="text-muted text-xs">(2)</span></a>
+                    </div>
+                </div>
+                <div class="ms-auto hstack gap-2">
+                    <!-- Search -->
+                    <div class="input-group input-group-sm input-group-inline">
+                        <span class="input-group-text pe-2">
+                            <i class="bi bi-search"></i>
+                        </span>
+                        <input type="email" class="form-control" placeholder="Search" aria-label="Search">
+                    </div>
+                    <!-- Filters -->
+                    {% inject "components/dropdown-filters.njk" %}
+                </div>
+            </div>
+            <div class="table-responsive">
+                {% inject "components/table-admins.njk", {
+                content: admins,
+                limit: 10
+                } %}
+            </div>
+            <div class="card-footer border-0 py-5">
+                <span class="text-muted text-sm">Showing 10 items out of 250 results found</span>
+            </div>
+        </div>
+    </div>
+</div>

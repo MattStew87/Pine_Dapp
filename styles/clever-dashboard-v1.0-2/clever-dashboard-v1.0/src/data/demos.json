@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Project Management",
+        "description": "Minimal starter template for websites using Bootstrap 5 and Webpixels CSS next to the Eleventy static site generator.",
+        "img": "https://cdn.dribbble.com/users/880427/screenshots/16589297/media/203b06d0e3a0746492d95dff9b0bba25.png?compress=1&resize=1600x1200&vertical=top",
+        "path": "/pages/projects/overview.html",
+        "published": true
+    },
+    {
+        "name": "Job Platform",
+        "description": "Minimal starter template for websites using Bootstrap 5 and Webpixels CSS next to the Eleventy static site generator.",
+        "img": "https://cdn.dribbble.com/users/880427/screenshots/16589297/media/203b06d0e3a0746492d95dff9b0bba25.png?compress=1&resize=1600x1200&vertical=top",
+        "path": "/pages/jobs/overview.html",
+        "published": true
+    },
+    {
+        "name": "Messaging Center",
+        "description": "Minimal starter template for websites using Bootstrap 5 and Webpixels CSS next to the Eleventy static site generator.",
+        "img": "https://cdn.dribbble.com/users/880427/screenshots/16589297/media/203b06d0e3a0746492d95dff9b0bba25.png?compress=1&resize=1600x1200&vertical=top",
+        "path": "/pages/messaging/chat.html",
+        "published": true
+    },
+    {
+        "name": "E-commerce",
+        "description": "Minimal starter template for websites using Bootstrap 5 and Webpixels CSS next to the Eleventy static site generator.",
+        "img": "https://cdn.dribbble.com/users/880427/screenshots/16589297/media/203b06d0e3a0746492d95dff9b0bba25.png?compress=1&resize=1600x1200&vertical=top",
+        "path": "/pages/ecommerce/overview.html",
+        "published": false
+    }
+]

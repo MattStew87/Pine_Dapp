@@ -1,0 +1,375 @@
+---
+layout: base
+headerButtons: false
+title: Tasks Overview
+permalink: 'pages/tasks/overview.html'
+---
+
+<div class="container-fluid vstack gap-6">
+    <!-- Filters -->
+    <div class="d-flex flex-column flex-md-row gap-3 justify-content-between">
+        <div class="btn-group order-2 order-md-1">
+            <a href="#" class="btn btn-sm btn-neutral text-primary" aria-current="page">12M</a>
+            <a href="#" class="btn btn-sm btn-neutral">90d</a>
+            <a href="#" class="btn btn-sm btn-neutral">30d</a>
+            <a href="#" class="btn btn-sm btn-neutral">24hrs</a>
+        </div>
+        <div class="d-flex gap-3 order-1 order-md-2">
+            <!-- Datepicker -->
+            <div class="daterangepicker position-relative btn btn-sm btn-neutral d-flex gap-2 align-items-center flex-fill">
+                <!-- External trigger -->
+                <a href="#" class="text-heading stretched-link d-none d-md-block" data-toggle>
+                    <i class="bi bi-calendar-event me-1"></i>
+                </a>
+                <!-- input is mandatory for Flatpickr plugin to work -->
+                <input type="text" class="form-control form-control-flush text-sm font-semibold" placeholder="Select date" data-input>
+            </div>
+            <!-- Filters -->
+            {% inject "components/dropdown-filters.njk" %}
+        </div>
+    </div>
+    <!-- Chart -->
+    <div class="card">
+        <div class="card-header d-flex align-items-center">
+            <h5 class="mb-0">Work Performance</h5>
+            <button class="btn btn-sm btn-neutral ms-auto">Export</button>
+        </div>
+        <div class="px-4 scrollable-x">
+            <div id="chart-users" data-height="340" style="min-width: 780px;"></div>
+        </div>
+    </div>
+    <!-- Card stats -->
+    <div class="row g-6">
+        <div class="col-xl-4 col-sm-6 col-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <h5>Finished Tasks</h5>
+                        </div>
+                        <div class="d-flex align-items-center gap-3">
+                            <a href="#" class="text-muted text-opacity-60 text-opacity-100-hover">
+                                <i class="bi bi-arrow-clockwise"></i>
+                            </a>
+                            <a href="#" class="text-muted text-opacity-60 text-opacity-100-hover">
+                                <i class="bi bi-three-dots"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="d-block text-sm mt-1">
+                        <span>in the</span>
+                        <a href="#" class="link-primary font-semibold">Clever Project</a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <div class="d-flex align-items-center">
+                                <div>
+                                    <span class="h3 d-block mb-0">1098</span>
+                                </div>
+                                <div class="d-flex align-items-center ms-3 mt-n1">
+                                    <span class="badge badge-xs badge-pill bg-soft-success text-success">
+                                        <i class="bi bi-arrow-up"></i>
+                                        20%
+                                    </span>
+                                </div>
+                            </div>
+                            <span class="d-block text-sm text-muted">since last month</span>
+                        </div>
+                        <div class="col-auto">
+                            <div class="w-32">
+                                <div data-toggle="spark-chart" data-type="line" data-height="50" data-color="primary" data-dataset="[47, 94, 24, 18, 26, 65, 31, 47, 10, 44, 45]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-4 col-sm-6 col-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <h5>Ongoing Tasks</h5>
+                        </div>
+                        <div class="d-flex align-items-center gap-3">
+                            <a href="#" class="text-muted text-opacity-60 text-opacity-100-hover">
+                                <i class="bi bi-arrow-clockwise"></i>
+                            </a>
+                            <a href="#" class="text-muted text-opacity-60 text-opacity-100-hover">
+                                <i class="bi bi-three-dots"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="d-block text-sm mt-1">
+                        <span>in the</span>
+                        <a href="#" class="link-tertiary font-semibold">Clever Project</a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <div class="d-flex align-items-center">
+                                <div>
+                                    <span class="h3 d-block mb-0">2400</span>
+                                </div>
+                                <div class="d-flex align-items-center ms-3 mt-n1">
+                                    <span class="badge badge-xs badge-pill bg-soft-success text-success">
+                                        <i class="bi bi-arrow-up"></i>
+                                        43%
+                                    </span>
+                                </div>
+                            </div>
+                            <span class="d-block text-sm text-muted">since last month</span>
+                        </div>
+                        <div class="col-auto">
+                            <div class="w-32">
+                                <div data-toggle="spark-chart" data-type="line" data-height="50" data-color="tertiary" data-dataset="[47, 94, 24, 18, 26, 65, 31, 47, 10, 44, 45]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-4 col-sm-6 col-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <h5>Billed Hours</h5>
+                        </div>
+                        <div class="d-flex align-items-center gap-3">
+                            <a href="#" class="text-muted text-opacity-60 text-opacity-100-hover">
+                                <i class="bi bi-arrow-clockwise"></i>
+                            </a>
+                            <a href="#" class="text-muted text-opacity-60 text-opacity-100-hover">
+                                <i class="bi bi-three-dots"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="d-block text-sm mt-1">
+                        <span>in the</span>
+                        <a href="#" class="link-warning font-semibold">Clever Project</a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <div class="d-flex align-items-center">
+                                <div>
+                                    <span class="h3 d-block mb-0">998</span>
+                                </div>
+                                <div class="d-flex align-items-center ms-3 mt-n1">
+                                    <span class="badge badge-xs badge-pill bg-soft-success text-success">
+                                        <i class="bi bi-arrow-up"></i>
+                                        17%
+                                    </span>
+                                </div>
+                            </div>
+                            <span class="d-block text-sm text-muted">since last month</span>
+                        </div>
+                        <div class="col-auto">
+                            <div class="w-32">
+                                <div data-toggle="spark-chart" data-type="bar" data-height="50" data-color="warning" data-dataset="[47, 94, 24, 18, 26, 65, 31, 47, 10, 44, 45]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row g-6">
+        <div class="col-xl-4">
+            <div class="card">
+                <div class="card-header">
+                    <div class="d-flex align-items-center">
+                        <h5 class="mb-0">Recent Activity</h5>
+                    </div>
+                </div>
+                <div class="card-body py-0 position-relative scrollable-y" style="max-height: 380px">
+                    <div class="list-group list-group-flush">
+                        {% for item in user_activities.slice(0,5) %}
+                        <div class="list-group-item px-0 position-relative hstack flex-wrap">
+                            <div class="me-3 text-white">
+                                <div class="position-relative d-inline-block text-current">
+                                    <div class="avatar rounded-circle">
+                                        <img alt="..." src="{{ item.img.src }}">
+                                    </div>
+                                    <span class="position-absolute bottom-2 end-2 transform translate-x-1/2 translate-y-1/2 border-2 border-solid border-current w-3 h-3 bg-success rounded-circle"></span>
+                                </div>
+                            </div>
+                            <div class="flex-1">
+                                <div class="d-flex align-items-center mb-1">
+                                    <a href="#" class="d-block h6 stretched-link">{{ item.name }}</a>
+                                    <span class="text-muted text-xs ms-2">{{ item.date }}</span>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <div class="w-3/4 text-sm text-muted line-clamp-1 me-auto">
+                                        {{ item.text }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-8">
+            <div class="card">
+                <div class="card-header">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5 class="mb-0">Latest Tasks</h5>
+                        </div>
+                        <div class="text-end mx-n1 d-flex align-items-center">
+                            <a href="#" class="px-2 text-muted">
+                                <i class="bi bi-arrow-clockwise"></i>
+                            </a>
+                            <a href="#" class="px-2 text-muted">
+                                <i class="bi bi-three-dots"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body pt-0 position-relative scrollable-y" style="max-height: 380px">
+                    <div>
+                        <a href="#" class="h5 d-inline-block font-semibold mb-2">Work on the website redesign</a>
+                        <p class="text-sm text-muted mb-4">
+                            I need 5 examples of the logo
+                        </p>
+                        <span class="surtitle text-muted d-block">Progress</span>
+                        <div class="d-flex align-items-center">
+                            <div style="width: 80%;">
+                                <div class="progress progress-sm shadow-none">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                            <div class="col px-0 text-end">
+                                <a href="#" class="h6 text-sm">65%</a>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mt-3">
+                            <div>
+                                <div class="hstack gap-4 justify-content-end">
+                                    <div class="position-relative text-sm">
+                                        <i class="bi bi-files-alt text-muted"></i>
+                                        <a href="#" class="text-muted text-primary-hover stretched-link">18</a>
+                                    </div>
+                                    <div class="position-relative text-sm">
+                                        <i class="bi bi-people-fill text-muted"></i>
+                                        <a href="#" class="text-muted text-primary-hover stretched-link">7</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ms-auto">
+                                <div class="avatar-group">
+                                    <a href="#" class="avatar avatar-xs rounded-circle text-white border border-1 border-solid border-card">
+                                        <img alt="..." src="{{ '/img/people/img-1.jpg' | url }}">
+                                    </a>
+                                    <a href="#" class="avatar avatar-xs rounded-circle text-white border border-1 border-solid border-card">
+                                        <img alt="..." src="{{ '/img/people/img-3.jpg' | url }}">
+                                    </a>
+                                    <a href="#" class="avatar avatar-xs rounded-circle text-white border border-1 border-solid border-card">
+                                        <img alt="..." src="{{ '/img/people/img-4.jpg' | url }}">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="my-5">
+                    <div>
+                        <a href="#" class="h5 d-inline-block font-semibold mb-2">Create the new landing sections</a>
+                        <p class="text-sm text-muted mb-4">
+                            I need 5 examples of the logo
+                        </p>
+                        <span class="surtitle text-muted d-block">Progress</span>
+                        <div class="d-flex align-items-center">
+                            <div style="width: 80%;">
+                                <div class="progress progress-sm shadow-none">
+                                    <div class="progress-bar bg-tertiary" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                            <div class="col px-0 text-end">
+                                <a href="#" class="h6 text-sm">65%</a>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mt-3">
+                            <div>
+                                <div class="hstack gap-4 justify-content-end">
+                                    <div class="position-relative text-sm">
+                                        <i class="bi bi-files-alt text-muted"></i>
+                                        <a href="#" class="text-muted text-primary-hover stretched-link">18</a>
+                                    </div>
+                                    <div class="position-relative text-sm">
+                                        <i class="bi bi-people-fill text-muted"></i>
+                                        <a href="#" class="text-muted text-primary-hover stretched-link">7</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ms-auto">
+                                <div class="avatar-group">
+                                    <a href="#" class="avatar avatar-xs rounded-circle text-white border border-1 border-solid border-card">
+                                        <img alt="..." src="{{ '/img/people/img-1.jpg' | url }}">
+                                    </a>
+                                    <a href="#" class="avatar avatar-xs rounded-circle text-white border border-1 border-solid border-card">
+                                        <img alt="..." src="{{ '/img/people/img-3.jpg' | url }}">
+                                    </a>
+                                    <a href="#" class="avatar avatar-xs rounded-circle text-white border border-1 border-solid border-card">
+                                        <img alt="..." src="{{ '/img/people/img-4.jpg' | url }}">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="my-5">
+                    <div>
+                        <a href="#" class="h5 d-inline-block font-semibold mb-2">Design a new icon set</a>
+                        <p class="text-sm text-muted mb-4">
+                            I need 5 examples of the logo
+                        </p>
+                        <span class="surtitle text-muted d-block">Progress</span>
+                        <div class="d-flex align-items-center">
+                            <div style="width: 80%;">
+                                <div class="progress progress-sm shadow-none">
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                            <div class="col px-0 text-end">
+                                <a href="#" class="h6 text-sm">65%</a>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mt-3">
+                            <div>
+                                <div class="hstack gap-4 justify-content-end">
+                                    <div class="position-relative text-sm">
+                                        <i class="bi bi-files-alt text-muted"></i>
+                                        <a href="#" class="text-muted text-primary-hover stretched-link">18</a>
+                                    </div>
+                                    <div class="position-relative text-sm">
+                                        <i class="bi bi-people-fill text-muted"></i>
+                                        <a href="#" class="text-muted text-primary-hover stretched-link">7</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ms-auto">
+                                <div class="avatar-group">
+                                    <a href="#" class="avatar avatar-xs rounded-circle text-white border border-1 border-solid border-card">
+                                        <img alt="..." src="{{ '/img/people/img-1.jpg' | url }}">
+                                    </a>
+                                    <a href="#" class="avatar avatar-xs rounded-circle text-white border border-1 border-solid border-card">
+                                        <img alt="..." src="{{ '/img/people/img-3.jpg' | url }}">
+                                    </a>
+                                    <a href="#" class="avatar avatar-xs rounded-circle text-white border border-1 border-solid border-card">
+                                        <img alt="..." src="{{ '/img/people/img-4.jpg' | url }}">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,71 @@
+---
+layout: columns
+title: Launch Clever dashboard theme
+permalink: 'pages/tasks/list-view-aside.html'
+---
+
+<!-- Offcanvas -->
+{% inject "components/offcanvas-create-task.njk" %}
+
+<!-- Modal -->
+{% inject "components/modal-share.njk" %}
+
+<!-- Container -->
+<div class="container-fluid px-xl-16 vstack gap-3">
+    {% for group in tasks %}
+    <div class="card">
+        <div class="px-4 px-md-8 pb-4">
+            <div class="d-flex align-items-center mb-4 py-5 border-bottom">
+                <h5 class="font-semibold">
+                    <span class="me-1">{{ group.emoji }}</span>
+                    <span>{{ group.name }}</span>
+                </h5>
+                <div class="hstack gap-3 ms-auto">
+                    <a href="#" class="p-1 text-muted">
+                        <i class="bi bi-calendar-event"></i>
+                    </a>
+                    <a href="#" class="p-1 text-muted">
+                        <i class="bi bi-three-dots"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="list-group list-group-flush">
+                {% for task in group.content %}
+                <div class="list-group-item py-1 border-0">
+                    <div class="row g-3 align-items-center">
+                        <div class="col-sm-6 col-12">
+                            <div class="form-check form-check-linethrough">
+                                <input class="form-check-input w-5 h-5 mt-0 rounded-circle border-dashed flex-none" type="checkbox" id="check-{{ group.name | lower | replace(' ', '-')}}-{{ loop.index }}"{{ ' checked' if task.checked }}>
+                                <a href="#offcanvasCreate" class="form-check-label font-regular ms-2" data-bs-toggle="offcanvas">
+                                    {{ task.name }}
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-sm-auto col-12 ms-sm-auto">
+                            <div class="hstack gap-5 justify-content-end">
+                                <div>
+                                    <span class="badge bg-soft-{{ task.badge.color }} text-{{ task.badge.color }}">{{ task.badge.text }}</span>
+                                </div>
+                                <div class="position-relative text-sm">
+                                    <i class="bi bi-check-circle-fill text-{{ task.progress.color if task.progress.color else 'muted' }}"></i>
+                                    <span class="text-muted">{{ task.progress.value }}%</span>
+                                </div>
+                                <div class="position-relative text-sm">
+                                    <i class="bi bi-files-alt text-muted"></i>
+                                    <a href="#" class="text-muted text-primary-hover stretched-link">18</a>
+                                </div>
+                                <div class="position-relative text-sm">
+                                    <i class="bi bi-people-fill text-muted"></i>
+                                    <a href="#" class="text-muted text-primary-hover stretched-link">7</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>

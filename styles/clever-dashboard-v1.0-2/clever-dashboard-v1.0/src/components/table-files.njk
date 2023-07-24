@@ -1,0 +1,59 @@
+<table class="table table-hover table-nowrap">
+    <thead class="table-light">
+        <tr>
+            <th scope="col">File</th>
+            <th scope="col">Size</th>
+            <th scope="col">Modified</th>
+            <th scope="col">Access</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% if content %}
+        {% for item in content.slice(0, limit) %}
+        <tr>
+            <td>
+                <div class="d-flex align-items-center">
+                    <div class="icon icon-shape rounded-3 text-lg bg-{{ item.icon.color }} text-white">
+                        <i class="bi bi-{{ item.icon.code }}"></i>
+                    </div>
+                    <div class="ms-3">
+                        <a class="d-inline-block h6 font-semibold mb-1" href="#">
+                            {{ item.name }}
+                        </a>
+                        <small class="d-block">{{ item.value_1 }}</small>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <span>{{ item.value_2 }}</span>
+            </td>
+            <td>
+                <a class="text-current" href="mailto:{{ item.email }}">{{ item.date }}</a>
+            </td>
+            <td>
+                <span class="badge rounded-pill bg-soft-{{ item.badge.color }} text-{{ item.badge.color }}">{{ item.badge.label }}</span>
+            </td>
+            <td class="text-end">
+                <div class="dropdown">
+                    <a class="text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="bi bi-three-dots-vertical"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end">
+                        <a href="#!" class="dropdown-item">
+                            Action
+                        </a>
+                        <a href="#!" class="dropdown-item">
+                            Another action
+                        </a>
+                        <a href="#!" class="dropdown-item">
+                            Something else here
+                        </a>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        {% endfor %}
+        {% endif %}
+    </tbody>
+</table>

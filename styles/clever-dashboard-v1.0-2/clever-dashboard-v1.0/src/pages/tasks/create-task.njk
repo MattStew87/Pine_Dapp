@@ -1,0 +1,362 @@
+---
+layout: base
+navbar: false
+header: create
+title: Create a new task
+permalink: 'pages/tasks/create-task.html'
+---
+
+<!-- Container -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="vstack gap-8 mt-4">
+                <!-- Title -->
+                <input type="text" class="form-control form-control-flush text-2xl font-bold" placeholder="Enter your task name ..." />
+                <!-- Description -->
+                <div class="card">
+                    <div>
+                        <div class="textarea-autosize p-6">
+                            <textarea class="form-control border-0 shadow-none p-0" rows="4" placeholder="Enter description" oninput="this.parentNode.dataset.replicatedValue = this.value"></textarea>
+                        </div>
+                        <div class="d-flex align-items-center px-6 py-3 border-top">
+                            <div class="flex-fill d-flex align-items-center">
+                                <h6 class="font-semibold text-xs text-muted text-opacity-70">Markdown formatting</h6>
+                            </div>
+                            <div class="text-end">
+                                <div class="hstack gap-5 align-items-center">
+                                    <a href="#!" class="text-lg text-muted text-primary-hover">
+                                        <i class="bi bi-images"></i>
+                                    </a>
+                                    <a href="#!" class="text-lg text-muted text-primary-hover">
+                                        <i class="bi bi-emoji-smile"></i>
+                                    </a>
+                                    <a href="#!" class="text-lg text-muted text-primary-hover">
+                                        <i class="bi bi-paperclip"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Subtasks -->
+                <div class="ps-6 border-start">
+                    <h6 class="mb-4">Subtasks</h6>
+                    <div class="vstack gap-3">
+                        <div>
+                            <div class="form-check form-check-linethrough">
+                                <input class="form-check-input w-5 h-5 mt-0 rounded-circle border-dashed flex-none" type="checkbox" checked>
+                                <a href="#offcanvas-show-task" class="form-check-label font-regular ms-2" data-bs-toggle="offcanvas">
+                                    Keep my mentality healthy by taking walks outside
+                                </a>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="form-check form-check-linethrough">
+                                <input class="form-check-input w-5 h-5 mt-0 rounded-circle border-dashed flex-none" type="checkbox">
+                                <a href="#offcanvas-show-task" class="form-check-label font-regular ms-2" data-bs-toggle="offcanvas">
+                                    Build some new components in Figma
+                                </a>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="form-check form-check-linethrough">
+                                <input class="form-check-input w-5 h-5 mt-0 rounded-circle border-dashed flex-none" type="checkbox">
+                                <a href="#offcanvas-show-task" class="form-check-label font-regular ms-2" data-bs-toggle="offcanvas">
+                                    Figure out how to use Clever from the help center!
+                                </a>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="form-check form-check-linethrough">
+                                <input class="form-check-input w-5 h-5 mt-0 rounded-circle border-dashed flex-none" type="checkbox">
+                                <a href="#offcanvas-show-task" class="form-check-label font-regular ms-2" data-bs-toggle="offcanvas">
+                                    Create wireframes for the new dashboard
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="text" class="form-control form-control-sm mt-4 mb-3" placeholder="Add another subtask" />
+                        <div class="d-flex gap-3">
+                            <button type="button" class="btn btn-link p-0 text-muted text-danger-hover text-sm font-semibold">Cancel</button>
+                            <button type="button" class="btn btn-link p-0 link-success text-sm font-semibold">Save task</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Attachments -->
+                <div class="mb-6">
+                    <h6 class="mb-3">Attachments</h6>
+                    <div class="card">
+                        <div class="card-body pb-0">
+                            <div class="rounded border-2 border-dashed border-primary-hover position-relative">
+                                <div class="d-flex justify-content-center px-5 py-5">
+                                    <label for="file_upload" class="position-absolute w-full h-full top-0 start-0 cursor-pointer">
+                                        <input id="file_upload" name="file_upload" type="file" class="visually-hidden">
+                                    </label>
+                                    <div class="text-center">
+                                        <div class="text-2xl text-muted">
+                                            <i class="bi bi-upload"></i>
+                                        </div>
+                                        <div class="d-flex text-sm mt-3">
+                                            <p class="font-semibold">Upload a file or drag and drop</p>
+                                        </div>
+                                        <p class="text-xs text-gray-500">
+                                            PNG, JPG, GIF up to 3MB
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Upload preview -->
+                            <div class="list-group list-group-flush mt-2">
+                                <div class="list-group-item py-3 d-flex align-items-center">
+                                    <div class="flex-fill">
+                                        <!-- Title -->
+                                        <span class="d-block h6 text-sm font-semibold mb-1">task-img-1.png</span>
+                                        <!-- Subtitle -->
+                                        <span class="d-block text-xs text-muted">350 kb</span>
+                                    </div>
+                                    <div class="ms-auto">
+                                        <div class="dropdown">
+                                            <a class="text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="bi bi-three-dots-vertical"></i>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-end">
+                                                <a href="#!" class="dropdown-item">
+                                                    Action
+                                                </a>
+                                                <a href="#!" class="dropdown-item">
+                                                    Another action
+                                                </a>
+                                                <a href="#!" class="dropdown-item">
+                                                    Something else here
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list-group-item py-3 d-flex align-items-center">
+                                    <div class="flex-fill">
+                                        <!-- Title -->
+                                        <span class="d-block h6 text-sm font-semibold mb-1">task-img-1.png</span>
+                                        <!-- Subtitle -->
+                                        <span class="d-block text-xs text-muted">350 kb</span>
+                                    </div>
+                                    <div class="ms-auto">
+                                        <div class="dropdown">
+                                            <a class="text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="bi bi-three-dots-vertical"></i>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-end">
+                                                <a href="#!" class="dropdown-item">
+                                                    Action
+                                                </a>
+                                                <a href="#!" class="dropdown-item">
+                                                    Another action
+                                                </a>
+                                                <a href="#!" class="dropdown-item">
+                                                    Something else here
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list-group-item py-3 d-flex align-items-center">
+                                    <div class="flex-fill">
+                                        <!-- Title -->
+                                        <span class="d-block h6 text-sm font-semibold mb-1">task-img-1.png</span>
+                                        <!-- Subtitle -->
+                                        <span class="d-block text-xs text-muted">350 kb</span>
+                                    </div>
+                                    <div class="ms-auto">
+                                        <div class="dropdown">
+                                            <a class="text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="bi bi-three-dots-vertical"></i>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-end">
+                                                <a href="#!" class="dropdown-item">
+                                                    Action
+                                                </a>
+                                                <a href="#!" class="dropdown-item">
+                                                    Another action
+                                                </a>
+                                                <a href="#!" class="dropdown-item">
+                                                    Something else here
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card position-sticky top-24">
+                <div class="card-body pb-0">
+                    <h6 class="mb-4">Task settings</h6>
+                    <div>
+                        <select class="form-select">
+                            <option value="1">Clever Project</option>
+                            <option value="2">Second Project</option>
+                            <option value="3">Another Cool Project</option>
+                        </select>
+                        <div class="d-flex gap-3 justify-content-end mt-4">
+                            <button type="button" class="btn btn-link p-0 link-primary text-sm font-semibold">Add new project</button>
+                        </div>
+                        <hr class="mt-4 mb-0">
+                        <div class="list-group list-group-flush">
+                            <div class="list-group-item">
+                                <div class="d-flex align-items-center">
+                                    <h6 class="text-sm text-muted font-semibold">Assignee</h6>
+                                    <div class="dropdown ms-auto">
+                                        <a href="#" class="text-muted text-primary-hover" data-bs-toggle="dropdown" data-bs-autoclose="outside" aria-expanded="false">
+                                            <i class="bi bi-gear"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-end w-64">
+                                            <div class="dropdown-header">
+                                                <h6 class="text-sm font-semibold">Assign up to 10 people</h6>
+                                            </div>
+                                            <div class="dropdown-item">
+                                                <div class="input-group input-group-sm input-group-inline">
+                                                    <span class="input-group-text ps-3 pe-1">
+                                                        <i class="bi bi-search"></i>
+                                                    </span>
+                                                    <input type="email" class="form-control" placeholder="Search" aria-label="Search">
+                                                </div>
+                                            </div>
+                                            {% for item in users.slice(0,4) %}
+                                            <div class="dropdown-item d-flex align-items-center">
+                                                <div class="flex-none">
+                                                    <img alt="..." class="avatar avatar-xs rounded-circle" src="{{ item.img.src | url  }}" />
+                                                </div>
+                                                <div class="flex-fill ms-3">
+                                                    <a href="#" class="text-sm text-heading font-semibold mb-0">
+                                                        {{ item.name }}
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="vstack gap-3 mt-3">
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-none">
+                                            <img alt="..." class="avatar w-5 h-5 rounded-circle" src="{{ '/img/people/img-2.jpg' | url }}" />
+                                        </div>
+                                        <div class="flex-fill ms-3">
+                                            <a href="#" class="text-sm text-heading font-semibold mb-0">
+                                                Mark Branson
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-none">
+                                            <img alt="..." class="avatar w-5 h-5 rounded-circle" src="{{ '/img/people/img-3.jpg' | url }}" />
+                                        </div>
+                                        <div class="flex-fill ms-3">
+                                            <a href="#" class="text-sm text-heading font-semibold mb-0">
+                                                Sara Summer
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-group-item">
+                                <div class="d-flex align-items-center">
+                                    <h6 class="text-sm text-muted font-semibold">Status</h6>
+                                    <div class="dropdown ms-auto">
+                                        <a href="#" class="text-muted text-primary-hover" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <i class="bi bi-gear"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-end">
+                                            <div class="dropdown-header">
+                                                <h6 class="text-sm font-semibold">Select an option</h6>
+                                            </div>
+                                            <div class="dropdown-item">
+                                                <span class="badge badge-sm bg-soft-success text-success">Done</span>
+                                            </div>
+                                            <div class="dropdown-item">
+                                                <span class="badge badge-sm bg-soft-warning text-warning">In progress</span>
+                                            </div>
+                                            <div class="dropdown-item">
+                                                <span class="badge badge-sm bg-soft-primary text-primary">Testing</span>
+                                            </div>
+                                            <div class="dropdown-item">
+                                                <span class="badge badge-sm bg-soft-danger text-danger">Canceled</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <span class="badge badge-sm bg-warning text-white">In progress</span>
+                                </div>
+                            </div>
+                            <div class="list-group-item">
+                                <div class="d-flex align-items-center">
+                                    <h6 class="text-sm text-muted font-semibold">Priority</h6>
+                                    <div class="dropdown ms-auto">
+                                        <a href="#" class="text-muted text-primary-hover" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <i class="bi bi-gear"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-end">
+                                            <div class="dropdown-header">
+                                                <h6 class="text-sm font-semibold">Select an option</h6>
+                                            </div>
+                                            <div class="dropdown-item">
+                                                <span class="badge badge-sm bg-soft-danger text-danger">
+                                                    <i class="bi bi-exclamation-circle-fill me-2"></i>High
+                                                </span>
+                                            </div>
+                                            <div class="dropdown-item">
+                                                <span class="badge badge-sm bg-soft-warning text-warning">
+                                                    <i class="bi bi-stopwatch-fill me-2"></i>Medium
+                                                </span>
+                                            </div>
+                                            <div class="dropdown-item">
+                                                <span class="badge badge-sm bg-soft-success text-success">
+                                                    <i class="bi bi-hand-thumbs-up-fill me-2"></i>Low
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <span class="badge badge-sm bg-soft-success text-success">
+                                        <i class="bi bi-hand-thumbs-up-fill me-2"></i>Low
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="list-group-item">
+                                <h6 class="text-sm text-muted font-semibold">Due date</h6>
+                                <div class="mt-3">
+                                    <div class="datepicker d-flex gap-2 align-items-center">
+                                        <!-- input is mandatory for Flatpickr plugin to work -->
+                                        <input type="text" class="form-control form-control-flush text-sm text-muted font-semibold" placeholder="Select date" data-input>
+                                        <!-- External trigger -->
+                                        <a href="#" class="text-muted text-primary-hover" data-toggle>
+                                            <i class="bi bi-calendar-event"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-group-item">
+                                <div>
+                                    <h6 class="text-sm text-muted font-semibold">Notifications</h6>
+                                    <button type="button" class="btn btn-neutral btn-sm w-full mt-3">
+                                        <i class="bi bi-bell me-2"></i>Subscribe
+                                    </button>
+                                    <small class="d-block mt-2 text-muted">You’re not receiving notifications from this thread.</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

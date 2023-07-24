@@ -1,0 +1,47 @@
+<header>
+    <div class="container-fluid">
+        <div class="border-bottom {{ 'pt-6' if headerNav != false else 'py-6' }}">
+            <div class="row align-items-center">
+                <div class="{{ 'col-sm' if headerButtons != false else 'col-sm-12' }} col-12">
+                    <!-- Title -->
+                    <h1 class="h2 ls-tight">
+                        {% if emoji %}<span class="d-inline-block me-3">{{ emoji }}</span>{% endif %}{{ title }}
+                    </h1>
+                </div>
+                {% if headerButtons != false %}
+                <!-- Actions -->
+                <div class="col-sm-auto col-12 mt-4 mt-sm-0">
+                    <div class="hstack gap-2 justify-content-sm-end">
+                        <a href="#modalExport" class="btn btn-sm btn-neutral border-base" data-bs-toggle="modal">
+                            <span class="pe-2">
+                                <i class="bi bi-people-fill"></i>
+                            </span>
+                            <span>Share</span>
+                        </a>
+                        <a href="#offcanvasCreate" class="btn btn-sm btn-primary" data-bs-toggle="offcanvas">
+                            <span class="pe-2">
+                                <i class="bi bi-plus-square-dotted"></i>
+                            </span>
+                            <span>Create</span>
+                        </a>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+            {% if headerNav != false %}
+            <!-- Nav -->
+            <ul class="nav nav-tabs overflow-x border-0">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active">View all</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Most recent</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Popular</a>
+                </li>
+            </ul>
+            {% endif %}
+        </div>
+    </div>
+</header>

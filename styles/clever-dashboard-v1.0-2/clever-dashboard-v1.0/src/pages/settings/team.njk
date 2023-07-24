@@ -1,0 +1,170 @@
+---
+layout: base
+header: account
+navbar: false
+title: Team Settings
+permalink: 'pages/settings/team.html'
+---
+
+<div class="container-fluid max-w-screen-md vstack gap-6">
+    <div class="card">
+        <div class="card-body">
+            <div class="mb-5">
+                <h4 class="mb-1">Your team's name</h4>
+                <p class="text-sm text-muted">
+                    This is your team's visible name within Clever.
+                </p>
+            </div>
+            <form class="vstack gap-5">
+                <div>
+                    <label class="form-label">Photo</label>
+                    <div class="d-flex align-items-center">
+                        <a href="#" class="avatar avatar-lg bg-warning rounded-circle text-white">
+                            <img alt="..." src="{{ '/img/logos/clever-primary-sm.svg' | url }}">
+                        </a>
+                        <div class="ms-5">
+                            <label for="file-upload" class="btn btn-sm btn-neutral">
+                                <span>Upload</span>
+                                <input type="file" name="file-upload" id="file-upload" class="visually-hidden">
+                            </label>
+                            <a href="#" class="btn d-inline-flex btn-sm btn-neutral ms-2 text-danger">
+                                <span class=" pe-2">
+                                    <i class="bi bi-trash"></i>
+                                </span>
+                                <span>Remove</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <label class="form-label">Team name</label>
+                    <input type="text" class="form-control" value="Clever Team">
+                </div>
+                <div class="hstack gap-2 justify-content-end">
+                    <button type="button" class="btn btn-sm btn-neutral">Cancel</button>
+                    <button type="submit" class="btn btn-sm btn-primary">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <div class="mb-5">
+                <h4 class="mb-1">Team URL</h4>
+                <p class="text-sm text-muted">
+                    This is your team’s URL namespace on Clever.
+                </p>
+            </div>
+            <form class="vstack gap-5">
+                <div>
+                    <div class="input-group position-relative">
+                        <span class="input-group-text">clever.io/</span>
+                        <input type="email" class="form-control" placeholder="username">
+                    </div>
+                </div>
+                <div class="hstack gap-2 justify-content-end">
+                    <button type="button" class="btn btn-sm btn-neutral">Cancel</button>
+                    <button type="submit" class="btn btn-sm btn-primary">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <div class="mb-5">
+                <h4 class="mb-1">Members</h4>
+                <p class="text-sm text-muted">
+                    Manage and invite Team Members.
+                </p>
+            </div>
+            <form class="vstack gap-5">
+                <div class="row gx-3 gy-5">
+                    <div class="col-md-8">
+                        <label class="form-label">Email address</label>
+                        <input type="email" class="form-control">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Role</label>
+                        <select class="form-select">
+                            <option value="member">Member</option>
+                            <option value="owner">Owner</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <button class="btn btn-sm btn-neutral d-flex align-items-center">
+                        <i class="bi bi-plus-circle me-2"></i>
+                        <span>Add more</span>
+                    </button>
+                </div>
+                <div class="hstack gap-2 justify-content-end">
+                    <button type="submit" class="btn btn-sm btn-primary">Invite</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body pb-0">
+            <div class="mb-4">
+                <h4 class="mb-1">Manage access</h4>
+                <p class="text-sm text-muted">
+                    Manage and invite Team Members.
+                </p>
+            </div>
+            <div class="row g-3">
+                <div class="col-lg-8">
+                    <div class="input-group input-group-sm input-group-inline mb-1">
+                    	<span class="input-group-text">
+                            <i class="bi bi-search"></i>
+                        </span>
+                    	<input type="email" class="form-control" placeholder="Search members">
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <select class="form-select form-select-sm">
+                        <option value="member">Role</option>
+                        <option value="owner">Date</option>
+                        <option value="owner">Name</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="list-group list-group-flush">
+                {% for user in users.slice(0,3) %}
+                <div class="list-group-item d-flex align-items-center">
+                    <div class="me-4">
+                        <div class="avatar w-10 h-10 rounded-circle">
+                            <img alt="..." src="{{ user.img.src | url  }}">
+                        </div>
+                    </div>
+                    <div class="flex-fill">
+                        <!-- Title -->
+                        <a href="#" class="d-block h6 font-semibold mb-1">{{ user.name }}</a>
+
+                        <!-- Subtitle -->
+                        <span class="d-block text-sm text-muted">{{ user.email }}</span>
+                    </div>
+                    <div class="ms-auto text-end">
+                        <div class="dropdown">
+                            <a class="text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="bi bi-three-dots-vertical"></i>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a href="#!" class="dropdown-item">
+                                    Action
+                                </a>
+                                <a href="#!" class="dropdown-item">
+                                    Another action
+                                </a>
+                                <a href="#!" class="dropdown-item">
+                                    Something else here
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

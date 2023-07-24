@@ -1,3 +1,5 @@
+
+// API route for getting wallet data from Users table. 
 import { NextApiRequest, NextApiResponse } from 'next';
 import { createClient, QueryResult, QueryResultRow } from '@vercel/postgres';
 

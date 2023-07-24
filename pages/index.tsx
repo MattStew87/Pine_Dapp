@@ -5,9 +5,9 @@ import { useRouter } from 'next/router';
 import { useAccount } from 'wagmi';
 
 // Main Page Components 
-import DisplayPine from './DisplayPine';
-import LeaderBoard from './LeaderBoard';
-import SubmitContent from './submitContent';
+import DisplayPine from '../components/DisplayPine';
+import LeaderBoard from '../components/LeaderBoard';
+import Main from './main';
 
 const Home: NextPage = () => {
   const { openConnectModal } = useConnectModal();
@@ -19,7 +19,7 @@ const Home: NextPage = () => {
     if (!isConnected) {
       openConnectModal?.();
     } else {
-      router.push('/form');
+      router.push('../components/form');
     }
   };
   // Authenticate/connect user submitting content 
@@ -27,7 +27,7 @@ const Home: NextPage = () => {
     if (!isConnected) {
       openConnectModal?.();
     } else {
-      router.push('/submitContent');
+      router.push('../components/submitContent');
     }
   };
 
@@ -45,32 +45,11 @@ const Home: NextPage = () => {
         <link rel="icon" href="https://pbs.twimg.com/profile_images/1659657965417160704/spa6XX5m_400x400.png" type="image/x-icon" />
       </Head>
       <div>
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'flex-end',
-            padding: 12,
-          }}
-        >
-          <ConnectButton />
-        </div>
 
         <div> 
-        <button onClick={handleContentButtonClick}>Submit Content</button>
+          <Main />
         </div>
 
-        <div> 
-        <button onClick={handleFormButtonClick}>Go to form</button>
-        </div>
-
-        <div> 
-          <DisplayPine />
-        </div>
-
-        <div> 
-          <LeaderBoard />
-        </div>
-        
       </div>
     </>
   );

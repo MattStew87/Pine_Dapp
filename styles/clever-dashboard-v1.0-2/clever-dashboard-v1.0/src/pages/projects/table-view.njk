@@ -1,0 +1,53 @@
+---
+layout: base
+title: My Cool Projects
+emoji: 😎
+permalink: 'pages/projects/table-view.html'
+---
+
+<!-- Offcanvas -->
+{% inject "components/offcanvas-create-project.njk" %}
+
+<!-- Modal -->
+{% inject "components/modal-export.njk" %}
+
+<!-- Container -->
+<div class="container-fluid">
+    <div class="vstack gap-4">
+        <!-- Filters -->
+        <div class="d-flex flex-column flex-md-row gap-3 justify-content-between">
+            <div class="d-flex gap-3">
+                <!-- Search -->
+                <div class="input-group input-group-sm input-group-inline">
+                    <span class="input-group-text pe-2">
+                        <i class="bi bi-search"></i>
+                    </span>
+                    <input type="text" class="form-control" placeholder="Search" aria-label="Search">
+                </div>
+                <!-- Filters -->
+                {% inject "components/dropdown-filters.njk" %}
+            </div>
+            <div class="btn-group">
+                <a href="#" class="btn btn-sm btn-neutral text-primary" aria-current="page">View all</a>
+                <a href="#" class="btn btn-sm btn-neutral">Private</a>
+                <a href="#" class="btn btn-sm btn-neutral">Shared files</a>
+            </div>
+        </div>
+        <!-- Table -->
+        <div class="card">
+            <div class="card-header border-bottom d-flex align-items-center">
+                <h5 class="me-auto">All projects</h5>
+                {% inject "components/dropdown-more.njk" %}
+            </div>
+            <div class="table-responsive">
+                {% inject "components/table-projects.njk", {
+                content: projects,
+                limit: 10
+                } %}
+            </div>
+            <div class="card-footer border-0 py-5">
+                <span class="text-muted text-sm">Showing 10 items out of 250 results found</span>
+            </div>
+        </div>
+    </div>
+</div>

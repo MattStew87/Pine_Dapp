@@ -1,0 +1,95 @@
+---
+layout: base
+headerButtons: false
+navbar: false
+title: Manage Apps
+permalink: 'pages/integrations/manage-apps.html'
+---
+
+<div class="container-fluid vstack gap-10">
+    <div>
+        <h4 class="mb-4">
+            <i class="bi bi-pin-angle text-muted me-3"></i>Pinned Apps
+        </h4>
+        <div class="row g-4 g-xl-6">
+            <div class="col-xl-3 col-sm-6">
+                {% inject "components/card-integration.njk", {
+                    name: 'Airbnb',
+                    text: 'In certain circumstances and owing to the claims of duty.',
+                    img: {
+                        src: '/svg/social/airbnb.svg'
+                    }
+                } %}
+            </div>
+            <div class="col-xl-3 col-sm-6">
+                {% inject "components/card-integration.njk", {
+                    name: 'Bootstrap',
+                    text: 'In certain circumstances and owing to the claims of duty.',
+                    img: {
+                        src: '/svg/social/bootstrap.svg'
+                    }
+                } %}
+            </div>
+            <div class="col-xl-3 col-sm-6">
+                {% inject "components/card-integration.njk", {
+                    name: 'GitHub',
+                    text: 'In certain circumstances and owing to the claims of duty.',
+                    img: {
+                        src: '/svg/social/github.svg'
+                    }
+                } %}
+            </div>
+            <div class="col-xl-3 col-sm-6">
+                {% inject "components/card-integration.njk", {
+                    name: 'Spotify',
+                    text: 'In certain circumstances and owing to the claims of duty.',
+                    img: {
+                        src: '/svg/social/spotify.svg'
+                    }
+                } %}
+            </div>
+        </div>
+    </div>
+    <hr class="my-0" />
+    <div>
+        <h4 class="mb-5">
+            <i class="bi bi-app-indicator text-muted me-3"></i>Installed Apps
+        </h4>
+        <div class="row g-4">
+            {% for item in integrations.slice(0,8) %}
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="p-5">
+                		<div class="row justify-content-between align-items-center">
+                			<div class="col-lg-6 col-12">
+                				<div class="d-flex align-items-center">
+                					<div>
+                						<img alt="..." src="{{ item.img.src | url  }}" class="avatar rounded" />
+                					</div>
+                					<div class="ms-4">
+                						<a href="#" class="h6 mb-1">{{ item.name }}</a>
+                						<span class="d-block text-sm text-muted">You subtitle comes here</span>
+                					</div>
+                				</div>
+                			</div>
+                			<div class="col-lg-auto col-12 mt-4 mt-lg-0">
+                				<div class="d-flex align-items-center justify-content-between gap-6">
+                					<div>
+                						<a href="#" class="text-sm text-muted text-danger-hover font-semibold">
+                                            <i class="bi bi-trash me-2"></i>Uninstall
+                                        </a>
+                					</div>
+                                    <div class="form-check form-switch me-n2">
+                                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked="checked">
+                                    </div>
+                				</div>
+                			</div>
+
+                		</div>
+                	</div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

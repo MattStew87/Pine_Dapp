@@ -1,0 +1,55 @@
+---
+layout: base
+title: Users
+permalink: 'pages/user/table-view.html'
+---
+
+<!-- Offcanvas -->
+{% inject "components/offcanvas-create-user.njk" %}
+
+<!-- Modal -->
+{% inject "components/modal-export.njk" %}
+
+<!-- Container -->
+<div class="container-fluid">
+    <div class="vstack gap-4">
+        <!-- Filters -->
+        <div class="d-flex justify-content-between flex-column flex-sm-row gap-3">
+            <div class="hstack gap-2">
+                <!-- Search -->
+                <div class="input-group input-group-sm input-group-inline">
+                    <span class="input-group-text pe-2">
+                        <i class="bi bi-search"></i>
+                    </span>
+                    <input type="email" class="form-control" placeholder="Search" aria-label="Search">
+                </div>
+                <!-- Filters -->
+                {% inject "components/dropdown-filters.njk" %}
+            </div>
+            <div class="btn-group">
+                <a href="#" class="btn btn-sm btn-neutral">
+                    <i class="bi bi-cloud-download me-2"></i>Download all
+                </a>
+                <a href="#" class="btn btn-sm btn-neutral">
+                    <i class="bi bi-gear-wide me-2"></i>Settings
+                </a>
+            </div>
+        </div>
+        <!-- Table -->
+        <div class="card">
+            <div class="card-header border-bottom d-flex align-items-center">
+                <h5 class="me-auto">All projects</h5>
+                {% inject "components/dropdown-more.njk" %}
+            </div>
+            <div class="table-responsive">
+                {% inject "components/table-users.njk", {
+                content: users,
+                limit: 10
+                } %}
+            </div>
+            <div class="card-footer border-0 py-5">
+                <span class="text-muted text-sm">Showing 10 items out of 250 results found</span>
+            </div>
+        </div>
+    </div>
+</div>

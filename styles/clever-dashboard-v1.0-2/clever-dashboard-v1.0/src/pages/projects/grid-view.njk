@@ -1,0 +1,47 @@
+---
+layout: base
+title: My Cool Projects
+permalink: 'pages/projects/grid-view.html'
+---
+
+<!-- Offcanvas -->
+{% inject "components/offcanvas-create-project.njk" %}
+
+<!-- Modal -->
+{% inject "components/modal-export.njk" %}
+
+<!-- Container -->
+<div class="container-fluid">
+    <div class="vstack gap-6">
+        <!-- Filters -->
+        <div class="d-flex flex-column flex-md-row gap-3 justify-content-between">
+            <div class="d-flex gap-3">
+                <!-- Search -->
+                <div class="input-group input-group-sm input-group-inline">
+                    <span class="input-group-text pe-2">
+                        <i class="bi bi-search"></i>
+                    </span>
+                    <input type="text" class="form-control" placeholder="Search" aria-label="Search">
+                </div>
+                <!-- Filters -->
+                {% inject "components/dropdown-filters.njk" %}
+            </div>
+            <div class="btn-group">
+                <a href="#" class="btn btn-sm btn-neutral text-primary" aria-current="page">View all</a>
+                <a href="#" class="btn btn-sm btn-neutral">Private</a>
+                <a href="#" class="btn btn-sm btn-neutral">Shared files</a>
+            </div>
+        </div>
+
+        <!-- Items -->
+        <div class="row g-6">
+            {% for item in projects %}
+            <div class="col-xl-3 col-sm-6">
+                {% inject "components/card-project.njk", item %}
+            </div>
+            {% endfor %}
+        </div>
+        <!-- Pagination -->
+        {% inject "components/pagination-print.njk" %}
+    </div>
+</div>

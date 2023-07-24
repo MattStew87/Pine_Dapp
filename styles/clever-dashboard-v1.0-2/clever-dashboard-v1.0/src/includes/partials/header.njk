@@ -1,0 +1,15 @@
+{% if header == "base" %}
+{% include "partials/header-base.njk" %}
+{% elif header == "project" %}
+{% include "partials/header-project.njk" %}
+{% elif header == "create" %}
+{% include "partials/header-create.njk" %}
+{% elif header == "share" %}
+{% include "partials/header-share.njk" %}
+{% elif header == "account" %}
+{% include "partials/header-account.njk" %}
+{% elif header == "profile" %}
+{% include "partials/header-profile.njk" %}
+{% else %}
+{% include "partials/header-base.njk" %}
+{% endif %}

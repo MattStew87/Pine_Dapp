@@ -1,0 +1,145 @@
+---
+layout: base
+navbar: false
+header: share
+title: Storage Management
+permalink: 'pages/files/overview.html'
+---
+
+<div class="container-fluid">
+    <!-- Row 1 -->
+    <div class="row g-6 mb-8">
+        <div class="col-xl col-sm-6 col-12">
+            {% inject "components/card-progress.njk", {
+    			title: 'Flickr Storage',
+    			img: {
+    				src: '/img/social/flickr.svg'
+    			},
+    			progress: {
+                    color: 'tertiary',
+                    value: 30,
+                    min: 10,
+                    max: 30
+                }
+    		} %}
+        </div>
+        <div class="col-xl col-sm-6 col-12">
+            {% inject "components/card-progress.njk", {
+    			title: 'Slack Storage',
+    			img: {
+    				src: '/img/social/slack.svg'
+    			},
+    			progress: {
+                    color: 'primary',
+                    value: 60,
+                    min: 20,
+                    max: 30
+                }
+    		} %}
+        </div>
+        <div class="col-xl col-sm-6 col-12">
+            {% inject "components/card-progress.njk", {
+    			title: 'Amazon Storage',
+    			img: {
+    				src: '/img/social/amazon.svg'
+    			},
+    			progress: {
+                    color: 'warning',
+                    value: 90,
+                    min: 90,
+                    max: 100
+                }
+    		} %}
+        </div>
+    </div>
+    <!-- Row 2 -->
+    <div class="d-flex align-items-center mb-5">
+        <div>
+            <h5 class="mb-0">My folders</h5>
+        </div>
+        <div class="ms-auto">
+            <a href="#" class="btn btn-sm btn-neutral">See more</a>
+        </div>
+    </div>
+    <div class="row g-6 mb-8">
+        <div class="col-xl-3 col-sm-6 col-12">
+            {% inject "components/card-info-2.njk", {
+    			title: 'Illustrations',
+    			icon: {
+    				code: 'folder-fill'
+    			},
+    			infos: [
+    				{
+    					text: '30 files'
+    				},
+    				{
+    					text: '25 MB'
+    				}
+    			]
+    		} %}
+        </div>
+        <div class="col-xl-3 col-sm-6 col-12">
+            {% inject "components/card-info-2.njk", {
+    			title: 'Marketing stuff',
+    			icon: {
+    				code: 'folder-fill'
+    			},
+    			infos: [
+    				{
+    					text: '1200 files'
+    				},
+    				{
+    					text: '25 GB'
+    				}
+    			]
+    		} %}
+        </div>
+        <div class="col-xl-3 col-sm-6 col-12">
+            {% inject "components/card-info-2.njk", {
+                title: 'Documentation',
+    			icon: {
+    				code: 'folder-fill'
+    			},
+    			infos: [
+    				{
+    					text: '40 files'
+    				},
+    				{
+    					text: '13.5 MB'
+    				}
+    			]
+    		} %}
+        </div>
+        <div class="col-xl-3 col-sm-6 col-12">
+            {% inject "components/card-info-2.njk", {
+                title: 'Images',
+    			icon: {
+    				code: 'folder-fill'
+    			},
+    			infos: [
+    				{
+    					text: '2500 files'
+    				},
+    				{
+    					text: '32 GB'
+    				}
+    			]
+    		} %}
+        </div>
+    </div>
+    <!-- Table -->
+    <div class="card">
+        <div class="card-header">
+            <h5 class="mb-0">Recent files</h5>
+        </div>
+        <div class="table-responsive">
+            {% inject "components/table-files.njk", {
+                content: files,
+                limit: 5
+            } %}
+        </div>
+        <div class="card-footer border-0 py-5">
+            <span class="text-muted text-sm">Showing 10 items out of 250 results found</span>
+        </div>
+    </div>
+</div>

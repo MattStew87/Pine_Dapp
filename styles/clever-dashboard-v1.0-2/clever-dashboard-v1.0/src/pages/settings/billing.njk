@@ -1,0 +1,181 @@
+---
+layout: base
+header: account
+navbar: false
+title: Billing
+permalink: 'pages/settings/billing.html'
+---
+
+<div class="container-fluid max-w-screen-md vstack gap-6">
+    <div class="card">
+        <div class="card-body py-4">
+            <!-- Icon + Dropdown -->
+            <div class="d-flex align-items-center justify-content-between mb-5">
+                <div class="flex-1">
+                    <!-- Title -->
+                    <h6 class="h5 font-semibold mb-1">Standard Plan</h6>
+                    <!-- Text -->
+                    <p class="text-sm text-muted">The perfect way to get started.</p>
+                </div>
+                <div class="ms-auto">
+                    <div class="d-flex align-items-center mt-5 mb-3 lh-none  text-heading d-block display-5 ls-tight mb-0">
+                        <span class="font-semibold text-2xl align-self-start mt-1 mt-sm-1 me-1">$</span>
+                        <span>59</span>
+                        <span class="d-inline-block font-regular text-muted text-lg mt-sm-3 ms-1"> / month</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Progress -->
+            <div class="d-flex align-items-center justify-content-between mb-1">
+                <span class="text-sm text-muted font-semibold text-heading d-block">30 days</span>
+                <span class="text-sm text-muted font-semibold d-block">12 days left</span>
+            </div>
+            <div class="progress progress-sm shadow-none mb-6">
+                <div class="progress-bar bg-warning" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <hr class="my-4" />
+            <div class="d-flex align-items-center justify-content-between">
+                <a href="#" class="text-muted text-danger-hover text-sm font-semibold">Cancel plan</a>
+                <a href="#" class="btn btn-sm btn-neutral">Change plan</a>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body pb-4">
+            <!-- Icon + Dropdown -->
+            <div class="d-flex align-items-center justify-content-between mb-5">
+                <div class="flex-1">
+                    <!-- Title -->
+                    <h4 class="mb-1">Payment Method</h4>
+                    <!-- Text -->
+                    <p class="text-sm text-muted">The perfect way to get started.</p>
+                </div>
+            </div>
+            <div class="p-3 border border-dashed rounded-2 d-flex align-items-center mb-2">
+                <div>
+                    <img alt="..." src="{{ '/img/cards/visa.svg' | url }}" class="w-20 rounded-2">
+                </div>
+                <div class="ms-4 flex-fill">
+                    <div class="d-block text-sm text-heading font-semibold mb-1">Visa ending in 4291</div>
+                    <div class="d-block text-sm text-muted">
+                        Expiry date: 12/26
+                    </div>
+                </div>
+            </div>
+            <div class="p-3 border border-dashed rounded-2 d-flex align-items-center">
+                <div>
+                    <img alt="..." src="{{ '/img/cards/mastercard.svg' | url }}" class="w-20 rounded-2">
+                </div>
+                <div class="ms-4 flex-fill">
+                    <div class="d-block text-sm text-heading font-semibold mb-1">Mastercard ending in 3399</div>
+                    <div class="d-block text-sm text-muted">
+                        Expiry date: 12/23
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex align-items-center justify-content-between pt-4">
+                <a href="#" class="text-muted text-danger-hover text-sm font-semibold">Remove card</a>
+                <a href="#" class="btn btn-sm btn-neutral">Edit payment method</a>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body pb-0">
+            <div class="mb-3">
+                <h4>Paid invoices</h4>
+            </div>
+            <div class="list-group list-group-flush">
+                {% for item in invoices.slice(0,3) %}
+                <div class="list-group-item d-flex">
+                    <div>
+                        <a href="" class="text-sm text-muted">
+
+                        </a>
+                    </div>
+                    <div class="flex-fill">
+                        <a href="#" class="d-block h6 font-semibold mb-1">
+                            {{ item.title }}
+                        </a>
+                        <p class="text-sm text-muted">
+                            {{ item.text }}
+                        </p>
+                    </div>
+                    <div class="ms-auto text-end align-self-center">
+                        <div class=" d-flex align-items-center gap-4">
+                            <div>
+                                <span class="font-semibold text-base text-heading">${{ item.value }}</span>
+                            </div>
+                            <div class="dropdown">
+                                <a class="text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="bi bi-three-dots-vertical"></i>
+                                </a>
+                                <div class="dropdown-menu">
+                                    <a href="#!" class="dropdown-item">
+                                        Download PDF
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body pb-0">
+            <div class="mb-7">
+                <h4 class="mb-1">Billing Details</h4>
+                <p class="text-sm text-muted">By filling your data you get a much better experience using our website.</p>
+            </div>
+            <div class="row g-5">
+                <div class="col-md-6">
+                    <div>
+                        <label class="form-label">Name</label>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div>
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control">
+                    </div>
+
+                </div>
+                <div class="col-12">
+                    <div>
+                        <label class="form-label">Address</label>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div>
+                        <label class="form-label">City</label>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div>
+                        <label class="form-label">Country</label>
+                        <select class="form-select">
+                            <option selected="">Country</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div>
+                        <label class="form-label">ZIP</label>
+                        <input type="tel" class="form-control" placeholder="Your email">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer text-end">
+            <button type="button" class="btn btn-sm btn-neutral me-2">Cancel</button>
+            <button type="submit" class="btn btn-sm btn-primary">Save</button>
+        </div>
+    </div>
+</div>

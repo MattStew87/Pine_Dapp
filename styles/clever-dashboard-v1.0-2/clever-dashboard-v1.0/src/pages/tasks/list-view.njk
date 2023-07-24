@@ -1,0 +1,18 @@
+---
+layout: base
+title: Launch Clever dashboard theme
+permalink: 'pages/tasks/list-view.html'
+---
+
+<!-- Offcanvas -->
+{% inject "components/offcanvas-create-task.njk" %}
+
+<!-- Modal -->
+{% inject "components/modal-share.njk" %}
+
+<!-- Container -->
+<div class="container-fluid vstack gap-3">
+    {% inject "components/card-tasks.njk", {
+        tasks: tasks
+    } %}
+</div>

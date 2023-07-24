@@ -1,0 +1,264 @@
+---
+layout: columns
+headerButtons: false
+title: Launch Clever dashboard theme
+permalink: 'pages/projects/details.html'
+---
+
+<div class="container-fluid px-xxl-16">
+    <div class="vstack gap-6">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="mb-3">Mission</h4>
+                <p class="text-sm">
+                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable you need to be sure there isn't anything hidden in the middle of text.
+                </p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h4 class="mb-3">Team</h4>
+                <div class="row g-6 mt-n3">
+                    <div class="col-xxl-3 col-md-4 col-sm-6">
+                        <div class="position-relative d-flex align-items-center">
+                            <div class="me-4">
+                                <div class="avatar rounded-circle border-2 border-dashed">
+                                    <i class="bi bi-plus-lg"></i>
+                                </div>
+                            </div>
+                            <div class="flex-fill">
+                                <a href="#" class="d-block h6 text-muted text-primary-hover font-semibold stretched-link">Add member</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% for user in users.slice(0,7) %}
+                    <div class="col-xxl-3 col-md-4 col-sm-6">
+                        <div class="d-flex align-items-center">
+                            <div class="me-3">
+                                <div class="avatar rounded-circle">
+                                    <img alt="..." src="{{ user.img.src }}">
+                                </div>
+                            </div>
+                            <div class="flex-fill text-limit">
+                                <!-- Title -->
+                                <a href="#" class="d-block h6 font-semibold">{{ user.name }}</a>
+                                <!-- Subtitle -->
+                                <span class="d-block text-xs text-muted">{{ user.role }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h4 class="mb-4">Files</h4>
+                <div class="row g-3">
+                    {% for file in files.slice(0,5) %}
+                    <div class="col-xxl-4 col-lg-6">
+                        <div class="position-relative border border-dashed rounded">
+                            <div class="p-3 d-flex align-items-center">
+                                <div class="me-4">
+                                    <div class="icon icon-shape text-xl bg-{{ file.icon.color }} text-white">
+                                        <i class="bi bi-{{ file.icon.code }}"></i>
+                                    </div>
+                                </div>
+                                <div class="flex-fill">
+                                    <a href="#" class="d-block h6 text-sm font-semibold mb-1">{{ file.name }}</a>
+                                    <span class="d-block text-xs">{{ file.value_1 }}</span>
+                                </div>
+                                <div class="ms-4 pe-2 text-end">
+                                    <div class="dropdown">
+                                    	<a class="text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    		<i class="bi bi-three-dots-vertical"></i>
+                                    	</a>
+                                        <div class="dropdown-menu">
+                                    		<a href="#!" class="dropdown-item">
+                                    			Action
+                                    		</a>
+                                    		<a href="#!" class="dropdown-item">
+                                    			Another action
+                                    		</a>
+                                    		<a href="#!" class="dropdown-item">
+                                    			Something else here
+                                    		</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="mb-6">Recent Activity</h5>
+                <div class="list-group list-group-flush list-group-borderless ms-4">
+                    <div class="list-group-item px-2 py-0">
+                        <div class="border-start">
+                            <div class="d-flex ms-n6 pb-6">
+                                <div class="flex-none me-3">
+                                    <div class="icon icon-shape text-base w-12 h-12 bg-soft-primary text-primary rounded-circle">
+                                        <i class="bi bi-file-earmark-pdf-fill"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <small class="d-block mb-1 text-muted">2 hrs ago</small>
+                                    <div>You've uploaded <span class="font-bold">documentation.pdf</span> to the <span class="font-bold">Webpixels</span> project</div>
+                                    <div class="d-flex gap-2 mt-2">
+                                        <div class="position-relative bg-light border border-dashed border-warning-hover rounded-pill">
+                                            <div class="py-2 px-3 d-flex align-items-center">
+                                                <div class="me-2">
+                                                    <i class="bi bi-image text-warning"></i>
+                                                </div>
+                                                <div class="flex-fill">
+                                                    <a href="#" class="d-block font-semibold text-xs text-muted text-warning-hover stretched-link">documentation.pdf</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-group-item px-2 py-0">
+                        <div class="border-start">
+                            <div class="d-flex ms-n6 pb-6">
+                                <div class="flex-none me-3">
+                                    <div class="icon icon-shape text-base w-12 h-12 bg-soft-primary text-primary rounded-circle">
+                                        <i class="bi bi-file-earmark-pdf-fill"></i>
+                                    </div>
+                                </div>
+                                <div class="flex-fill">
+                                    <small class="d-block mb-1 text-muted">4 hrs ago</small>
+                                    <div class="text-sm">
+                                        <span class="text-heading text-sm font-bold">Mike</span> added a new comment to your task:
+                                    </div>
+                                    <div class="mt-2">
+                                        <p class="text-sm text-muted">
+                                            On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-group-item px-2 py-0">
+                        <div class="border-start">
+                            <div class="d-flex ms-n6 pb-6">
+                                <div class="flex-none me-3">
+                                    <div class="icon icon-shape text-base w-12 h-12 bg-soft-primary text-primary rounded-circle">
+                                        <i class="bi bi-file-earmark-pdf-fill"></i>
+                                    </div>
+                                </div>
+                                <div class="flex-fill">
+                                    <small class="d-block mb-1 text-muted">4 hrs ago</small>
+                                    <div class="text-sm">
+                                        Heather added <span class="font-bold">4 images</span> to the <span class="font-bold">Team</span> album:
+                                    </div>
+                                    <div class="mt-2 d-flex gap-2 scrollable-x">
+                                        <div class="col-auto">
+                                            <img alt="" src="{{ '/img/media/img-3.jpg' | url }}" class="rounded w-auto h-16">
+                                        </div>
+                                        <div class="col-auto">
+                                            <img alt="" src="{{ '/img/media/img-4.jpg' | url }}" class="rounded w-auto h-16">
+                                        </div>
+                                        <div class="col-auto">
+                                            <img alt="" src="{{ '/img/media/img-5.jpg' | url }}" class="rounded w-auto h-16">
+                                        </div>
+                                        <div class="col-auto">
+                                            <img alt="" src="{{ '/img/media/img-6.jpg' | url }}" class="rounded w-auto h-16">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-group-item px-2 py-0">
+                        <div class="border-start">
+                            <div class="d-flex ms-n6 pb-6">
+                                <div class="flex-none me-3">
+                                    <div class="icon icon-shape text-base w-12 h-12 bg-soft-primary text-primary rounded-circle">
+                                        <i class="bi bi-file-earmark-pdf-fill"></i>
+                                    </div>
+                                </div>
+                                <div class="flex-fill">
+                                    <small class="d-block mb-1 text-muted">4 hrs ago</small>
+                                    <div class="text-sm">
+                                        Heather added <span class="font-bold">Anna</span> to the <span class="font-bold">Clever</span> team.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-group-item px-2 py-0">
+                        <div class="border-start">
+                            <div class="d-flex ms-n6 pb-6">
+                                <div class="flex-none me-3">
+                                    <div class="icon icon-shape text-base w-12 h-12 bg-soft-primary text-primary rounded-circle">
+                                        <i class="bi bi-file-earmark-pdf-fill"></i>
+                                    </div>
+                                </div>
+                                <div class="flex-fill">
+                                    <small class="d-block mb-1 text-muted">4 hrs ago</small>
+                                    <div class="text-sm">
+                                        Heather created the tags
+                                        <div class="d-inline-block mx-1">
+                                            <a href="#" class="badge rounded-pill bg-danger bg-opacity-20 bg-opacity-100-hover text-danger text-white-hover">Bugs</a> <a href="#" class="badge rounded-pill bg-success bg-opacity-20 bg-opacity-100-hover text-success text-white-hover">Showcase</a>
+                                        </div>
+                                        for the <span class="font-bold">Clever</span> project
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-group-item px-2 py-0">
+                        <div>
+                            <div class="d-flex ms-n6 pb-6">
+                                <div class="flex-none me-3">
+                                    <div class="icon icon-shape text-base w-12 h-12 bg-soft-primary text-primary rounded-circle">
+                                        <i class="bi bi-file-earmark-pdf-fill"></i>
+                                    </div>
+                                </div>
+                                <div class="flex-fill">
+                                    <small class="d-block mb-1 text-muted">2 hrs ago</small>
+                                    <div>
+                                        You've uploaded <span class="font-bold">documentation.pdf</span> to the <span class="font-bold">Webpixels</span> project
+                                    </div>
+                                    <div class="mt-2 scrollable-x overflow-hidden">
+                                        <div class="d-inline-block position-relative bg-light border border-dashed border-tertiary-hover rounded-pill">
+                                            <div class="py-2 px-3 d-flex align-items-center">
+                                                <div class="me-2">
+                                                    <i class="bi bi-image text-tertiary"></i>
+                                                </div>
+                                                <div class="flex-fill">
+                                                    <a href="#" class="d-block font-semibold text-xs text-muted text-tertiary-hover stretched-link">design.fig</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="d-inline-block position-relative bg-light border border-dashed border-warning-hover rounded-pill">
+                                            <div class="py-2 px-3 d-flex align-items-center">
+                                                <div class="me-2">
+                                                    <i class="bi bi-image text-warning"></i>
+                                                </div>
+                                                <div class="flex-fill">
+                                                    <a href="#" class="d-block font-semibold text-xs text-muted text-warning-hover stretched-link">readme.md</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% inject "components/card-tasks.njk", {
+            tasks: tasks.slice(0,2)
+        } %}
+    </div>
+</div>

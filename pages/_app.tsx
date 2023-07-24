@@ -1,6 +1,14 @@
 import '../styles/global.css'; 
 import '@rainbow-me/rainbowkit/styles.css';
 import type { AppProps } from 'next/app';
+import { useEffect } from 'react'; // Add this import at the top of your file
+
+// Boostrap css Files 
+import '../styles/clever-dashboard-v1.0-2/clever-dashboard-v1.0/dist/css/_custom.css';
+import '../styles/clever-dashboard-v1.0-2/clever-dashboard-v1.0/dist/css/main.css';
+import '../styles/clever-dashboard-v1.0-2/clever-dashboard-v1.0/dist/css/utilities.css'; 
+
+
 
 import { RainbowKitSiweNextAuthProvider } from '@rainbow-me/rainbowkit-siwe-next-auth';
 import { SessionProvider } from 'next-auth/react';
@@ -8,7 +16,7 @@ import type { Session } from 'next-auth';
 
 import {
   RainbowKitProvider,
-  getDefaultWallets,
+  getDefaultWallets, 
   connectorsForWallets,
 } from '@rainbow-me/rainbowkit'; 
 import { 
@@ -19,6 +27,8 @@ import {
 import { configureChains, createConfig, WagmiConfig } from 'wagmi';
 import { polygon } from 'wagmi/chains';
 import { publicProvider } from 'wagmi/providers/public';
+
+
 
 require('dotenv').config();
 
@@ -67,6 +77,13 @@ export default function MyApp({
 }: AppProps<{
   session: Session;
 }>)  { 
+
+  // Boostrap JS file
+  useEffect(() => {
+    require("../styles/clever-dashboard-v1.0-2/clever-dashboard-v1.0/dist/js/main.js");
+    
+  }, []);
+
   return (
     <WagmiConfig config={wagmiConfig}>
       <SessionProvider refetchInterval={0} session={pageProps.session}>

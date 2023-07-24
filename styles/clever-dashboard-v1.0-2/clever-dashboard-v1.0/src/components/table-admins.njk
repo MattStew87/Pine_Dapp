@@ -1,0 +1,52 @@
+<table class="table table-hover table-nowrap">
+    <thead class="table-light">
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Role</th>
+            <th scope="col">Access</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% if content %}
+        {% for user in content.slice(0, limit) %}
+        <tr>
+            <td>
+                <img alt="..." src="{{ user.img.src }}" class="avatar avatar-sm rounded-circle me-2">
+                <a class="text-heading text-primary-hover font-semibold" href="#">
+                    {{ user.name }}
+                </a>
+            </td>
+            <td>
+                {{ user.email }}
+            </td>
+            <td>
+                <span class="badge text-uppercase bg-soft-primary text-primary rounded-pill">{{ user.role }}</span>
+            </td>
+            <td>
+                <div class="dropdown">
+                    <a href="#" class="font-semibold text-heading text-primary-hover" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        {{ user.access }}<i class="bi bi-chevron-down ms-2 text-xs"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Full access</a></li>
+                        <li><a class="dropdown-item" href="#">Can view</a></li>
+                        <li><a class="dropdown-item" href="#">Can edit</a></li>
+                        <li><a class="dropdown-item" href="#">Can publish</a></li>
+                    </ul>
+                </div>
+            </td>
+            <td class="text-end">
+                <a href="#" class="btn btn-sm btn-square btn-neutral">
+                    <i class="bi bi-pencil"></i>
+                </a>
+                <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover">
+                    <i class="bi bi-trash"></i>
+                </button>
+            </td>
+        </tr>
+        {% endfor %}
+        {% endif %}
+    </tbody>
+</table>

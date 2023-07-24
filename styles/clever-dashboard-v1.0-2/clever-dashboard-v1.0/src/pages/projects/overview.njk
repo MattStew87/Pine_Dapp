@@ -1,0 +1,119 @@
+---
+layout: base
+title: Projects
+permalink: 'pages/projects/overview.html'
+---
+
+<!-- Offcanvas -->
+{% inject "components/offcanvas-create-project.njk" %}
+
+<!-- Modal -->
+{% inject "components/modal-export.njk" %}
+
+<!-- Container -->
+<div class="container-fluid">
+    <div class="row g-6 mb-6">
+        <div class="col-xl-8">
+            <div class="card">
+                <div class="card-header d-flex align-items-center">
+                    <h5 class="mb-0">Orders</h5>
+                    <button class="btn btn-sm btn-neutral ms-auto">Export</button>
+                </div>
+                <div class="px-4">
+                    <div id="chart-line" data-height="300"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-4">
+            {% inject "components/card-list-users.njk", {
+                title: 'Top Performance'
+            } %}
+        </div>
+    </div>
+    <!-- Card stats -->
+    <div class="row g-6 mb-6">
+        <div class="col-xl-3 col-sm-6 col-12">
+            {% inject "components/card-stats.njk", {
+				title: 'Budget',
+				value: '$750.90',
+				icon: {
+					color: 'tertiary',
+					code: 'credit-card'
+				},
+				badge: {
+					color: 'success',
+					text: '30%',
+					icon: {
+						code: 'arrow-up'
+					},
+					helper: 'Since last month'
+				}
+			} %}
+        </div>
+        <div class="col-xl-3 col-sm-6 col-12">
+            {% inject "components/card-stats.njk", {
+                title: 'New projects',
+				value: '215',
+				icon: {
+					color: 'primary',
+					code: 'people'
+				},
+				badge: {
+					color: 'success',
+					text: '23%',
+					icon: {
+						code: 'arrow-up'
+					},
+					helper: 'Since last week'
+				}
+			} %}
+        </div>
+        <div class="col-xl-3 col-sm-6 col-12">
+            {% inject "components/card-stats.njk", {
+                title: 'Total hours',
+				value: '1.400',
+				icon: {
+					color: 'info',
+					code: 'clock-history'
+				},
+				badge: {
+					color: 'danger',
+					text: '-10%',
+					icon: {
+						code: 'arrow-down'
+					},
+					helper: 'Since last month'
+				}
+			} %}
+        </div>
+        <div class="col-xl-3 col-sm-6 col-12">
+            {% inject "components/card-stats.njk", {
+                title: 'Work load',
+				value: '95%',
+				icon: {
+					color: 'warning',
+					code: 'minecart-loaded'
+				},
+				badge: {
+					color: 'success',
+					text: '15%',
+					icon: {
+						code: 'arrow-up'
+					},
+					helper: 'Since yestearday'
+				}
+			} %}
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header border-bottom">
+            <h5 class="mb-0">Latest projects</h5>
+        </div>
+        <div class="table-responsive">
+            {% inject "components/table-projects.njk", {
+            content: projects,
+            limit: 5
+            } %}
+        </div>
+    </div>
+</div>

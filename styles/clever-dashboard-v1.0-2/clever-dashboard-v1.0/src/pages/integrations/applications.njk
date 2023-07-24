@@ -1,0 +1,156 @@
+---
+layout: base
+headerButtons: false
+navbar: false
+title: Applications
+permalink: 'pages/integrations/applications.html'
+---
+
+{% inject "components/modal-install-app.njk" %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-md-2 vstack gap-3">
+            <!-- Mobile btn for collapsing filters -->
+            <button class="btn btn-sm btn-neutral w-full mb-3 d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-page-filters" aria-expanded="false" aria-controls="collapse-page-filters">
+                <i class="bi bi-filter-square me-2"></i>Filters
+            </button>
+            <!-- Collapible filters -->
+            <div class="collapse d-md-block mb-6" id="collapse-page-filters">
+                <div class="vstack gap-10">
+                    <div>
+                        <!-- Title -->
+                        <h5>Clever version</h5>
+
+                        <!-- Subtitle -->
+                        <p class="text-sm text-muted mt-1">
+                            Show apps working with:
+                        </p>
+
+                        <!-- Filters -->
+                        <div class="vstack gap-3 mt-4">
+                            <div class="form-item-checkable">
+                                <input class="form-item-check" type="radio" name="filter-version" id="filter-version-1">
+                                <label class="item w-full" for="filter-version-1">
+                                    <span class="form-item-click d-flex align-items-center border border-primary-hover text-heading p-3 rounded-2">
+                                        <i class="bi bi-lightning-charge text-lg me-3"></i>
+                                        <span class="text-body text-sm font-semibold">Bootstrap 5</span>
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="form-item-checkable">
+                                <input class="form-item-check" type="radio" name="filter-version" id="filter-version-2">
+                                <label class="item w-full" for="filter-version-2">
+                                    <span class="form-item-click d-flex align-items-center border border-primary-hover text-heading p-3 rounded-2">
+                                        <i class="bi bi-bootstrap text-xl me-3"></i>
+                                        <span class="text-body text-sm font-semibold">Vue 3</span>
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="form-item-checkable">
+                                <input class="form-item-check" type="radio" name="filter-version" id="filter-version-3">
+                                <label class="item w-full" for="filter-version-3">
+                                    <span class="form-item-click d-flex align-items-center border border-primary-hover text-heading p-3 rounded-2">
+                                        <i class="bi bi-brightness-high text-xl me-3"></i>
+                                        <span class="text-body text-sm font-semibold">React</span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <!-- Title -->
+                        <h5>Categories</h5>
+
+                        <!-- Subtitle -->
+                        <p class="text-sm text-muted mt-1">
+                            Show apps working with:
+                        </p>
+
+                        <!-- Filters -->
+                        <div class="vstack gap-3 mt-4">
+                            <div class="form-item-checkable">
+                                <input class="form-item-check" type="radio" name="filter-category" id="filter-category-1">
+                                <label class="item w-full" for="filter-category-1">
+                                    <span class="form-item-click d-flex align-items-center border border-primary-hover text-heading p-3 rounded-2">
+                                        <i class="bi bi-bar-chart-line text-lg me-3"></i>
+                                        <span class="text-body text-sm font-semibold">Analytics</span>
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="form-item-checkable">
+                                <input class="form-item-check" type="radio" name="filter-category" id="filter-category-2">
+                                <label class="item w-full" for="filter-category-2">
+                                    <span class="form-item-click d-flex align-items-center border border-primary-hover text-heading p-3 rounded-2">
+                                        <i class="bi bi-body-text text-xl me-3"></i>
+                                        <span class="text-body text-sm font-semibold">CMS</span>
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="form-item-checkable">
+                                <input class="form-item-check" type="radio" name="filter-category" id="filter-category-3">
+                                <label class="item w-full" for="filter-category-3">
+                                    <span class="form-item-click d-flex align-items-center border border-primary-hover text-heading p-3 rounded-2">
+                                        <i class="bi bi-hdd-stack text-xl me-3"></i>
+                                        <span class="text-body text-sm font-semibold">Database</span>
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="form-item-checkable">
+                                <input class="form-item-check" type="radio" name="filter-category" id="filter-category-4">
+                                <label class="item w-full" for="filter-category-4">
+                                    <span class="form-item-click d-flex align-items-center border border-primary-hover text-heading p-3 rounded-2">
+                                        <i class="bi bi-cart-4 text-lg me-3"></i>
+                                        <span class="text-body text-sm font-semibold">E-commerce</span>
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="form-item-checkable">
+                                <input class="form-item-check" type="radio" name="filter-category" id="filter-category-5">
+                                <label class="item w-full" for="filter-category-5">
+                                    <span class="form-item-click d-flex align-items-center border border-primary-hover text-heading p-3 rounded-2">
+                                        <i class="bi bi-credit-card text-xl me-3"></i>
+                                        <span class="text-body text-sm font-semibold">Payment</span>
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="form-item-checkable">
+                                <input class="form-item-check" type="radio" name="filter-category" id="filter-category-6">
+                                <label class="item w-full" for="filter-category-6">
+                                    <span class="form-item-click d-flex align-items-center border border-primary-hover text-heading p-3 rounded-2">
+                                        <i class="bi bi-shield-check text-xl me-3"></i>
+                                        <span class="text-body text-sm font-semibold">Security</span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-9">
+            <div>
+                <!-- Filters -->
+                <div class="d-flex flex-column flex-sm-row justify-content-between gap-3">
+                    <!-- Search -->
+                    <div class="input-group input-group-sm input-group-inline">
+                        <span class="input-group-text pe-2">
+                            <i class="bi bi-search"></i>
+                        </span>
+                        <input type="text" class="form-control" placeholder="Search" aria-label="Search">
+                    </div>
+                    <a href="#" class="btn btn-sm btn-warning text-nowrap">Submit app</a>
+                </div>
+
+                <!-- Apps -->
+                <div class="row g-3 g-xl-5 mt-1">
+                    {% for item in integrations %}
+                    <div class="col-lg-4 col-sm-6">
+                        {% inject "components/card-integration-2.njk", item %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

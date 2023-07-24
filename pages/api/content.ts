@@ -1,5 +1,8 @@
 // pages/api/content.ts
 
+
+// Content table API route
+// Allows users to submit content to the Content table in the database. 
 import { NextApiRequest, NextApiResponse } from 'next';
 import { sql } from '@vercel/postgres';
 

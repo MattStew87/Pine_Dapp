@@ -3,7 +3,7 @@ import {useState, useEffect, useMemo} from 'react';
 import { readContract } from '@wagmi/core'
 
 // Pine Badges ABI File
-import Badges_ABI from  './ABI_Folder/Badges.json'
+import Badges_ABI from  '../pages/ABI_Folder/Badges.json'
 
 
 // Contract addresses

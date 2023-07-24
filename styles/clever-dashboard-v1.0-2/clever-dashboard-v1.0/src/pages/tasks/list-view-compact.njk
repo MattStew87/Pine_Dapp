@@ -1,0 +1,92 @@
+---
+layout: base
+navbar: false
+title: To Do List
+permalink: 'pages/tasks/list-view-compact.html'
+---
+
+<!-- Offcanvas -->
+{% inject "components/offcanvas-create-task.njk" %}
+
+<!-- Modal -->
+{% inject "components/modal-share.njk" %}
+
+<!-- Container -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xl-8 mx-auto">
+            <div class=" vstack gap-3">
+                {% for group in tasks %}
+                <div class="d-flex align-items-center py-3{{ 'mt-10' if loop.first > 0 }}">
+                    <div class="d-flex align-items-center">
+                        <div class="me-2">
+                            📬
+                        </div>
+                        <h5 class="text-muted text-sm font-semibold">{{ group.name }}</h5>
+                    </div>
+
+                    <div class="hstack gap-3 ms-auto">
+                        <a href="#" class="p-1 text-muted">
+                            <i class="bi bi-calendar-event"></i>
+                        </a>
+                        <a href="#" class="p-1 text-muted">
+                            <i class="bi bi-three-dots"></i>
+                        </a>
+                    </div>
+                </div>
+
+                {% for task in group.content %}
+                <div class="card overflow-hidden">
+                    <div class="progress" style="height: 3px;">
+            		    <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            	    </div>
+                    <div class="card-body">
+                        <div>
+                            <div class="row align-items-center">
+                                <div class="col-sm-6 d-flex">
+                                    <div class="form-check d-flex align-items-center">
+                                        <input class="form-check-input w-5 h-5 border-2" type="checkbox" value="" id="checkTask{{ loop.index }}">
+                                        <label class="form-check-label font-regular ms-2" for="checkTask{{ loop.index }}">
+                                            Create the app's wireframe
+                                        </label>
+                                    </div>
+                                    <div class="d-inline-block float-right float-sm-none">
+                                        <div class="ms-4 text-muted text-sm font-semibold">
+                                            <i class="bi bi-chat me-2"></i>6
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-auto col-12 ms-sm-auto">
+                                    <div class="hstack gap-4 justify-content-end">
+                                        <div>
+                                            <span class="badge bg-soft-{{ task.badge.color }} text-{{ task.badge.color }}">{{ task.badge.text }}</span>
+                                        </div>
+                                        <div class="mx-2 text-sm font-semibold">
+                                            <i class="bi bi-check-circle me-2"></i>50%
+                                        </div>
+                                        <div class="mx-2 text-sm font-semibold">
+                                            <i class="bi bi-file-earmark-image me-2"></i>3
+                                        </div>
+                                    </div>
+                                    <div class="position-relative d-flex rounded-pill align-items-center d-inline-flex border border-dashed bg-secondary-hover bg-opacity-20 ms-4">
+                                        <span class="avatar avatar-sm rounded-circle bg-primary text-white">
+                                            JM
+                                        </span>
+                                        <div class="ps-2 pe-4">
+                                            <a href="#" class="mb-0 text-sm text-muted stretched-link">+3</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+
+
+</div>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+    <head>
+        {% include 'meta.njk' %}
+        {% include 'styles.njk' %}
+    </head>
+    <body>
+        <div class="d-flex flex-column flex-lg-row h-lg-full">
+
+            <!-- Sidebar -->
+            {% include "partials/sidebar-base.njk" %}
+
+        	<!-- Main content -->
+        	<div class="h-screen flex-grow-1 overflow-y-lg-auto">
+
+                {% if navbar != false %}
+                <!-- Navbar -->
+                {% include "partials/navbar.njk" %}
+                {% endif %}
+
+        		<div class="bg-surface-secondary">
+        			<div class="d-xl-flex">
+        				<div class="min-w-0 flex-xl-fill">
+                            {% if header != false %}
+                            <!-- Navbar -->
+                            {% include "partials/header.njk" %}
+                            {% endif %}
+    						<!-- Main -->
+    						<main class="py-6">
+    							{{ content | safe }}
+    						</main>
+        				</div>
+        				<div class="flex-xl-none w-xl-96 border-start-xl bg-surface-primary h-xl-calc position-sticky top-xl-18" style="--x-h-xl: 4.5rem;">
+        					<aside class="p-8 h-full overflow-y-xl-auto">
+        						{% include "partials/aside.njk" %}
+        					</aside>
+        				</div>
+        			</div>
+        		</div>
+        	</div>
+        </div>
+
+        <!-- Scripts -->
+        <script src="{{ '/js/main.js' | url }}"></script>
+    </body>
+</html>

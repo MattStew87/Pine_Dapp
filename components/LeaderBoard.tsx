@@ -1,7 +1,6 @@
 // Import necessary hooks and components from React
 import React, { useEffect, useState, useCallback, useMemo } from 'react';
 
-
 // Define the updated API URL for fetching the holders and their scores
 const apiURL = 'https://api.flipsidecrypto.com/api/v2/queries/235a1bde-fd3d-4ab9-a887-c1f13d026e8d/data/latest';
 
@@ -43,7 +42,6 @@ const LeaderBoard: React.FC = () => {
     fetchData();
   }, [fetchData]);
 
-
   // Define how the holder data will be rendered
   // Map through the holders and create a table row for each
   const renderHolders = useMemo(() => {
@@ -61,12 +59,12 @@ const LeaderBoard: React.FC = () => {
   const errorMessage = error ? <div>Error: {error}</div> : null;
   
   const table = (
-    <table className="leaderboard-table">
-      <thead>
+    <table className="table table-hover table-nowrap">
+      <thead className="table-light">
         <tr>
-          <th>Rank</th>
-          <th>Holder</th>
-          <th>Score</th>
+          <th scope="col">Rank</th>
+          <th scope="col">Holder</th>
+          <th scope="col">Score</th>
         </tr>
       </thead>
       <tbody>

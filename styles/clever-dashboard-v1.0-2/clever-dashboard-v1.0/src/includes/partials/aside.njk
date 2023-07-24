@@ -1,0 +1,13 @@
+{% if aside == "base" %}
+{% include "partials/aside-base.njk" %}
+{% elif aside == "project" %}
+{% include "partials/aside-project.njk" %}
+{% elif aside == "create" %}
+{% include "partials/aside-create.njk" %}
+{% elif aside == "share" %}
+{% include "partials/aside-share.njk" %}
+{% elif aside == "account" %}
+{% include "partials/aside-account.njk" %}
+{% else %}
+{% include "partials/aside-base.njk" %}
+{% endif %}
