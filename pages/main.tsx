@@ -1,6 +1,11 @@
 import React from 'react';
+import Link from 'next/link';
+
 
 import { ConnectButton } from '@rainbow-me/rainbowkit';
+
+
+
 
 // add HTML here which has been adjusted for React/Next.js 
 // Wnat to put overview.html here from files/overview 
@@ -31,27 +36,27 @@ const Main = () => {
                     <span className="navbar-toggler-icon" />
                 </button>
                 {/* Brand */}
-                <a className="navbar-brand py-lg-2 mb-lg-5 px-lg-6 me-0" href="/">
+                <Link className="navbar-brand py-lg-2 mb-lg-5 px-lg-6 me-0" href="/">
                     <img src="/img/logos/clever-primary.svg" alt="..." />
-                </a>
+                </Link>
                 {/* User menu (mobile) */}
                 <div className="navbar-user d-lg-none">
                     {/* Dropdown */}
                     <div className="dropdown">
                     {/* Toggle */}
-                    <a href="#" id="sidebarAvatar" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <Link href="#" id="sidebarAvatar" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div className="avatar-parent-child">
                         <img alt="..." src="/img/people/img-profile.jpg" className="avatar avatar- rounded-circle" />
                         <span className="avatar-child avatar-badge bg-success" />
                         </div>
-                    </a>
+                    </Link>
                     {/* Menu */}
                     <div className="dropdown-menu dropdown-menu-end" aria-labelledby="sidebarAvatar">
-                        <a href="#" className="dropdown-item">Profile</a>
-                        <a href="#" className="dropdown-item">Settings</a>
-                        <a href="#" className="dropdown-item">Billing</a>
+                        <Link href="#" className="dropdown-item">Profile</Link>
+                        <Link href="#" className="dropdown-item">Settings</Link>
+                        <Link href="#" className="dropdown-item">Billing</Link>
                         <hr className="dropdown-divider" />
-                        <a href="#" className="dropdown-item">Logout</a>
+                        <Link href="#" className="dropdown-item">Logout</Link>
                     </div>
                     </div>
                 </div>
@@ -66,32 +71,22 @@ const Main = () => {
                         <div className="collapse" id="sidebar-projects">
                         <ul className="nav nav-sm flex-column">
                             <li className="nav-item">
-                            <a href="/pages/projects/overview.html" className="nav-link">
-                                Overview
-                            </a>
+                                <Link href="/pages/projects/overview.html" className="nav-link">Overview</Link>
                             </li>
                             <li className="nav-item">
-                            <a href="/pages/projects/grid-view.html" className="nav-link">
-                                Grid View
-                            </a>
+                                <Link href="/pages/projects/grid-view.html" className="nav-link">Grid View</Link>
                             </li>
                             <li className="nav-item">
-                            <a href="/pages/projects/table-view.html" className="nav-link">
-                                Table View
-                            </a>
+                                <Link href="/pages/projects/table-view.html" className="nav-link">Table View</Link>
                             </li>
                             <li className="nav-item">
-                            <a href="/pages/projects/details.html" className="nav-link">
-                                Details
-                            </a>
+                                <Link href="/pages/projects/details.html" className="nav-link">Details</Link>
                             </li>
                             <li className="nav-item">
-                            <a href="/pages/projects/create-project.html" className="nav-link">
-                                Create Project
-                            </a>
+                                <Link href="/pages/projects/create-project.html" className="nav-link">Create Project</Link>
                             </li>
                         </ul>
-                        </div>
+                    </div>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link" href="#sidebar-tasks" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebar-tasks">
@@ -100,29 +95,29 @@ const Main = () => {
                         <div className="collapse" id="sidebar-tasks">
                         <ul className="nav nav-sm flex-column">
                             <li className="nav-item">
-                            <a href="/pages/tasks/overview.html" className="nav-link">
+                            <Link href="/pages/tasks/overview.html" className="nav-link">
                                 Overview
-                            </a>
+                            </Link>
                             </li>
                             <li className="nav-item">
-                            <a href="/pages/tasks/list-view.html" className="nav-link">
+                            <Link href="/pages/tasks/list-view.html" className="nav-link">
                                 List View
-                            </a>
+                            </Link>
                             </li>
                             <li className="nav-item">
-                            <a href="/pages/tasks/list-view-aside.html" className="nav-link">
+                            <Link href="/pages/tasks/list-view-aside.html" className="nav-link">
                                 List View w/ Details
-                            </a>
+                            </Link>
                             </li>
                             <li className="nav-item">
-                            <a href="/pages/tasks/board-view.html" className="nav-link">
+                            <Link href="/pages/tasks/board-view.html" className="nav-link">
                                 Board View
-                            </a>
+                            </Link>
                             </li>
                             <li className="nav-item">
-                            <a href="/pages/tasks/create-task.html" className="nav-link">
+                            <Link href="/pages/tasks/create-task.html" className="nav-link">
                                 Create Task
-                            </a>
+                            </Link>
                             </li>
                         </ul>
                         </div>
@@ -134,19 +129,19 @@ const Main = () => {
                         <div className="collapse show" id="sidebar-files">
                         <ul className="nav nav-sm flex-column">
                             <li className="nav-item">
-                            <a href="/pages/files/overview.html" className="nav-link font-bold">
+                            <Link href="/pages/files/overview.html" className="nav-link font-bold">
                                 Overview
-                            </a>
+                            </Link>
                             </li>
                             <li className="nav-item">
-                            <a href="/pages/files/table-view.html" className="nav-link">
+                            <Link href="/pages/files/table-view.html" className="nav-link">
                                 Table View
-                            </a>
+                            </Link>
                             </li>
                             <li className="nav-item">
-                            <a href="/pages/files/media-gallery.html" className="nav-link">
+                            <Link href="/pages/files/media-gallery.html" className="nav-link">
                                 Media Gallery
-                            </a>
+                            </Link>
                             </li>
                         </ul>
                         </div>
@@ -158,14 +153,14 @@ const Main = () => {
                         <div className="collapse" id="sidebar-integrations">
                         <ul className="nav nav-sm flex-column">
                             <li className="nav-item">
-                            <a href="/pages/integrations/applications.html" className="nav-link">
+                            <Link href="/pages/integrations/applications.html" className="nav-link">
                                 Applications
-                            </a>
+                            </Link>
                             </li>
                             <li className="nav-item">
-                            <a href="/pages/integrations/manage-apps.html" className="nav-link">
+                            <Link href="/pages/integrations/manage-apps.html" className="nav-link">
                                 Manage Apps
-                            </a>
+                            </Link>
                             </li>
                         </ul>
                         </div>
@@ -177,19 +172,19 @@ const Main = () => {
                         <div className="collapse" id="sidebar-user">
                         <ul className="nav nav-sm flex-column">
                             <li className="nav-item">
-                            <a href="/pages/user/profile.html" className="nav-link">
+                            <Link href="/pages/user/profile.html" className="nav-link">
                                 Profile
-                            </a>
+                            </Link>
                             </li>
                             <li className="nav-item">
-                            <a href="/pages/user/table-view.html" className="nav-link">
+                            <Link href="/pages/user/table-view.html" className="nav-link">
                                 Table View
-                            </a>
+                            </Link>
                             </li>
                             <li className="nav-item">
-                            <a href="/pages/user/permissions.html" className="nav-link">
+                            <Link href="/pages/user/permissions.html" className="nav-link">
                                 Permissions
-                            </a>
+                            </Link>
                             </li>
                         </ul>
                         </div>
@@ -201,29 +196,29 @@ const Main = () => {
                         <div className="collapse" id="sidebar-settings">
                         <ul className="nav nav-sm flex-column">
                             <li className="nav-item">
-                            <a href="/pages/settings/general.html" className="nav-link">
+                            <Link href="/pages/settings/general.html" className="nav-link">
                                 General
-                            </a>
+                            </Link>
                             </li>
                             <li className="nav-item">
-                            <a href="/pages/settings/security.html" className="nav-link">
+                            <Link href="/pages/settings/security.html" className="nav-link">
                                 Security
-                            </a>
+                            </Link>
                             </li>
                             <li className="nav-item">
-                            <a href="/pages/settings/team.html" className="nav-link">
+                            <Link href="/pages/settings/team.html" className="nav-link">
                                 Team
-                            </a>
+                            </Link>
                             </li>
                             <li className="nav-item">
-                            <a href="/pages/settings/billing.html" className="nav-link">
+                            <Link href="/pages/settings/billing.html" className="nav-link">
                                 Billing
-                            </a>
+                            </Link>
                             </li>
                             <li className="nav-item">
-                            <a href="/pages/settings/notifications.html" className="nav-link">
+                            <Link href="/pages/settings/notifications.html" className="nav-link">
                                 Notifications
-                            </a>
+                            </Link>
                             </li>
                         </ul>
                         </div>
@@ -235,34 +230,34 @@ const Main = () => {
                         <div className="collapse" id="sidebar-authentication">
                         <ul className="nav nav-sm flex-column">
                             <li className="nav-item">
-                            <a href="/pages/authentication/basic-login.html" className="nav-link">
+                            <Link href="/pages/authentication/basic-login.html" className="nav-link">
                                 Basic Login
-                            </a>
+                            </Link>
                             </li>
                             <li className="nav-item">
-                            <a href="/pages/authentication/basic-register.html" className="nav-link">
+                            <Link href="/pages/authentication/basic-register.html" className="nav-link">
                                 Basic Register
-                            </a>
+                            </Link>
                             </li>
                             <li className="nav-item">
-                            <a href="/pages/authentication/basic-recover.html" className="nav-link">
+                            <Link href="/pages/authentication/basic-recover.html" className="nav-link">
                                 Basic Recover
-                            </a>
+                            </Link>
                             </li>
                             <li className="nav-item">
-                            <a href="/pages/authentication/side-login.html" className="nav-link">
+                            <Link href="/pages/authentication/side-login.html" className="nav-link">
                                 Side Login
-                            </a>
+                            </Link>
                             </li>
                             <li className="nav-item">
-                            <a href="/pages/authentication/side-register.html" className="nav-link">
+                            <Link href="/pages/authentication/side-register.html" className="nav-link">
                                 Side Register
-                            </a>
+                            </Link>
                             </li>
                             <li className="nav-item">
-                            <a href="/pages/authentication/side-recover.html" className="nav-link">
+                            <Link href="/pages/authentication/side-recover.html" className="nav-link">
                                 Side Recover
-                            </a>
+                            </Link>
                             </li>
                         </ul>
                         </div>
@@ -371,13 +366,13 @@ const Main = () => {
                     {/* Nav */}
                     <ul className="nav nav-tabs overflow-x border-0">
                         <li className="nav-item">
-                        <a href="#" className="nav-link active">View all</a>
+                        <Link href="#" className="nav-link active">View all</Link>
                         </li>
                         <li className="nav-item">
-                        <a href="#" className="nav-link">Most recent</a>
+                        <Link href="#" className="nav-link">Most recent</Link>
                         </li>
                         <li className="nav-item">
-                        <a href="#" className="nav-link">Popular</a>
+                        <Link href="#" className="nav-link">Popular</Link>
                         </li>
                     </ul>
                     </div>
@@ -403,15 +398,15 @@ const Main = () => {
                                 <i className="bi bi-three-dots" />
                                 </a>
                                 <div className="dropdown-menu">
-                                <a href="#!" className="dropdown-item">
+                                <Link href="#!" className="dropdown-item">
                                     Action
-                                </a>
-                                <a href="#!" className="dropdown-item">
+                                </Link>
+                                <Link href="#!" className="dropdown-item">
                                     Another action
-                                </a>
-                                <a href="#!" className="dropdown-item">
+                                </Link>
+                                <Link href="#!" className="dropdown-item">
                                     Something else here
-                                </a>
+                                </Link>
                                 </div>
                             </div>
                             </div>
@@ -443,15 +438,15 @@ const Main = () => {
                                 <i className="bi bi-three-dots" />
                                 </a>
                                 <div className="dropdown-menu">
-                                <a href="#!" className="dropdown-item">
+                                <Link href="#!" className="dropdown-item">
                                     Action
-                                </a>
-                                <a href="#!" className="dropdown-item">
+                                </Link>
+                                <Link href="#!" className="dropdown-item">
                                     Another action
-                                </a>
-                                <a href="#!" className="dropdown-item">
+                                </Link>
+                                <Link href="#!" className="dropdown-item">
                                     Something else here
-                                </a>
+                                </Link>
                                 </div>
                             </div>
                             </div>
@@ -483,15 +478,15 @@ const Main = () => {
                                 <i className="bi bi-three-dots" />
                                 </a>
                                 <div className="dropdown-menu">
-                                <a href="#!" className="dropdown-item">
+                                <Link href="#!" className="dropdown-item">
                                     Action
-                                </a>
-                                <a href="#!" className="dropdown-item">
+                                </Link>
+                                <Link href="#!" className="dropdown-item">
                                     Another action
-                                </a>
-                                <a href="#!" className="dropdown-item">
+                                </Link>
+                                <Link href="#!" className="dropdown-item">
                                     Something else here
-                                </a>
+                                </Link>
                                 </div>
                             </div>
                             </div>
@@ -515,7 +510,7 @@ const Main = () => {
                         <h5 className="mb-0">My folders</h5>
                     </div>
                     <div className="ms-auto">
-                        <a href="#" className="btn btn-sm btn-neutral">See more</a>
+                        <Link href="#" className="btn btn-sm btn-neutral">See more</Link>
                     </div>
                     </div>
                     <div className="row g-6 mb-8">
@@ -531,15 +526,15 @@ const Main = () => {
                             </div>
                             <div>
                                 <div className="avatar-group">
-                                <a href="#" className="avatar avatar-sm bg-primary rounded-circle text-white border border-2 border-solid border-card">
+                                <Link href="#" className="avatar avatar-sm bg-primary rounded-circle text-white border border-2 border-solid border-card">
                                     AE
-                                </a>
-                                <a href="#" className="avatar avatar-sm bg-tertiary rounded-circle text-white border border-2 border-solid border-card">
+                                </Link>
+                                <Link href="#" className="avatar avatar-sm bg-tertiary rounded-circle text-white border border-2 border-solid border-card">
                                     MJ
-                                </a>
-                                <a href="#" className="avatar avatar-sm rounded-circle text-white border border-2 border-solid border-card">
+                                </Link>
+                                <Link href="#" className="avatar avatar-sm rounded-circle text-white border border-2 border-solid border-card">
                                     <img alt="..." src="/img/people/img-1.jpg" />
-                                </a>
+                                </Link>
                                 </div>
                             </div>
                             </div>
@@ -565,15 +560,15 @@ const Main = () => {
                             </div>
                             <div>
                                 <div className="avatar-group">
-                                <a href="#" className="avatar avatar-sm bg-primary rounded-circle text-white border border-2 border-solid border-card">
+                                <Link href="#" className="avatar avatar-sm bg-primary rounded-circle text-white border border-2 border-solid border-card">
                                     AE
-                                </a>
-                                <a href="#" className="avatar avatar-sm bg-tertiary rounded-circle text-white border border-2 border-solid border-card">
+                                </Link>
+                                <Link href="#" className="avatar avatar-sm bg-tertiary rounded-circle text-white border border-2 border-solid border-card">
                                     MJ
-                                </a>
-                                <a href="#" className="avatar avatar-sm rounded-circle text-white border border-2 border-solid border-card">
+                                </Link>
+                                <Link href="#" className="avatar avatar-sm rounded-circle text-white border border-2 border-solid border-card">
                                     <img alt="..." src="/img/people/img-1.jpg" />
-                                </a>
+                                </Link>
                                 </div>
                             </div>
                             </div>
@@ -599,15 +594,15 @@ const Main = () => {
                             </div>
                             <div>
                                 <div className="avatar-group">
-                                <a href="#" className="avatar avatar-sm bg-primary rounded-circle text-white border border-2 border-solid border-card">
+                                <Link href="#" className="avatar avatar-sm bg-primary rounded-circle text-white border border-2 border-solid border-card">
                                     AE
-                                </a>
-                                <a href="#" className="avatar avatar-sm bg-tertiary rounded-circle text-white border border-2 border-solid border-card">
+                                </Link>
+                                <Link href="#" className="avatar avatar-sm bg-tertiary rounded-circle text-white border border-2 border-solid border-card">
                                     MJ
-                                </a>
-                                <a href="#" className="avatar avatar-sm rounded-circle text-white border border-2 border-solid border-card">
+                                </Link>
+                                <Link href="#" className="avatar avatar-sm rounded-circle text-white border border-2 border-solid border-card">
                                     <img alt="..." src="/img/people/img-1.jpg" />
-                                </a>
+                                </Link>
                                 </div>
                             </div>
                             </div>
@@ -633,15 +628,15 @@ const Main = () => {
                             </div>
                             <div>
                                 <div className="avatar-group">
-                                <a href="#" className="avatar avatar-sm bg-primary rounded-circle text-white border border-2 border-solid border-card">
+                                <Link href="#" className="avatar avatar-sm bg-primary rounded-circle text-white border border-2 border-solid border-card">
                                     AE
-                                </a>
-                                <a href="#" className="avatar avatar-sm bg-tertiary rounded-circle text-white border border-2 border-solid border-card">
+                                </Link>
+                                <Link href="#" className="avatar avatar-sm bg-tertiary rounded-circle text-white border border-2 border-solid border-card">
                                     MJ
-                                </a>
-                                <a href="#" className="avatar avatar-sm rounded-circle text-white border border-2 border-solid border-card">
+                                </Link>
+                                <Link href="#" className="avatar avatar-sm rounded-circle text-white border border-2 border-solid border-card">
                                     <img alt="..." src="/img/people/img-1.jpg" />
-                                </a>
+                                </Link>
                                 </div>
                             </div>
                             </div>
@@ -702,15 +697,15 @@ const Main = () => {
                                     <i className="bi bi-three-dots-vertical" />
                                 </a>
                                 <div className="dropdown-menu dropdown-menu-end">
-                                    <a href="#!" className="dropdown-item">
+                                    <Link href="#!" className="dropdown-item">
                                     Action
-                                    </a>
-                                    <a href="#!" className="dropdown-item">
+                                    </Link>
+                                    <Link href="#!" className="dropdown-item">
                                     Another action
-                                    </a>
-                                    <a href="#!" className="dropdown-item">
+                                    </Link>
+                                    <Link href="#!" className="dropdown-item">
                                     Something else here
-                                    </a>
+                                    </Link>
                                 </div>
                                 </div>
                             </td>
@@ -744,15 +739,15 @@ const Main = () => {
                                     <i className="bi bi-three-dots-vertical" />
                                 </a>
                                 <div className="dropdown-menu dropdown-menu-end">
-                                    <a href="#!" className="dropdown-item">
+                                    <Link href="#!" className="dropdown-item">
                                     Action
-                                    </a>
-                                    <a href="#!" className="dropdown-item">
+                                    </Link>
+                                    <Link href="#!" className="dropdown-item">
                                     Another action
-                                    </a>
-                                    <a href="#!" className="dropdown-item">
+                                    </Link>
+                                    <Link href="#!" className="dropdown-item">
                                     Something else here
-                                    </a>
+                                    </Link>
                                 </div>
                                 </div>
                             </td>
@@ -786,15 +781,15 @@ const Main = () => {
                                     <i className="bi bi-three-dots-vertical" />
                                 </a>
                                 <div className="dropdown-menu dropdown-menu-end">
-                                    <a href="#!" className="dropdown-item">
+                                    <Link href="#!" className="dropdown-item">
                                     Action
-                                    </a>
-                                    <a href="#!" className="dropdown-item">
+                                    </Link>
+                                    <Link href="#!" className="dropdown-item">
                                     Another action
-                                    </a>
-                                    <a href="#!" className="dropdown-item">
+                                    </Link>
+                                    <Link href="#!" className="dropdown-item">
                                     Something else here
-                                    </a>
+                                    </Link>
                                 </div>
                                 </div>
                             </td>
@@ -828,15 +823,15 @@ const Main = () => {
                                     <i className="bi bi-three-dots-vertical" />
                                 </a>
                                 <div className="dropdown-menu dropdown-menu-end">
-                                    <a href="#!" className="dropdown-item">
+                                    <Link href="#!" className="dropdown-item">
                                     Action
-                                    </a>
-                                    <a href="#!" className="dropdown-item">
+                                    </Link>
+                                    <Link href="#!" className="dropdown-item">
                                     Another action
-                                    </a>
-                                    <a href="#!" className="dropdown-item">
+                                    </Link>
+                                    <Link href="#!" className="dropdown-item">
                                     Something else here
-                                    </a>
+                                    </Link>
                                 </div>
                                 </div>
                             </td>
@@ -870,15 +865,15 @@ const Main = () => {
                                     <i className="bi bi-three-dots-vertical" />
                                 </a>
                                 <div className="dropdown-menu dropdown-menu-end">
-                                    <a href="#!" className="dropdown-item">
+                                    <Link href="#!" className="dropdown-item">
                                     Action
-                                    </a>
-                                    <a href="#!" className="dropdown-item">
+                                    </Link>
+                                    <Link href="#!" className="dropdown-item">
                                     Another action
-                                    </a>
-                                    <a href="#!" className="dropdown-item">
+                                    </Link>
+                                    <Link href="#!" className="dropdown-item">
                                     Something else here
-                                    </a>
+                                    </Link>
                                 </div>
                                 </div>
                             </td>
