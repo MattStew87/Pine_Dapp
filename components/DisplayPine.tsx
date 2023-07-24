@@ -80,7 +80,7 @@ const DisplayPine = () => {
 
         let PineNFTArray = [];
         let tokenIndex = 0;
-        let maxTokens = 150;
+        let maxTokens = 150; 
 
         while (tokenIndex < maxTokens) {
             let fetchPromises = [];

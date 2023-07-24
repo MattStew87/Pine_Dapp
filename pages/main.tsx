@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 
 import { ConnectButton } from '@rainbow-me/rainbowkit';
+import Profile from '../components/profile';
 
 
 
@@ -46,7 +47,7 @@ const Main = () => {
                     {/* Toggle */}
                     <Link href="#" id="sidebarAvatar" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div className="avatar-parent-child">
-                        <img alt="..." src="/img/people/img-profile.jpg" className="avatar avatar- rounded-circle" />
+                        <Profile />
                         <span className="avatar-child avatar-badge bg-success" />
                         </div>
                     </Link>

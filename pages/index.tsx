@@ -8,6 +8,7 @@ import { useAccount } from 'wagmi';
 import DisplayPine from '../components/DisplayPine';
 import LeaderBoard from '../components/LeaderBoard';
 import Main from './main';
+import Profile from '../components/profile';
 
 const Home: NextPage = () => {
   const { openConnectModal } = useConnectModal();
@@ -48,6 +49,10 @@ const Home: NextPage = () => {
 
         <div> 
           <Main />
+        </div>
+
+        <div> 
+          <Profile />
         </div>
 
       </div>
