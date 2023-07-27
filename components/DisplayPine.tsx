@@ -159,7 +159,7 @@ const DisplayPine = () => {
         {pineNFTs.length > 0 
             ? pineNFTs.map((token, i) => (
                 <div key={i} className="role-info">
-                    <img src={token.imageUrl} alt={`Pine NFT ${i+1}`} className="role-img" />
+                    <img src={token.imageUrl} alt={`Pine NFT ${i+1}`} className="icon icon-shape rounded-4 bg-secondary bg-opacity-40" />
                     <div className="role-text">
                         <strong>Pine NFT {i+1}:</strong>
                         <span className="role-has">✔️</span>
@@ -175,21 +175,70 @@ const DisplayPine = () => {
   );
 
 
-  // Pine Badge Information Display 
-  const renderTokenInfo= (
-    <div>
-        <h2>Pine Badges:</h2>
-        {Object.keys(tokenInfo).map((role, index) => (
-            <div key={index} className="role-info">
-                <img src={tokenInfo[role].imageUrl} alt={role} className="role-img" />
-                <div className="role-text">
-                    <strong>{role}: </strong>
-                    <span className="role-balance">{tokenInfo[role].balance}</span>
-                </div>
-            </div>
-        ))}
+// Define your grayscale images
+const grayscaleImages = [
+  "https://badger.mypinata.cloud/ipfs/QmVv6JZSS5qrWz4sXWDR4H2qJXTXW6CMHMXBtEm6RRoYRW",
+  "https://badger.mypinata.cloud/ipfs/QmYBoD7vNbgfgrvrfCJZyKxkpE2FRVn1jfnPbMsmeTFyeH",
+  "https://badger.mypinata.cloud/ipfs/QmWPKKs4RtXzQWKq6uKxJNEmyTjd23jdAsHjLnyEBkq1d3",
+  "https://badger.mypinata.cloud/ipfs/QmZ4fsKdgjsSoZNu8ja6ctLxEX924H21xLAj9owwBfUnTo",
+  "https://badger.mypinata.cloud/ipfs/QmXWLAPHQbj9b5Ex3WUmjigJ4ZqsbyRozcGSjYnyQiefGe",
+  "https://badger.mypinata.cloud/ipfs/QmRjs6qUvBwkZG7v9aPwTrVABsLJJrxozo9MoZSUoAJnY3"
+];
+
+// Pine Badge Information Display 
+const renderTokenInfo = (
+  <div>
+    <div style={{
+      display: 'grid',
+      gridTemplateColumns: 'repeat(3, 1fr)',
+      gridGap: '10px'
+    }}>
+      {isConnected && Object.keys(tokenInfo).length > 0 ? Object.keys(tokenInfo).map((role, index) => (
+        <div key={index} className="role-info" style={{ position: 'relative' }}>
+          <img 
+            src={parseFloat(tokenInfo[role].balance) > 0 ? tokenInfo[role].imageUrl : grayscaleImages[index]} 
+            alt={role} 
+            className="icon icon-shape rounded-4 bg-secondary bg-opacity-40" 
+            style={{width: '100%', height: 'auto', filter: parseFloat(tokenInfo[role].balance) > 0 ? 'none' : 'grayscale(100%)'}}
+          />
+          <div className="role-text" style={{
+            position: 'absolute',
+            bottom: '0',
+            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+            color: 'white',
+            width: '100%',
+            textAlign: 'center',
+            opacity: '0',
+            transition: 'opacity 0.3s'
+          }}
+          onMouseEnter={(e) => { e.currentTarget.style.opacity = '1'; }}
+          onMouseLeave={(e) => { e.currentTarget.style.opacity = '0'; }}
+          >
+            <strong>{role}: </strong>
+            <span className="role-balance">{tokenInfo[role].balance}</span>
+          </div>
+        </div>
+      )) : grayscaleImages.map((image, index) => (
+        <div key={index} className="role-info" style={{ position: 'relative' }}>
+          <img 
+            src={image}
+            alt={`Role ${index + 1}`} 
+            className="icon icon-shape rounded-4 bg-secondary bg-opacity-40" 
+            style={{width: '100%', height: 'auto', filter: 'grayscale(100%)'}}
+          />
+        </div>
+      ))}
     </div>
-  );
+  </div>
+);
+
+
+
+
+
+  
+  
+  
     
 
   
@@ -197,7 +246,6 @@ const DisplayPine = () => {
   return (
       <div className="infoContainer">
           {renderTokenInfo}
-          {renderPineNFTs}
       </div>
   );
   

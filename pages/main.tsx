@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import Profile from '../components/profile';
 import LeaderBoard from '../components/LeaderBoard';
+import DisplayPine from '../components/DisplayPine';
 
 
 
@@ -389,42 +390,9 @@ const Main = () => {
                     <div className="row g-6 mb-8">
                     <div className="col-xl col-sm-6 col-12">
                         <div className="card">
-                        <div className="card-body">
-                            {/* Icon + Dropdown */}
-                            <div className="d-flex justify-content-between mb-5">
-                            <div className="me-4">
-                                <div className="icon icon-shape rounded-4 bg-secondary bg-opacity-40">
-                                <img src="/img/social/flickr.svg" alt="..." />
-                                </div>
+                            <div className="card-body">
+                                <DisplayPine/> 
                             </div>
-                            <div className="dropdown">
-                                <a className="text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i className="bi bi-three-dots" />
-                                </a>
-                                <div className="dropdown-menu">
-                                <Link href="#!" className="dropdown-item">
-                                    Action
-                                </Link>
-                                <Link href="#!" className="dropdown-item">
-                                    Another action
-                                </Link>
-                                <Link href="#!" className="dropdown-item">
-                                    Something else here
-                                </Link>
-                                </div>
-                            </div>
-                            </div>
-                            {/* Title */}
-                            <h6 className="h5 font-semibold mb-6">Flickr Storage</h6>
-                            {/* Progress */}
-                            <div className="d-flex align-items-center justify-content-between mb-1">
-                            <span className="text-sm text-uppercase text-muted d-block">10 GB</span>
-                            <span className="text-sm text-uppercase text-muted d-block">30 GB</span>
-                            </div>
-                            <div className="progress progress-sm shadow-none">
-                            <div className="progress-bar bg-tertiary" role="progressbar" style={{width: '30%'}} aria-valuenow={30} aria-valuemin={0} aria-valuemax={100} />
-                            </div>
-                        </div>
                         </div>
                     </div>
                     <div className="col-xl col-sm-6 col-12">
