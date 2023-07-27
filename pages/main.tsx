@@ -4,6 +4,7 @@ import Link from 'next/link';
 
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import Profile from '../components/profile';
+import LeaderBoard from '../components/LeaderBoard';
 
 
 
@@ -16,8 +17,8 @@ import Profile from '../components/profile';
 const Main = () => {
 
 
-        return (
-                <div>
+    return (
+        <div>
             <meta charSet="UTF-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
             <meta name="color-scheme" content="dark light" />
@@ -47,7 +48,8 @@ const Main = () => {
                     {/* Toggle */}
                     <Link href="#" id="sidebarAvatar" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div className="avatar-parent-child">
-                        <Profile />
+                            {/* Profile Goes here*/}
+                            <Profile/> 
                         <span className="avatar-child avatar-badge bg-success" />
                         </div>
                     </Link>
@@ -293,7 +295,8 @@ const Main = () => {
                     <div className="dropup w-full">
                         <button className="btn-primary d-flex w-full py-3 ps-3 pe-4 align-items-center shadow shadow-3-hover rounded-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <span className="me-3">
-                            <img alt="..." src="/img/people/img-profile.jpg" className="avatar avatar-sm rounded-circle" />
+                            {/* Profile Goes Here */}
+                            <Profile/> 
                         </span>
                         <span className="flex-fill text-start text-sm font-semibold">
                             Tahlia Mooney
@@ -655,238 +658,14 @@ const Main = () => {
                     {/* Table */}
                     <div className="card">
                     <div className="card-header">
-                        <h5 className="mb-0">Recent files</h5>
+                        <h5 className="mb-0">Community Leaderboard:</h5>
                     </div>
                     <div className="table-responsive">
-                        <table className="table table-hover table-nowrap">
-                        <thead className="table-light">
-                            <tr>
-                            <th scope="col">File</th>
-                            <th scope="col">Size</th>
-                            <th scope="col">Modified</th>
-                            <th scope="col">Access</th>
-                            <th />
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                            <td>
-                                <div className="d-flex align-items-center">
-                                <div className="icon icon-shape rounded-3 text-lg bg-orange-500 text-white">
-                                    <i className="bi bi-card-image" />
-                                </div>
-                                <div className="ms-3">
-                                    <a className="d-inline-block h6 font-semibold mb-1" href="#">
-                                    Images
-                                    </a>
-                                    <small className="d-block">2560 files</small>
-                                </div>
-                                </div>
-                            </td>
-                            <td>
-                                <span>323 MB</span>
-                            </td>
-                            <td>
-                                <a className="text-current" href="mailto:">5/23/2020, 10:45 AM</a>
-                            </td>
-                            <td>
-                                <span className="badge rounded-pill bg-soft-success text-success">2 members</span>
-                            </td>
-                            <td className="text-end">
-                                <div className="dropdown">
-                                <a className="text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i className="bi bi-three-dots-vertical" />
-                                </a>
-                                <div className="dropdown-menu dropdown-menu-end">
-                                    <Link href="#!" className="dropdown-item">
-                                    Action
-                                    </Link>
-                                    <Link href="#!" className="dropdown-item">
-                                    Another action
-                                    </Link>
-                                    <Link href="#!" className="dropdown-item">
-                                    Something else here
-                                    </Link>
-                                </div>
-                                </div>
-                            </td>
-                            </tr>
-                            <tr>
-                            <td>
-                                <div className="d-flex align-items-center">
-                                <div className="icon icon-shape rounded-3 text-lg bg-blue-500 text-white">
-                                    <i className="bi bi-file-earmark-font" />
-                                </div>
-                                <div className="ms-3">
-                                    <a className="d-inline-block h6 font-semibold mb-1" href="#">
-                                    Documents
-                                    </a>
-                                    <small className="d-block">9800 files</small>
-                                </div>
-                                </div>
-                            </td>
-                            <td>
-                                <span>250 MB</span>
-                            </td>
-                            <td>
-                                <a className="text-current" href="mailto:">5/23/2020, 10:45 AM</a>
-                            </td>
-                            <td>
-                                <span className="badge rounded-pill bg-soft-success text-success">5 members</span>
-                            </td>
-                            <td className="text-end">
-                                <div className="dropdown">
-                                <a className="text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i className="bi bi-three-dots-vertical" />
-                                </a>
-                                <div className="dropdown-menu dropdown-menu-end">
-                                    <Link href="#!" className="dropdown-item">
-                                    Action
-                                    </Link>
-                                    <Link href="#!" className="dropdown-item">
-                                    Another action
-                                    </Link>
-                                    <Link href="#!" className="dropdown-item">
-                                    Something else here
-                                    </Link>
-                                </div>
-                                </div>
-                            </td>
-                            </tr>
-                            <tr>
-                            <td>
-                                <div className="d-flex align-items-center">
-                                <div className="icon icon-shape rounded-3 text-lg bg-green-500 text-white">
-                                    <i className="bi bi-file-earmark-excel" />
-                                </div>
-                                <div className="ms-3">
-                                    <a className="d-inline-block h6 font-semibold mb-1" href="#">
-                                    Sheets
-                                    </a>
-                                    <small className="d-block">120 files</small>
-                                </div>
-                                </div>
-                            </td>
-                            <td>
-                                <span>19 MB</span>
-                            </td>
-                            <td>
-                                <a className="text-current" href="mailto:">5/23/2020, 10:45 AM</a>
-                            </td>
-                            <td>
-                                <span className="badge rounded-pill bg-soft-primary text-primary">Only you</span>
-                            </td>
-                            <td className="text-end">
-                                <div className="dropdown">
-                                <a className="text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i className="bi bi-three-dots-vertical" />
-                                </a>
-                                <div className="dropdown-menu dropdown-menu-end">
-                                    <Link href="#!" className="dropdown-item">
-                                    Action
-                                    </Link>
-                                    <Link href="#!" className="dropdown-item">
-                                    Another action
-                                    </Link>
-                                    <Link href="#!" className="dropdown-item">
-                                    Something else here
-                                    </Link>
-                                </div>
-                                </div>
-                            </td>
-                            </tr>
-                            <tr>
-                            <td>
-                                <div className="d-flex align-items-center">
-                                <div className="icon icon-shape rounded-3 text-lg bg-purple-500 text-white">
-                                    <i className="bi bi-camera-video" />
-                                </div>
-                                <div className="ms-3">
-                                    <a className="d-inline-block h6 font-semibold mb-1" href="#">
-                                    Videos
-                                    </a>
-                                    <small className="d-block">400 files</small>
-                                </div>
-                                </div>
-                            </td>
-                            <td>
-                                <span>1.2 GB</span>
-                            </td>
-                            <td>
-                                <a className="text-current" href="mailto:">5/23/2020, 10:45 AM</a>
-                            </td>
-                            <td>
-                                <span className="badge rounded-pill bg-soft-success text-success">10 members</span>
-                            </td>
-                            <td className="text-end">
-                                <div className="dropdown">
-                                <a className="text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i className="bi bi-three-dots-vertical" />
-                                </a>
-                                <div className="dropdown-menu dropdown-menu-end">
-                                    <Link href="#!" className="dropdown-item">
-                                    Action
-                                    </Link>
-                                    <Link href="#!" className="dropdown-item">
-                                    Another action
-                                    </Link>
-                                    <Link href="#!" className="dropdown-item">
-                                    Something else here
-                                    </Link>
-                                </div>
-                                </div>
-                            </td>
-                            </tr>
-                            <tr>
-                            <td>
-                                <div className="d-flex align-items-center">
-                                <div className="icon icon-shape rounded-3 text-lg bg-yellow-500 text-white">
-                                    <i className="bi bi-file-arrow-down" />
-                                </div>
-                                <div className="ms-3">
-                                    <a className="d-inline-block h6 font-semibold mb-1" href="#">
-                                    Downloads
-                                    </a>
-                                    <small className="d-block">400 files</small>
-                                </div>
-                                </div>
-                            </td>
-                            <td>
-                                <span>300 MB</span>
-                            </td>
-                            <td>
-                                <a className="text-current" href="mailto:">5/23/2020, 10:45 AM</a>
-                            </td>
-                            <td>
-                                <span className="badge rounded-pill bg-soft-primary text-primary">Only you</span>
-                            </td>
-                            <td className="text-end">
-                                <div className="dropdown">
-                                <a className="text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i className="bi bi-three-dots-vertical" />
-                                </a>
-                                <div className="dropdown-menu dropdown-menu-end">
-                                    <Link href="#!" className="dropdown-item">
-                                    Action
-                                    </Link>
-                                    <Link href="#!" className="dropdown-item">
-                                    Another action
-                                    </Link>
-                                    <Link href="#!" className="dropdown-item">
-                                    Something else here
-                                    </Link>
-                                </div>
-                                </div>
-                            </td>
-                            </tr>
-                        </tbody>
-                        </table>
-                    </div>
-                    <div className="card-footer border-0 py-5">
-                        <span className="text-muted text-sm">Showing 10 items out of 250 results found</span>
+                        <LeaderBoard/>
                     </div>
                     </div>
                 </div>
+                
                 </main>
             </div>
             </div>

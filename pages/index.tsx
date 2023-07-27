@@ -51,10 +51,7 @@ const Home: NextPage = () => {
           <Main />
         </div>
 
-        <div> 
-          <Profile />
-        </div>
-
+      
       </div>
     </>
   );

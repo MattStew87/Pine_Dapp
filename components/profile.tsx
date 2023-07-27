@@ -18,7 +18,7 @@ const Profile = () => {
     const balance = await readContract({
       address: Pine_NFT_Address,
       abi: Badges_ABI,
-      functionName: 'balanceOf',
+      functionName: 'balanceOf', 
       args: [address, tokenIndex]
     }) as number;
   
@@ -67,8 +67,8 @@ const Profile = () => {
   const renderPineNFT = (
     <div>
         {pineNFT 
-            ? <img src={pineNFT.imageUrl} alt={`Pine NFT`} className="avatar avatar- rounded-circle" />
-            : <img src="/jackthepine_green_pine_sapling_in_a_lush_forest_digital_art_bru_fa6c8d1e-08fb-4012-8ffb-f3d21e1772b4.png" alt="Default Pine NFT" className="avatar avatar- rounded-circle" />
+            ? <img alt="Pine NFT" src={pineNFT.imageUrl} className="avatar avatar- rounded-circle" />
+            : <img alt="Default Pine Sapling" src="/jackthepine_green_pine_sapling_in_a_lush_forest_digital_art_bru_fa6c8d1e-08fb-4012-8ffb-f3d21e1772b4.png" className="avatar avatar- rounded-circle" />
         }
     </div>
   );
