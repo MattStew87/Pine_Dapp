@@ -9,7 +9,7 @@ import Badges_ABI from  '../pages/ABI_Folder/Badges.json'
 const Pine_NFT_Address = '0x6A711028d8E01519Bc6524BEbC885f3DE36ccbB6';
 
 interface ProfileProps {
-  holderAddress: string;
+  holderAddress: string; 
   delay: number; // Add a delay prop
 }
 
@@ -34,7 +34,7 @@ const LeaderBoardProfile: React.FC<ProfileProps> = ({ holderAddress, delay }) =>
       }) as number;
    
       if (balance > 0) {
-        const ipfsHash = await readContract({
+        const ipfsHash = await readContract({ 
           address: Pine_NFT_Address,
           abi: Badges_ABI,
           functionName: 'uri',
