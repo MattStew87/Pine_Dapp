@@ -4,12 +4,9 @@ import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { useAccount } from 'wagmi';
 
-// Main Page Components 
-import DisplayPine from '../components/DisplayPineBadges';
-import LeaderBoard from '../components/LeaderBoard';
+// Imported Pages
 import Main from './main';
-import Profile from '../components/profile';
-import DisplayPineNFT from '../components/DisplayPineNFT';
+
 
 const Home: NextPage = () => {
   const { openConnectModal } = useConnectModal();
@@ -52,7 +49,6 @@ const Home: NextPage = () => {
           <Main />
         </div>
 
-      
       </div>
     </>
   );

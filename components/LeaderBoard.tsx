@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import LeaderBoardProfile from './LeaderBoardProfile';
+import { useAccount } from 'wagmi';
 
 const apiURL = 'https://api.flipsidecrypto.com/api/v2/queries/235a1bde-fd3d-4ab9-a887-c1f13d026e8d/data/latest';
 
@@ -7,6 +8,7 @@ const LeaderBoard: React.FC = () => {
   const [holders, setHolders] = useState<{ HOLDER: string; SCORE: number }[]>([]);
   const [error, setError] = useState<null | string>(null);
   const [currentPage, setCurrentPage] = useState(0);
+  const { address, isConnected } = useAccount();
   const rowsPerPage = 10;
 
   const fetchData = useCallback(async () => {
@@ -50,16 +52,18 @@ const LeaderBoard: React.FC = () => {
         </thead>
         <tbody>
           {displayedHolders.map((holder, index) => (
-            <tr key={holder.HOLDER}>
-              <td>
-                {index + 1 + currentPage * rowsPerPage}
-              </td>
-              <td onClick={() => copyToClipboard(holder.HOLDER)} style={{cursor: 'pointer'}}>
-                <span className="badge rounded-pill bg-soft-success text-success">{holder.HOLDER}</span>
-              </td>
-              <td>{holder.SCORE}</td>
-              <td><LeaderBoardProfile holderAddress={holder.HOLDER} delay={index * 200} /></td>
-            </tr>
+            <tr 
+            key={holder.HOLDER} 
+            style={holder.HOLDER.toLowerCase() === address?.toLowerCase() ? {backgroundColor: 'rgba(144, 238, 144, 0.3)'} : {}}>
+            <td>
+              {index + 1 + currentPage * rowsPerPage}
+            </td>
+            <td onClick={() => copyToClipboard(holder.HOLDER)} style={{cursor: 'pointer'}}>
+              <span className="badge rounded-pill bg-soft-success text-success">{holder.HOLDER}</span>
+            </td>
+            <td>{holder.SCORE}</td>
+            <td><LeaderBoardProfile holderAddress={holder.HOLDER} delay={index * 200} /></td>
+          </tr>
           ))}
         </tbody>
       </table>
