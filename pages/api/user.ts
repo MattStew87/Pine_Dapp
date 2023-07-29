@@ -7,7 +7,7 @@ import { sql } from '@vercel/postgres';
 
 export default async function handle(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {
-    const { discord, twitter, wallet } = req.body as { discord: string, twitter: string, wallet: string };
+    const { discord, twitter, wallet, email } = req.body as { discord: string, twitter: string, wallet: string, email: string };
 
     try {
       // Create the Users table if it doesn't exist
@@ -15,6 +15,7 @@ export default async function handle(req: NextApiRequest, res: NextApiResponse) 
         CREATE TABLE IF NOT EXISTS Users (
           discord VARCHAR(255),
           twitter VARCHAR(255),
+          email VARCHAR(255),
           wallet VARCHAR(255) UNIQUE,
           createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
           Pine_Holder BOOLEAN DEFAULT FALSE
@@ -23,11 +24,12 @@ export default async function handle(req: NextApiRequest, res: NextApiResponse) 
  
       // Insert the new user into the Users table or update existing user
       const result = await sql`
-        INSERT INTO Users (discord, twitter, wallet)
-        VALUES (${discord}, ${twitter}, ${wallet})
+        INSERT INTO Users (discord, twitter, wallet, email)
+        VALUES (${discord}, ${twitter}, ${wallet}, ${email})
         ON CONFLICT (wallet) DO UPDATE SET
         discord = EXCLUDED.discord,
-        twitter = EXCLUDED.twitter
+        twitter = EXCLUDED.twitter,
+        email = EXCLUDED.email
         RETURNING *;
       `;
 

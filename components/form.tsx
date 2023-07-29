@@ -1,5 +1,3 @@
-// pages/form.tsx
-
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 import { useAccount } from 'wagmi';
 
@@ -7,16 +5,17 @@ const CreateUserForm: React.FC = () => {
   const { address, isConnected } = useAccount();
   const [discord, setDiscord] = useState('');
   const [twitter, setTwitter] = useState('');
+  const [email, setEmail] = useState(''); // Add state for email
 
-  const handleSubmit = async (event: FormEvent) => {
+  const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
 
-    // Prevent submission if either field is empty
-    if (discord.trim() === '' || twitter.trim() === '') {
+    // Prevent submission if any field is empty
+    if (discord.trim() === '' || twitter.trim() === '' || email.trim() === '') {
       return;
     }
 
-    const data = { discord, twitter, wallet: address || ''};
+    const data = { discord, twitter, email, wallet: address || ''}; // Include email in data
 
     try {
       const response = await fetch('/api/user', {
@@ -38,6 +37,7 @@ const CreateUserForm: React.FC = () => {
       // Clear the form
       setDiscord('');
       setTwitter('');
+      setEmail(''); // Clear email field
     } catch (error) {
       console.error('An error occurred:', error);
     }
@@ -52,6 +52,9 @@ const CreateUserForm: React.FC = () => {
         break;
       case 'twitter':
         setTwitter(value);
+        break;
+      case 'email': // Handle email input change
+        setEmail(value);
         break;
       default:
         break;
@@ -71,6 +74,10 @@ const CreateUserForm: React.FC = () => {
       <label>
         Twitter:
         <input type="text" name="twitter" value={twitter} onChange={handleInputChange} />
+      </label>
+      <label>
+        Email: {/* Add email input field */}
+        <input type="email" name="email" value={email} onChange={handleInputChange} />
       </label>
       <input type="submit" value="Submit" />
     </form>

@@ -73,7 +73,7 @@ const Profile = () => {
     </div>
   );
 
-  // return function 
+  // return function for Pine NFT
   return (
       <div className="infoContainer">
           {renderPineNFT}

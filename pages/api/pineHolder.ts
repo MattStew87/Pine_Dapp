@@ -14,7 +14,8 @@ export default async function handle(req: NextApiRequest, res: NextApiResponse) 
       await sql`
         CREATE TABLE IF NOT EXISTS Users (
           discord VARCHAR(255),
-          twitter VARCHAR(255),
+          twitter VARCHAR(255), 
+          email VARCHAR(255),
           wallet VARCHAR(255) UNIQUE,
           createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
           Pine_Holder BOOLEAN DEFAULT FALSE

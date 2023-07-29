@@ -8,6 +8,7 @@ import { useAccount } from 'wagmi';
 import Main from './main';
 
 
+
 const Home: NextPage = () => {
   const { openConnectModal } = useConnectModal();
   const { isConnected } = useAccount();
@@ -48,8 +49,10 @@ const Home: NextPage = () => {
         <div> 
           <Main />
         </div>
+        
 
       </div>
+
     </>
   );
 };
