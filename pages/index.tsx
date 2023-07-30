@@ -1,36 +1,12 @@
 import Head from 'next/head';
-import { ConnectButton, useConnectModal } from '@rainbow-me/rainbowkit';
 import type { NextPage } from 'next';
-import { useRouter } from 'next/router';
-import { useAccount } from 'wagmi';
 
 // Imported Pages
 import Main from './main';
 
 
-
 const Home: NextPage = () => {
-  const { openConnectModal } = useConnectModal();
-  const { isConnected } = useAccount();
-  const router = useRouter();
-
-  // Authenticate/connect user before logging discord and twitter information
-  const handleFormButtonClick = () => {
-    if (!isConnected) {
-      openConnectModal?.();
-    } else {
-      router.push('../components/form');
-    }
-  };
-  // Authenticate/connect user submitting content 
-  const handleContentButtonClick = () => {
-    if (!isConnected) {
-      openConnectModal?.();
-    } else {
-      router.push('../components/submitContent');
-    }
-  };
-
+  
   return (
     <>
       <Head>
