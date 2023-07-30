@@ -18,7 +18,7 @@ const DisplayTwDs: React.FC = () => {
   const { address, isConnected } = useAccount();
   const { openConnectModal } = useConnectModal();
 
-  const [inDatabase, setInDatabase] = useState<boolean | null>(true)
+  const [inDatabase, setInDatabase] = useState<boolean | null>(false)
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Displayed variables
@@ -39,6 +39,7 @@ const DisplayTwDs: React.FC = () => {
           const response = await fetch(`/api/getWalletData?wallet=${address}`);
           const data: UserData[] = await response.json();
           if (data.length > 0) {
+            setInDatabase(true); 
             setTwitter(data[0].twitter);
             setDiscord(data[0].discord); 
             setPineHolder(data[0].pine_holder); 
@@ -46,7 +47,7 @@ const DisplayTwDs: React.FC = () => {
             
           }
           else {
-            setInDatabase(false); 
+            
           } 
 
           // Fetch score from API
@@ -68,15 +69,12 @@ const DisplayTwDs: React.FC = () => {
     };
 
     getWalletData();
-  }, [isConnected, address]);
+  }, [isConnected, address, isModalOpen]);
 
 
 
 
-
-  if (!inDatabase) {
-    return <div>You must log your information to the database</div>;
-  }
+  
 
   return (
     <div className="card-body pb-5">
@@ -95,7 +93,7 @@ const DisplayTwDs: React.FC = () => {
               }
             }}
           >
-            Edit Profile
+             {inDatabase ? 'Edit Profile' : 'Create Profile'}
           </a>
         </div>
       </div>
