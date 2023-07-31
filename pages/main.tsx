@@ -9,6 +9,7 @@ import LeaderBoard from '../components/LeaderBoard';
 import DisplayPineBadges from '../components/DisplayPineBadges';
 import DisplayPineNFT from '../components/DisplayPineNFT';
 import DisplayTwDs from '../components/DisplayTwDS';
+import SubmitContentForm from '../components/submitContent'
 
 
 const Main = () => {
@@ -411,152 +412,61 @@ const Main = () => {
                     </div>
                     </div>
                     {/* Row 2 */}
+
+
+
                     <div className="d-flex align-items-center mb-5">
                     <div>
-                        <h5 className="mb-0">My folders</h5>
+                        <h5 className="mb-0">My Content</h5>
                     </div>
                     <div className="ms-auto">
-                        <Link href="#" className="btn btn-sm btn-neutral">See more</Link>
+                        <SubmitContentForm />
                     </div>
                     </div>
+
                     <div className="row g-6 mb-8">
+
                     <div className="col-xl-3 col-sm-6 col-12">
                         <div className="card">
-                        <div className="card-body">
-                            {/* Icon + Avatar group */}
-                            <div className="d-flex align-items-center justify-content-between mb-5">
-                            <div className="me-4">
-                                <div className="icon icon-shape rounded-4 bg-secondary bg-opacity-40 text-lg text-heading">
-                                <i className="bi bi-folder-fill" />
+                            <div className="card shadow-4-hover">
+                                <div className="card-body">
+                                {/* Insert Content here*/}
                                 </div>
                             </div>
-                            <div>
-                                <div className="avatar-group">
-                                <Link href="#" className="avatar avatar-sm bg-primary rounded-circle text-white border border-2 border-solid border-card">
-                                    AE
-                                </Link>
-                                <Link href="#" className="avatar avatar-sm bg-tertiary rounded-circle text-white border border-2 border-solid border-card">
-                                    MJ
-                                </Link>
-                                <Link href="#" className="avatar avatar-sm rounded-circle text-white border border-2 border-solid border-card">
-                                    <img alt="..." src="/img/people/img-1.jpg" />
-                                </Link>
-                                </div>
-                            </div>
-                            </div>
-                            {/* Title */}
-                            <h6 className="h5 font-semibold mb-5">Illustrations</h6>
-                            {/* Info */}
-                            <div className="d-flex justify-content-between">
-                            <span className="text-muted text-sm">30 files</span>
-                            <span className="text-muted text-sm">25 MB</span>
-                            </div>
-                        </div>
                         </div>
                     </div>
                     <div className="col-xl-3 col-sm-6 col-12">
                         <div className="card">
-                        <div className="card-body">
-                            {/* Icon + Avatar group */}
-                            <div className="d-flex align-items-center justify-content-between mb-5">
-                            <div className="me-4">
-                                <div className="icon icon-shape rounded-4 bg-secondary bg-opacity-40 text-lg text-heading">
-                                <i className="bi bi-folder-fill" />
+                            <div className="card shadow-4-hover">
+                                <div className="card-body">
+                                {/* Insert Content here*/}
                                 </div>
                             </div>
-                            <div>
-                                <div className="avatar-group">
-                                <Link href="#" className="avatar avatar-sm bg-primary rounded-circle text-white border border-2 border-solid border-card">
-                                    AE
-                                </Link>
-                                <Link href="#" className="avatar avatar-sm bg-tertiary rounded-circle text-white border border-2 border-solid border-card">
-                                    MJ
-                                </Link>
-                                <Link href="#" className="avatar avatar-sm rounded-circle text-white border border-2 border-solid border-card">
-                                    <img alt="..." src="/img/people/img-1.jpg" />
-                                </Link>
-                                </div>
-                            </div>
-                            </div>
-                            {/* Title */}
-                            <h6 className="h5 font-semibold mb-5">Marketing stuff</h6>
-                            {/* Info */}
-                            <div className="d-flex justify-content-between">
-                            <span className="text-muted text-sm">1200 files</span>
-                            <span className="text-muted text-sm">25 GB</span>
-                            </div>
-                        </div>
                         </div>
                     </div>
                     <div className="col-xl-3 col-sm-6 col-12">
                         <div className="card">
-                        <div className="card-body">
-                            {/* Icon + Avatar group */}
-                            <div className="d-flex align-items-center justify-content-between mb-5">
-                            <div className="me-4">
-                                <div className="icon icon-shape rounded-4 bg-secondary bg-opacity-40 text-lg text-heading">
-                                <i className="bi bi-folder-fill" />
+                            <div className="card shadow-4-hover">
+                                <div className="card-body">
+                                {/* Insert Content here*/}
                                 </div>
                             </div>
-                            <div>
-                                <div className="avatar-group">
-                                <Link href="#" className="avatar avatar-sm bg-primary rounded-circle text-white border border-2 border-solid border-card">
-                                    AE
-                                </Link>
-                                <Link href="#" className="avatar avatar-sm bg-tertiary rounded-circle text-white border border-2 border-solid border-card">
-                                    MJ
-                                </Link>
-                                <Link href="#" className="avatar avatar-sm rounded-circle text-white border border-2 border-solid border-card">
-                                    <img alt="..." src="/img/people/img-1.jpg" />
-                                </Link>
-                                </div>
-                            </div>
-                            </div>
-                            {/* Title */}
-                            <h6 className="h5 font-semibold mb-5">Documentation</h6>
-                            {/* Info */}
-                            <div className="d-flex justify-content-between">
-                            <span className="text-muted text-sm">40 files</span>
-                            <span className="text-muted text-sm">13.5 MB</span>
-                            </div>
-                        </div>
                         </div>
                     </div>
                     <div className="col-xl-3 col-sm-6 col-12">
                         <div className="card">
-                        <div className="card-body">
-                            {/* Icon + Avatar group */}
-                            <div className="d-flex align-items-center justify-content-between mb-5">
-                            <div className="me-4">
-                                <div className="icon icon-shape rounded-4 bg-secondary bg-opacity-40 text-lg text-heading">
-                                <i className="bi bi-folder-fill" />
+                            <div className="card shadow-4-hover">
+                                <div className="card-body">
+                                {/* Insert Content here*/}
                                 </div>
                             </div>
-                            <div>
-                                <div className="avatar-group">
-                                <Link href="#" className="avatar avatar-sm bg-primary rounded-circle text-white border border-2 border-solid border-card">
-                                    AE
-                                </Link>
-                                <Link href="#" className="avatar avatar-sm bg-tertiary rounded-circle text-white border border-2 border-solid border-card">
-                                    MJ
-                                </Link>
-                                <Link href="#" className="avatar avatar-sm rounded-circle text-white border border-2 border-solid border-card">
-                                    <img alt="..." src="/img/people/img-1.jpg" />
-                                </Link>
-                                </div>
-                            </div>
-                            </div>
-                            {/* Title */}
-                            <h6 className="h5 font-semibold mb-5">Images</h6>
-                            {/* Info */}
-                            <div className="d-flex justify-content-between">
-                            <span className="text-muted text-sm">2500 files</span>
-                            <span className="text-muted text-sm">32 GB</span>
-                            </div>
-                        </div>
                         </div>
                     </div>
+
                     </div>
+
+
+
                     {/* Table */}
                     <div className="card">
                     <div className="card-header">
