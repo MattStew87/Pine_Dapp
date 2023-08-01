@@ -12,7 +12,7 @@ export default async function handle(req: NextApiRequest, res: NextApiResponse) 
     try {
       // Fetch all content for the given wallet from the Content table
       const result = await sql`
-        SELECT * FROM Content 
+        SELECT * FROM Pine_Content 
         WHERE wallet = ${wallet};
       `;
 

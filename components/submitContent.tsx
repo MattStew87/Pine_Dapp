@@ -18,6 +18,8 @@ const SubmitContentForm: React.FC = () => {
   const [imageURL, setImageURL] = useState('');
   const [contentType, setContentType] = useState('');
   const [isCertified, setIsCertified] = useState<boolean>(false);
+
+  const [isHydrated, setIsHydrated] = useState(false);
  
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -42,7 +44,9 @@ const SubmitContentForm: React.FC = () => {
       }
     };
 
+    setIsHydrated(true);
     checkCertification();
+    
   }, [isConnected, address]);
 
 
@@ -123,7 +127,7 @@ const SubmitContentForm: React.FC = () => {
       >
         Submit Content
       </a>
-      {isConnected && !isCertified && <p style={{fontSize: 'small', color: 'red'}}>*Need Pine NFT to submit.</p>}
+      {isHydrated && isConnected && !isCertified && <p style={{fontSize: 'small', color: 'red'}}>*Need Pine NFT to submit.</p>}
     </div>
   
       {/* Modal setup for Submit Content*/}

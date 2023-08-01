@@ -10,6 +10,7 @@ import DisplayPineBadges from '../components/DisplayPineBadges';
 import DisplayPineNFT from '../components/DisplayPineNFT';
 import DisplayTwDs from '../components/DisplayTwDS';
 import SubmitContentForm from '../components/submitContent'
+import MyContent from '../components/myContent'
 
 
 const Main = () => {
@@ -415,56 +416,20 @@ const Main = () => {
 
 
 
-                    <div className="d-flex align-items-center mb-5">
+                <div className="d-flex align-items-center mb-5">
                     <div>
                         <h5 className="mb-0">My Content</h5>
                     </div>
+                    {/* Submit content button and form */}
                     <div className="ms-auto">
                         <SubmitContentForm />
                     </div>
-                    </div>
+                    
+                </div>
 
-                    <div className="row g-6 mb-8">
-
-                    <div className="col-xl-3 col-sm-6 col-12">
-                        <div className="card">
-                            <div className="card shadow-4-hover">
-                                <div className="card-body">
-                                {/* Insert Content here*/}
-                                </div>
-                            </div>
-                        </div>
+                    <div>
+                        <MyContent /> 
                     </div>
-                    <div className="col-xl-3 col-sm-6 col-12">
-                        <div className="card">
-                            <div className="card shadow-4-hover">
-                                <div className="card-body">
-                                {/* Insert Content here*/}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-xl-3 col-sm-6 col-12">
-                        <div className="card">
-                            <div className="card shadow-4-hover">
-                                <div className="card-body">
-                                {/* Insert Content here*/}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-xl-3 col-sm-6 col-12">
-                        <div className="card">
-                            <div className="card shadow-4-hover">
-                                <div className="card-body">
-                                {/* Insert Content here*/}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    </div>
-
 
 
                     {/* Table */}

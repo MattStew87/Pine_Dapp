@@ -18,10 +18,10 @@ export default async function handle(req: NextApiRequest, res: NextApiResponse) 
     try {
       // Create the Content table if it doesn't exist
       await sql`
-        CREATE TABLE IF NOT EXISTS Content (
+        CREATE TABLE IF NOT EXISTS Pine_Content (
           wallet VARCHAR(255),
-          contentURL VARCHAR(255),
-          imageURL VARCHAR(255),
+          contentURL TEXT,
+          imageURL TEXT,
           contentType VARCHAR(255),
           createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         );
@@ -29,7 +29,7 @@ export default async function handle(req: NextApiRequest, res: NextApiResponse) 
 
       // Insert new content into the Content table
       const result = await sql`
-        INSERT INTO Content (wallet, contentURL, imageURL, contentType)
+        INSERT INTO Pine_Content (wallet, contentURL, imageURL, contentType)
         VALUES (${wallet}, ${contentURL}, ${imageURL}, ${contentType})
         RETURNING *;
       `;
