@@ -2,7 +2,6 @@ import React, { useState, ChangeEvent, FormEvent, useEffect } from 'react';
 import { useAccount } from 'wagmi';
 import { useConnectModal } from '@rainbow-me/rainbowkit';
 
-
 interface UserData {
   discord: string | null;
   twitter: string | null;
@@ -18,6 +17,8 @@ const SubmitContentForm: React.FC = () => {
   const [imageURL, setImageURL] = useState('');
   const [contentType, setContentType] = useState('');
   const [isCertified, setIsCertified] = useState<boolean>(false);
+  const [contentURLError, setContentURLError] = useState('');
+  const [imageURLError, setImageURLError] = useState('');
 
   const [isHydrated, setIsHydrated] = useState(false);
  
@@ -49,12 +50,41 @@ const SubmitContentForm: React.FC = () => {
     
   }, [isConnected, address]);
 
+  // Function to check if a string is a valid URL
+  const isValidURL = (string: string) => {
+    const res = string.match(/^(ftp|http|https):\/\/[^ "]+$/);
+    return (res !== null)
+  };
+
+  // Function to check if a string is a valid PNG or JPEG
+  const isValidImage = (string: string) => {
+    const fileExtension = string.split('.').pop()?.toLowerCase();
+    return (fileExtension === 'png' || fileExtension === 'jpeg' || fileExtension === 'jpg')
+  };
 
   // handles content submission
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
 
-    if (!isCertified || contentURL.trim() === '' || imageURL.trim() === '' || contentType.trim() === '') {
+    // Reset error messages
+    setContentURLError('');
+    setImageURLError('');
+
+    let hasError = false;
+
+    // Validate content URL
+    if (!isValidURL(contentURL)) {
+      setContentURLError('*Must be a Valid URL');
+      hasError = true;
+    }
+
+    // Validate image URL
+    if (!isValidImage(imageURL)) {
+      setImageURLError('*Must be a PNG or JPEG');
+      hasError = true;
+    }
+
+    if (hasError || !isCertified || contentURL.trim() === '' || imageURL.trim() === '' || contentType.trim() === '') {
       return;
     }
 
@@ -87,6 +117,7 @@ const SubmitContentForm: React.FC = () => {
     }
   };
 
+
   // Assigns variable values. 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
@@ -105,9 +136,6 @@ const SubmitContentForm: React.FC = () => {
         break;
     }
   };
-
-
-
 
   return (
     <div>
@@ -172,12 +200,14 @@ const SubmitContentForm: React.FC = () => {
                       <label className="form-label" htmlFor="contentURL">Content URL:</label>
                     </div>
                     <input type="text" name="contentURL" value={contentURL} onChange={handleInputChange} className="form-control form-control-lg col-12 col-md-8 col-lg-6" id="contentURL"/>
+                    <div style={{color: 'red', fontSize: 'small', textAlign: 'left'}}>{contentURLError}</div>
                   </div>
                   <div className="mb-5">
                     <div className="d-flex align-items-center justify-content-between">
                       <label className="form-label" htmlFor="imageURL">Image URL:</label>
                     </div>
                     <input type="text" name="imageURL" value={imageURL} onChange={handleInputChange} className="form-control form-control-lg col-12 col-md-8 col-lg-6" id="imageURL"/>
+                    <div style={{color: 'red', fontSize: 'small', textAlign: 'left'}}>{imageURLError}</div>
                   </div>
                   <div className="mb-5">
                     <div className="d-flex align-items-center justify-content-between">
@@ -199,19 +229,24 @@ const SubmitContentForm: React.FC = () => {
               </div>
             </div>
             {/* Exit out of modal button*/}
-            <button onClick={() => setIsModalOpen(false)} style={{
-            position: 'absolute', // Position the button absolutely...
-            top: '10px', // ...from the top...
-            right: '10px', // ...and from the right
-            background: 'none', // Remove the default button background...
-            border: 'none', // ...and border
-            fontSize: '1.5em', // Increase the size of the X
+            <button onClick={() => {
+              setIsModalOpen(false); 
+              setIsSubmitted(false); 
+            }} 
+            style={{
+              position: 'absolute', // Position the button absolutely...
+              top: '10px', // ...from the top...
+              right: '10px', // ...and from the right
+              background: 'none', // Remove the default button background...
+              border: 'none', // ...and border
+              fontSize: '1.5em', // Increase the size of the X
           }}>❌</button> {/* This is the close button */}
           </div>
         </div>
       )}
     </div>
   );
+
   
 };
 
