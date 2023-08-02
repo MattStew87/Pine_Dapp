@@ -6,7 +6,7 @@ interface ContentItem {
   contenturl: string;
   imageurl: string;
   contenttype: string;
-  createdAt: string;
+  createdat: string;
 }
 
 const MyContent: React.FC = () => {
@@ -39,9 +39,9 @@ const MyContent: React.FC = () => {
     content.push({
       wallet: '',
       contenturl: '#',
-      imageurl: 'https://static.thenounproject.com/png/782938-200.png',
+      imageurl: 'https://www.christies.com/media-library/images/features/articles/2021/04/10-thing-to-know-about-cryptopunks/larva-labs-2005-cryptopunks-2017-non-fungible-token-21st-century-evening-sales-christies-hero-opt-new.jpg',
       contenttype: 'Blank',
-      createdAt: '',
+      createdat: '',
     });
   }
 
@@ -51,12 +51,16 @@ const MyContent: React.FC = () => {
         const contentURL = item.contenturl;
         const imageURL = item.imageurl;
         const contentType = item.contenttype;
-        const createdAt = new Date(item.createdAt).toLocaleDateString('en-US', {
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric'
-        });
-
+  
+        let createdAt = 'N/A'; // Default value
+        if (item.createdat) {
+          createdAt = new Date(item.createdat.replace(' ', 'T')).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+          });
+        }
+  
         return (
           <div className="col-xl-3 col-sm-6 col-12" key={index}>
             <div className="card">
@@ -100,7 +104,7 @@ const MyContent: React.FC = () => {
                       position: 'absolute', 
                       bottom: '10px', 
                       right: '10px', 
-                      backgroundColor: 'rgba(255, 255, 255, 0.7)', 
+                      backgroundColor: 'rgba(144, 238, 144, 0.5)', 
                       padding: '5px', 
                       borderRadius: '5px' 
                     }}>
@@ -115,6 +119,7 @@ const MyContent: React.FC = () => {
       })}
     </div>
   );
+  
 };
 
 export default MyContent;

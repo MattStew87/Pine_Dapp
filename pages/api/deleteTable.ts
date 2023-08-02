@@ -6,10 +6,6 @@ import { sql } from '@vercel/postgres';
 export default async function handle(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {
     try {
-      // Delete the Content table if it exists
-      await sql`
-        DROP TABLE IF EXISTS Content;
-      `;
 
       // Delete the Pine_Content table if it exists
       await sql`

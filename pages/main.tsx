@@ -1,5 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
+import { useAccount } from 'wagmi';
+
 
 //Imported Components for main.tsx page 
 import { ConnectButton } from '@rainbow-me/rainbowkit';
@@ -14,6 +16,11 @@ import MyContent from '../components/myContent'
 
 
 const Main = () => {
+
+    const { address } = useAccount();
+
+    let shortAddress = address ? `${address.slice(0, 4)}...${address.slice(-4)}` : '';
+
 
 
     return (
@@ -298,7 +305,7 @@ const Main = () => {
                             <Profile/> 
                         </span>
                         <span className="flex-fill text-start text-sm font-semibold">
-                            Tahlia Mooney
+                            {shortAddress}
                         </span>
                         <span>
                             <i className="bi bi-chevron-expand text-white text-opacity-70" />
@@ -307,7 +314,7 @@ const Main = () => {
                         <div className="dropdown-menu dropdown-menu-end w-full">
                         <div className="dropdown-header">
                             <span className="d-block text-sm text-muted mb-1">Signed in as</span>
-                            <span className="d-block text-heading font-semibold">Tahlia Mooney</span>
+                            <span className="d-block text-heading font-semibold"> {shortAddress} </span>
                         </div>
                         <div className="dropdown-divider" />
                         <a className="dropdown-item" href="#">

@@ -5,6 +5,8 @@ import type { NextPage } from 'next';
 import Main from './main';
 
 
+
+
 const Home: NextPage = () => {
   
   return (
@@ -26,7 +28,8 @@ const Home: NextPage = () => {
           <Main />
         </div>
 
-        
+      
+   
       </div>
 
     </>

@@ -13,7 +13,8 @@ export default async function handle(req: NextApiRequest, res: NextApiResponse) 
       // Fetch all content for the given wallet from the Content table
       const result = await sql`
         SELECT * FROM Pine_Content 
-        WHERE wallet = ${wallet};
+        WHERE wallet = ${wallet}
+        ORDER BY createdAt DESC;
       `;
 
       res.json(result.rows);

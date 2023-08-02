@@ -25,7 +25,7 @@ const DisplayTwDs: React.FC = () => {
   const [twitter, setTwitter] = useState<string | null>(null)
   const [discord, setDiscord] = useState<string | null>(null)
   const [email, setEmail] = useState<string | null>(null)
-  const [pineHolder, setPineHolder] = useState<boolean | null>(true)
+  const [pineHolder, setPineHolder] = useState<boolean | null>(null)
   const [score, setScore] = useState<number | null>(null); 
 
   
@@ -148,7 +148,7 @@ const DisplayTwDs: React.FC = () => {
         <p className="text-sm text-muted">Twitter: {twitter} </p>
         <p className="text-sm text-muted">Email: {email} </p>
         <p className="text-sm text-muted">Discord: {discord} </p>
-        <p className="text-sm text-muted">Pine Holder: {pineHolder === true ? 'True' : pineHolder === false ? 'False' : 'Null'} </p>
+        <p className="text-sm text-muted">Pine Holder: {pineHolder === true ? 'True' : pineHolder === false ? 'False' : ''} </p>
       </div>
       <hr className="my-5" /> {/* EDIT SIZING HERE */}
       <div className="text-end">

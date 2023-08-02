@@ -59,7 +59,7 @@ const SubmitContentForm: React.FC = () => {
   // Function to check if a string is a valid PNG or JPEG
   const isValidImage = (string: string) => {
     const fileExtension = string.split('.').pop()?.toLowerCase();
-    return (fileExtension === 'png' || fileExtension === 'jpeg' || fileExtension === 'jpg')
+    return (fileExtension === 'png' ||  fileExtension === 'jpg')
   };
 
   // handles content submission
@@ -80,7 +80,7 @@ const SubmitContentForm: React.FC = () => {
 
     // Validate image URL
     if (!isValidImage(imageURL)) {
-      setImageURLError('*Must be a PNG or JPEG');
+      setImageURLError('*Must be a png or jpg');
       hasError = true;
     }
 
