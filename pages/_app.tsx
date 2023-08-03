@@ -2,6 +2,7 @@ import '../styles/global.css';
 import '@rainbow-me/rainbowkit/styles.css';
 import type { AppProps } from 'next/app';
 import { useEffect } from 'react'; // Add this import at the top of your file
+import { Analytics } from '@vercel/analytics/react';
 
 // Boostrap css Files 
 import '../styles/clever-dashboard-v1.0-2/clever-dashboard-v1.0/dist/css/_custom.css';
@@ -90,6 +91,7 @@ export default function MyApp({
         <RainbowKitSiweNextAuthProvider>
           <RainbowKitProvider appInfo={demoAppInfo} chains={chains}>
             <Component {...pageProps} />
+            <Analytics />
           </RainbowKitProvider>
         </RainbowKitSiweNextAuthProvider>
       </SessionProvider>
