@@ -52,15 +52,6 @@ const MyContent: React.FC = () => {
         const imageURL = item.imageurl;
         const contentType = item.contenttype;
   
-        let createdAt = 'N/A'; // Default value
-        if (item.createdat) {
-          createdAt = new Date(item.createdat.replace(' ', 'T')).toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
-          });
-        }
-  
         return (
           <div className="col-xl-3 col-sm-6 col-12" key={index}>
             <div className="card">
@@ -99,16 +90,6 @@ const MyContent: React.FC = () => {
                       borderRadius: '5px' 
                     }}>
                       {contentType}
-                    </p>
-                    <p style={{ 
-                      position: 'absolute', 
-                      bottom: '10px', 
-                      right: '10px', 
-                      backgroundColor: 'rgba(144, 238, 144, 0.5)', 
-                      padding: '5px', 
-                      borderRadius: '5px' 
-                    }}>
-                      {createdAt}
                     </p>
                   </div>
                 </div>

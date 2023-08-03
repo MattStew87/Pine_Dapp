@@ -1,30 +1,23 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+![Pine Analytics User Profile DApp](IMAGE_URL)
 
-## Getting Started
+# Pine Analytics User Profile DApp
 
-First, run the development server:
+## Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+This is a decentralized application (DApp) developed as a profile page for Pine Analytics. It serves as a platform for Pine Analysts to access information about their Pine Holdings and their position within the community. Users can also submit content to Pine through this platform.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Live Application: [https://pine-dapp.vercel.app/](https://pine-dapp.vercel.app/)
+- Pine Analytics Main Page: [https://storage.googleapis.com/pinedao/Pinehome1.html](https://storage.googleapis.com/pinedao/Pinehome1.html)
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+This DApp is built using [Next.js](https://nextjs.org/), a popular React framework for building web applications. It's deployed on [Vercel](https://vercel.com/), utilizing their built-in Postgres Database.
 
-## Learn More
+## License
 
-To learn more about Next.js, take a look at the following resources:
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Contact
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+If you have any questions, suggestions, or would like to contribute to this project, please open an issue on GitHub or contact me through the following:
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Email: matstewart.668@gmail.com
+- Twitter: [@Matthew69207967](https://twitter.com/Matthew69207967)

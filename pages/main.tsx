@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { useAccount } from 'wagmi';
+import { useState, useEffect } from 'react';
 
 
 //Imported Components for main.tsx page 
@@ -18,8 +19,13 @@ import MyContent from '../components/myContent'
 const Main = () => {
 
     const { address } = useAccount();
+    const [shortAddress, setShortAddress] = useState('');   
 
-    let shortAddress = address ? `${address.slice(0, 4)}...${address.slice(-4)}` : '';
+    useEffect(() => {
+        if (address) {
+          setShortAddress(`${address.slice(0, 4)}...${address.slice(-4)}`);
+        }
+      }, [address]);
 
 
 
@@ -73,205 +79,14 @@ const Main = () => {
                 <div className="collapse navbar-collapse" id="sidebarCollapse">
                     {/* Navigation */}
                     <ul className="navbar-nav">
-                    <li className="nav-item">
-                        <a className="nav-link" href="#sidebar-projects" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebar-projects">
-                        <i className="bi bi-briefcase" /> Projects
-                        </a>
-                        <div className="collapse" id="sidebar-projects">
-                        <ul className="nav nav-sm flex-column">
-                            <li className="nav-item">
-                                <Link href="/pages/projects/overview.html" className="nav-link">Overview</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link href="/pages/projects/grid-view.html" className="nav-link">Grid View</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link href="/pages/projects/table-view.html" className="nav-link">Table View</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link href="/pages/projects/details.html" className="nav-link">Details</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link href="/pages/projects/create-project.html" className="nav-link">Create Project</Link>
-                            </li>
-                        </ul>
-                    </div>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link" href="#sidebar-tasks" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebar-tasks">
-                        <i className="bi bi-kanban" /> Tasks
-                        </a>
-                        <div className="collapse" id="sidebar-tasks">
-                        <ul className="nav nav-sm flex-column">
-                            <li className="nav-item">
-                            <Link href="/pages/tasks/overview.html" className="nav-link">
-                                Overview
-                            </Link>
-                            </li>
-                            <li className="nav-item">
-                            <Link href="/pages/tasks/list-view.html" className="nav-link">
-                                List View
-                            </Link>
-                            </li>
-                            <li className="nav-item">
-                            <Link href="/pages/tasks/list-view-aside.html" className="nav-link">
-                                List View w/ Details
-                            </Link>
-                            </li>
-                            <li className="nav-item">
-                            <Link href="/pages/tasks/board-view.html" className="nav-link">
-                                Board View
-                            </Link>
-                            </li>
-                            <li className="nav-item">
-                            <Link href="/pages/tasks/create-task.html" className="nav-link">
-                                Create Task
-                            </Link>
-                            </li>
-                        </ul>
-                        </div>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link active" href="#sidebar-files" data-bs-toggle="collapse" role="button" aria-expanded="true" aria-controls="sidebar-files">
-                        <i className="bi bi-file-earmark-text" /> Files
-                        </a>
-                        <div className="collapse show" id="sidebar-files">
-                        <ul className="nav nav-sm flex-column">
-                            <li className="nav-item">
-                            <Link href="/pages/files/overview.html" className="nav-link font-bold">
-                                Overview
-                            </Link>
-                            </li>
-                            <li className="nav-item">
-                            <Link href="/pages/files/table-view.html" className="nav-link">
-                                Table View
-                            </Link>
-                            </li>
-                            <li className="nav-item">
-                            <Link href="/pages/files/media-gallery.html" className="nav-link">
-                                Media Gallery
-                            </Link>
-                            </li>
-                        </ul>
-                        </div>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link" href="#sidebar-integrations" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebar-integrations">
-                        <i className="bi bi-terminal" /> Integrations
-                        </a>
-                        <div className="collapse" id="sidebar-integrations">
-                        <ul className="nav nav-sm flex-column">
-                            <li className="nav-item">
-                            <Link href="/pages/integrations/applications.html" className="nav-link">
-                                Applications
-                            </Link>
-                            </li>
-                            <li className="nav-item">
-                            <Link href="/pages/integrations/manage-apps.html" className="nav-link">
-                                Manage Apps
-                            </Link>
-                            </li>
-                        </ul>
-                        </div>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link" href="#sidebar-user" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebar-user">
-                        <i className="bi bi-people" /> User
-                        </a>
-                        <div className="collapse" id="sidebar-user">
-                        <ul className="nav nav-sm flex-column">
-                            <li className="nav-item">
-                            <Link href="/pages/user/profile.html" className="nav-link">
-                                Profile
-                            </Link>
-                            </li>
-                            <li className="nav-item">
-                            <Link href="/pages/user/table-view.html" className="nav-link">
-                                Table View
-                            </Link>
-                            </li>
-                            <li className="nav-item">
-                            <Link href="/pages/user/permissions.html" className="nav-link">
-                                Permissions
-                            </Link>
-                            </li>
-                        </ul>
-                        </div>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link" href="#sidebar-settings" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebar-settings">
-                        <i className="bi bi-gear" /> Settings
-                        </a>
-                        <div className="collapse" id="sidebar-settings">
-                        <ul className="nav nav-sm flex-column">
-                            <li className="nav-item">
-                            <Link href="/pages/settings/general.html" className="nav-link">
-                                General
-                            </Link>
-                            </li>
-                            <li className="nav-item">
-                            <Link href="/pages/settings/security.html" className="nav-link">
-                                Security
-                            </Link>
-                            </li>
-                            <li className="nav-item">
-                            <Link href="/pages/settings/team.html" className="nav-link">
-                                Team
-                            </Link>
-                            </li>
-                            <li className="nav-item">
-                            <Link href="/pages/settings/billing.html" className="nav-link">
-                                Billing
-                            </Link>
-                            </li>
-                            <li className="nav-item">
-                            <Link href="/pages/settings/notifications.html" className="nav-link">
-                                Notifications
-                            </Link>
-                            </li>
-                        </ul>
-                        </div>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link" href="#sidebar-authentication" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebar-authentication">
-                        <i className="bi bi-person-bounding-box" /> Authentication
-                        </a>
-                        <div className="collapse" id="sidebar-authentication">
-                        <ul className="nav nav-sm flex-column">
-                            <li className="nav-item">
-                            <Link href="/pages/authentication/basic-login.html" className="nav-link">
-                                Basic Login
-                            </Link>
-                            </li>
-                            <li className="nav-item">
-                            <Link href="/pages/authentication/basic-register.html" className="nav-link">
-                                Basic Register
-                            </Link>
-                            </li>
-                            <li className="nav-item">
-                            <Link href="/pages/authentication/basic-recover.html" className="nav-link">
-                                Basic Recover
-                            </Link>
-                            </li>
-                            <li className="nav-item">
-                            <Link href="/pages/authentication/side-login.html" className="nav-link">
-                                Side Login
-                            </Link>
-                            </li>
-                            <li className="nav-item">
-                            <Link href="/pages/authentication/side-register.html" className="nav-link">
-                                Side Register
-                            </Link>
-                            </li>
-                            <li className="nav-item">
-                            <Link href="/pages/authentication/side-recover.html" className="nav-link">
-                                Side Recover
-                            </Link>
-                            </li>
-                        </ul>
-                        </div>
-                    </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="https://storage.googleapis.com/pinedao/Pinehome1.html" role="button">
+                                <i className="bi bi-briefcase" /> Home
+                            </a>
+                        </li>
                     </ul>
+
+
                     {/* Divider */}
                     <hr className="navbar-divider my-4 opacity-70" />
                     {/* Documentation */}
@@ -282,15 +97,8 @@ const Main = () => {
                         </span>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link py-2" href="/docs">
-                        <i className="bi bi-code-square" /> Documentation
-                        </a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link py-2 d-flex align-items-center" href="https://webpixels.io/themes/clever-admin-dashboard-template/releases" target="_blank">
-                        <i className="bi bi-journals" />
-                        <span>Changelog</span>
-                        <span className="badge badge-sm bg-soft-success text-success rounded-pill ms-auto">v1.0.0</span>
+                        <a className="nav-link py-2" href="https://linktr.ee/pineanalytics" target="_blank" rel="noopener noreferrer">
+                            <i className="bi bi-code-square" /> Linktree
                         </a>
                     </li>
                     </ul>
