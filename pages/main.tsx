@@ -8,7 +8,6 @@ import { useState, useEffect } from 'react';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import Profile from '../components/profile';
 import LeaderBoard from '../components/LeaderBoard';
-
 import DisplayPineBadges from '../components/DisplayPineBadges';
 import DisplayPineNFT from '../components/DisplayPineNFT';
 import DisplayTwDs from '../components/DisplayTwDS';
@@ -19,7 +18,7 @@ import MyContent from '../components/myContent'
 const Main = () => {
 
     const { address } = useAccount();
-    const [shortAddress, setShortAddress] = useState('');   
+    const [shortAddress, setShortAddress] = useState('0x00...0000');   
 
     useEffect(() => {
         if (address) {
@@ -28,7 +27,7 @@ const Main = () => {
       }, [address]);
 
 
-
+    // Renders the Profile page and all the componenets mounted on that page
     return (
         <div>
             <meta charSet="UTF-8" />
@@ -58,21 +57,13 @@ const Main = () => {
                     {/* Dropdown */}
                     <div className="dropdown">
                     {/* Toggle */}
-                    <Link href="#" id="sidebarAvatar" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <div className="avatar-parent-child">
-                            {/* Profile Goes here*/}
-                            <Profile/> 
-                        <span className="avatar-child avatar-badge bg-success" />
-                        </div>
-                    </Link>
-                    {/* Menu */}
-                    <div className="dropdown-menu dropdown-menu-end" aria-labelledby="sidebarAvatar">
-                        <Link href="#" className="dropdown-item">Profile</Link>
-                        <Link href="#" className="dropdown-item">Settings</Link>
-                        <Link href="#" className="dropdown-item">Billing</Link>
-                        <hr className="dropdown-divider" />
-                        <Link href="#" className="dropdown-item">Logout</Link>
-                    </div>
+                        <Link href="#" id="sidebarAvatar" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div className="avatar-parent-child">
+                                {/* Profile Goes here*/}
+                                <Profile/> 
+                            <span className="avatar-child avatar-badge bg-success" />
+                            </div>
+                        </Link>
                     </div>
                 </div>
                 {/* Collapse */}
@@ -119,26 +110,6 @@ const Main = () => {
                             <i className="bi bi-chevron-expand text-white text-opacity-70" />
                         </span>
                         </button>
-                        <div className="dropdown-menu dropdown-menu-end w-full">
-                        <div className="dropdown-header">
-                            <span className="d-block text-sm text-muted mb-1">Signed in as</span>
-                            <span className="d-block text-heading font-semibold"> {shortAddress} </span>
-                        </div>
-                        <div className="dropdown-divider" />
-                        <a className="dropdown-item" href="#">
-                            <i className="bi bi-house me-3" />Home
-                        </a>
-                        <a className="dropdown-item" href="#">
-                            <i className="bi bi-pencil me-3" />Profile
-                        </a>
-                        <a className="dropdown-item" href="#">
-                            <i className="bi bi-gear me-3" />Settings
-                        </a>
-                        <div className="dropdown-divider" />
-                        <a className="dropdown-item" href="#">
-                            <i className="bi bi-box-arrow-left me-3" />Logout
-                        </a>
-                        </div>
                     </div>
                     <div className="d-flex gap-3 justify-content-center align-items-center mt-6 d-none">
                         <div>
@@ -165,7 +136,7 @@ const Main = () => {
                         <div className="col-md-6 col-12 mb-4 mb-sm-0">
                         {/* Title */}
                         <h1 className="h2 ls-tight">
-                            Storage Management
+                            Pine Profile 🌲
                         </h1>
                         </div>
                         {/* Actions */}
@@ -185,12 +156,6 @@ const Main = () => {
                     <ul className="nav nav-tabs overflow-x border-0">
                         <li className="nav-item">
                         <Link href="#" className="nav-link active">View all</Link>
-                        </li>
-                        <li className="nav-item">
-                        <Link href="#" className="nav-link">Most recent</Link>
-                        </li>
-                        <li className="nav-item">
-                        <Link href="#" className="nav-link">Popular</Link>
                         </li>
                     </ul>
                     </div>
@@ -226,7 +191,7 @@ const Main = () => {
                             </div>
                         </div>
                     </div>
-                    </div>
+                </div>
                     {/* Row 2 */}
 
 

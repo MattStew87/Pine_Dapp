@@ -1,10 +1,7 @@
-// pages/api/pineHolder.ts
-
-// Creates a new table or a new user if they don't exist 
-// Otherwise updates Pine_Holder and wallet information
 import { NextApiRequest, NextApiResponse } from 'next';
 import { sql } from '@vercel/postgres';
 
+// API route for logging Pine_Holder status. 
 export default async function handle(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {
     const { wallet } = req.body as { wallet: string };

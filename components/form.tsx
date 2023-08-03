@@ -8,6 +8,7 @@ const CreateUserForm: React.FC = () => {
   const [email, setEmail] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
 
+  // Logs Data to the Databasee upon Submission and updates variable states
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
 
@@ -43,6 +44,7 @@ const CreateUserForm: React.FC = () => {
     }
   };
 
+  // Sets Values upon input change
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
 
@@ -61,6 +63,7 @@ const CreateUserForm: React.FC = () => {
     }
   };
 
+  // Creates the Edit Profile Form Display. 
   return (
     <div className="row justify-content-center">
       <div className="col-lg-12 mx-auto ms-xl-0 d-flex flex-column align-items-center justify-content-center">

@@ -1,5 +1,3 @@
-// pages/api/deleteTables.ts
-
 import { NextApiRequest, NextApiResponse } from 'next';
 import { sql } from '@vercel/postgres';
 

@@ -1,28 +1,19 @@
 import { useAccount } from 'wagmi'
 import {useState, useEffect, useMemo} from 'react';
 import { readContract } from '@wagmi/core'
-
-// Pine Badges ABI File
 import Badges_ABI from  '../pages/ABI_Folder/Badges.json'
-
 
 // Contract addresses
 const Pine_NFT_Address = '0x6A711028d8E01519Bc6524BEbC885f3DE36ccbB6';
 
 
 const DisplayPineNFT = () => {
-  // Hooks
+  // Define state variables
   const { address, isConnected } = useAccount()
-  const [tokenInfo, setTokenInfo] = useState<{ [key: string]: { balance: string, imageUrl: string } }>({});
   const [pineNFTs, setPineNFTs] = useState<{ imageUrl: string; tokenId: number }[]>([]);
 
 
-
-  // Roles are static, so we use useMemo for performance optimization
-  const roles = useMemo<string[]>(() => ['Pine Challenger', 'Pine Citizen', 'Pine Trailblazer', 'Pine Orator', 'Pine Journalist', 'Pine Pundit'], []);
-
-
-  // grabs Pine NFT informatin
+  // Function to fetch token data
   async function fetchTokenData(tokenIndex: number): Promise<{ imageUrl: string; tokenId: number } | null> {
     const balance = await readContract({
       address: Pine_NFT_Address,
@@ -46,9 +37,6 @@ const DisplayPineNFT = () => {
           throw new Error('Response was not ok');
         }
         
-        const responseData = await response.json();
-        
-        //console.log(responseData);
       } catch (error) {
         console.error('An error occurred:', error);
       }
@@ -72,7 +60,7 @@ const DisplayPineNFT = () => {
   }
   
 
-  // Fetch Pine NFTs when isConnected or address changes 
+  // Fetch Pine NFTs when isConnected or address changes  
   useEffect(() => {
       async function fetchData() {
         if (!isConnected) return;
@@ -112,7 +100,7 @@ const DisplayPineNFT = () => {
 
 
 
-  // Pine NFT Information Display
+  // Function to render Pine NFTs
   const renderPineNFTs = (
     <div>
       <div style={{
@@ -154,19 +142,6 @@ const DisplayPineNFT = () => {
   );
 
 
-
-
-
-  
-  
-  
-
-
-
-
-
-
-// return function 
   return (
       <div className="infoContainer">
           {renderPineNFTs}

@@ -1,8 +1,7 @@
-
-// API route for getting wallet data from Users table. 
 import { NextApiRequest, NextApiResponse } from 'next';
 import { createClient, QueryResult, QueryResultRow } from '@vercel/postgres';
 
+// fetches user data for a particular wallet
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'GET') {
     return res.status(405).json({ error: 'Method Not Allowed' });

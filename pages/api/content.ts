@@ -1,11 +1,8 @@
-// pages/api/content.ts
-
-
-// Content table API route
-// Allows users to submit content to the Content table in the database. 
 import { NextApiRequest, NextApiResponse } from 'next';
 import { sql } from '@vercel/postgres';
 
+// Content table API route
+// Allows users to submit content to the Content table in the database. 
 export default async function handle(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {
     const { wallet, contentURL, imageURL, contentType } = req.body as {

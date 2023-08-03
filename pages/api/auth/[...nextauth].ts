@@ -3,6 +3,7 @@ import CredentialsProvider from "next-auth/providers/credentials"
 import { getCsrfToken } from "next-auth/react"
 import { SiweMessage } from "siwe"
 
+// Handles user authentication upon connecting your wallet. 
 export default async function auth(req: any, res: any) {
   const providers = [
     CredentialsProvider({

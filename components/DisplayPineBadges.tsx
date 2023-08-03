@@ -2,11 +2,10 @@ import { useAccount } from 'wagmi'
 import {useState, useEffect, useMemo} from 'react';
 import { readContract } from '@wagmi/core'
 
-// Pine Badges ABI File
+// Import the ABI file for the Pine Badges contract
 import Badges_ABI from  '../pages/ABI_Folder/Badges.json'
  
-
-// Contract addresses
+// Define the address of the Pine Badges contract
 const Badges_Address = '0xFaA85a0903985bAAF3Ba9EdE37db6b9e325630b7';
 
 
@@ -21,6 +20,8 @@ const DisplayPineBadges = () => {
 
 
   // Fetch Pine Badges when isConnected or address changes. 
+  // This effect runs when the component mounts and whenever the address or connection status changes.
+  // It fetches the balance and image URL for each role and stores them in the tokenInfo state.
   useEffect(() => {
     async function fetchData() {
         if (!isConnected) return;
@@ -61,7 +62,7 @@ const DisplayPineBadges = () => {
   }, [address, isConnected]);
 
 
-// Define your grayscale images
+// Define grayscale images
 const grayscaleImages = [
   "https://badger.mypinata.cloud/ipfs/QmVv6JZSS5qrWz4sXWDR4H2qJXTXW6CMHMXBtEm6RRoYRW",
   "https://badger.mypinata.cloud/ipfs/QmYBoD7vNbgfgrvrfCJZyKxkpE2FRVn1jfnPbMsmeTFyeH",
@@ -71,7 +72,10 @@ const grayscaleImages = [
   "https://badger.mypinata.cloud/ipfs/QmRjs6qUvBwkZG7v9aPwTrVABsLJJrxozo9MoZSUoAJnY3"
 ];
 
-// Pine Badge Information Display 
+  // Define a function to render the token information
+  // This function creates a grid of images for each role.
+  // If the user is connected and has a balance for a role, the image is in color.
+  // If the user is not connected or has no balance for a role, the image is in grayscale.
 const renderTokenInfo = (
   <div>
     <div style={{
@@ -119,7 +123,7 @@ const renderTokenInfo = (
 );
 
   
-  // return function 
+  // Return the JSX for the component
   return (
       <div className="infoContainer">
           {renderTokenInfo}

@@ -14,7 +14,7 @@ const MyContent: React.FC = () => {
   const [content, setContent] = useState<ContentItem[]>([]);
   const { address, isConnected } = useAccount();
 
-  // fetch Content page 
+  // fetch users content from database
   useEffect(() => {
     const fetchContent = async () => {
       if (isConnected && address) {
@@ -45,6 +45,7 @@ const MyContent: React.FC = () => {
     });
   }
 
+  // Display users content 
   return (
     <div className="row g-6 mb-8">
       {content.map((item, index) => {

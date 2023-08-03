@@ -10,7 +10,7 @@ const Pine_NFT_Address = '0x6A711028d8E01519Bc6524BEbC885f3DE36ccbB6';
 
 interface ProfileProps {
   holderAddress: string; 
-  delay: number; // Add a delay prop
+  delay: number; 
 }
 
 const LeaderBoardProfile: React.FC<ProfileProps> = ({ holderAddress, delay }) => {

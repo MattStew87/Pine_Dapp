@@ -11,6 +11,7 @@ const LeaderBoard: React.FC = () => {
   const { address, isConnected } = useAccount();
   const rowsPerPage = 10;
 
+  // Fetches LeaderBoard data from Flipside
   const fetchData = useCallback(async () => {
     try {
       const response = await fetch(apiURL);
@@ -29,6 +30,7 @@ const LeaderBoard: React.FC = () => {
     fetchData();
   }, [fetchData]);
 
+  // Copies any LeaderBoard address to the Clipboard when clicked
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text);
   };
@@ -39,6 +41,7 @@ const LeaderBoard: React.FC = () => {
 
   const displayedHolders = holders.slice(currentPage * rowsPerPage, (currentPage + 1) * rowsPerPage);
 
+  // Displays the Community LeaderBoard 10 items at a time.
   return (
     <div>
       <table className="table table-hover table-nowrap">

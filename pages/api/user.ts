@@ -1,10 +1,7 @@
-// pages/api/user.ts
-
-// Creates a new table if one does not already exist
-// Otherwise updates users twitter, discord, and wallet informaiton
 import { NextApiRequest, NextApiResponse } from 'next';
 import { sql } from '@vercel/postgres';
 
+// API route for storing user data
 export default async function handle(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {
     const { discord, twitter, wallet, email } = req.body as { discord: string, twitter: string, wallet: string, email: string };

@@ -1,8 +1,7 @@
-// pages/api/walletContent.ts
-
 import { NextApiRequest, NextApiResponse } from 'next';
 import { sql } from '@vercel/postgres';
 
+// fethces all Pine Content for a specified address 
 export default async function handle(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'GET') {
     const { wallet } = req.query as {
@@ -10,7 +9,6 @@ export default async function handle(req: NextApiRequest, res: NextApiResponse) 
     };
 
     try {
-      // Fetch all content for the given wallet from the Content table
       const result = await sql`
         SELECT * FROM Pine_Content 
         WHERE wallet = ${wallet}

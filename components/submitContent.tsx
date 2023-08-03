@@ -234,12 +234,12 @@ const SubmitContentForm: React.FC = () => {
               setIsSubmitted(false); 
             }} 
             style={{
-              position: 'absolute', // Position the button absolutely...
-              top: '10px', // ...from the top...
-              right: '10px', // ...and from the right
-              background: 'none', // Remove the default button background...
-              border: 'none', // ...and border
-              fontSize: '1.5em', // Increase the size of the X
+              position: 'absolute',
+              top: '10px',
+              right: '10px', 
+              background: 'none', 
+              border: 'none', 
+              fontSize: '1.5em', 
           }}>❌</button> {/* This is the close button */}
           </div>
         </div>

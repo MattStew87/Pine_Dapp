@@ -3,6 +3,7 @@ import { useConnectModal } from '@rainbow-me/rainbowkit';
 import { useAccount } from 'wagmi';
 
 import CreateUserForm from './form'
+import Profile_Display from './Profile_Display'
 
 interface UserData {
   discord: string | null;
@@ -31,7 +32,7 @@ const DisplayTwDs: React.FC = () => {
   
   const apiURL = 'https://api.flipsidecrypto.com/api/v2/queries/235a1bde-fd3d-4ab9-a887-c1f13d026e8d/data/latest';
 
-  // Retrieves twitter, discord, and email data if in Database also grabs score data
+  // Fetch wallet data when isConnected, address, or isModalOpen changes
   useEffect(() => {
     const getWalletData = async () => {
       try {
@@ -75,12 +76,13 @@ const DisplayTwDs: React.FC = () => {
 
 
   
-
+  // Displays Users Twitter, Discord, Email, and Pine_Holder Information
+  // Allows User to Create/Edit there Profile. 
   return (
     <div className="card-body pb-5">
       <div className="d-flex justify-content-between align-items-center">
         <a href="#" className="avatar w-20 h-20 border border-body border-4 rounded-circle ">
-          <img alt="..." src="/jackthepine_green_pine_sapling_in_a_lush_forest_digital_art_bru_fa6c8d1e-08fb-4012-8ffb-f3d21e1772b4.png" className="rounded-circle"  />
+          <Profile_Display /> 
         </a>
         <div className="text-end">
           {/* Edit Profile Button*/}
