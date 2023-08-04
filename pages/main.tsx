@@ -13,6 +13,7 @@ import DisplayPineNFT from '../components/DisplayPineNFT';
 import DisplayTwDs from '../components/DisplayTwDS';
 import SubmitContentForm from '../components/submitContent'
 import MyContent from '../components/myContent'
+import Questions from '../components/questions'
 
 
 const Main = () => {
@@ -92,6 +93,13 @@ const Main = () => {
                             <i className="bi bi-code-square" /> Linktree
                         </a>
                     </li>
+                    {/* Questions Listed Here */}
+                    <li>
+                        <span className="nav-link text-xs font-semibold text-uppercase text-muted ls-wide">
+                        Questions
+                        </span>
+                    </li>
+                    <Questions />
                     </ul>
                     {/* Push content down */}
                     <div className="mt-auto" />

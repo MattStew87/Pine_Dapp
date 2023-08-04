@@ -73,7 +73,7 @@ const DisplayTwDs: React.FC = () => {
   }, [isConnected, address, isModalOpen]);
 
 
-
+ 
 
   
   // Displays Users Twitter, Discord, Email, and Pine_Holder Information

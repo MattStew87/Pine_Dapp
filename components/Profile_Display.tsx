@@ -24,7 +24,7 @@ const Profile = () => {
   
     if (balance > 0) {
       const ipfsHash = await readContract({
-        address: Pine_NFT_Address,
+        address: Pine_NFT_Address, 
         abi: Badges_ABI,
         functionName: 'uri',
         args: [tokenIndex]

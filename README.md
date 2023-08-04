@@ -11,10 +11,6 @@ This is a decentralized application (DApp) developed as a profile page for Pine 
 
 This DApp is built using [Next.js](https://nextjs.org/), a popular React framework for building web applications. It's deployed on [Vercel](https://vercel.com/), utilizing their built-in Postgres Database.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
-
 ## Contact
 
 If you have any questions, suggestions, or would like to contribute to this project, please open an issue on GitHub or contact me through the following:
