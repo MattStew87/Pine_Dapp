@@ -113,27 +113,11 @@ const DisplayPineNFT = () => {
           return (
             <div key={i} className="role-info" style={{ position: 'relative' }}>
               <img 
-                src={token ? token.imageUrl : "/jackthepine_green_pine_sapling_in_a_lush_forest_digital_art_bru_fa6c8d1e-08fb-4012-8ffb-f3d21e1772b4.png"} 
+                src={token ? token.imageUrl : "/logo_v2_8.png"} 
                 alt={`Pine NFT ${i+1}`} 
                 className="icon icon-shape rounded-4 bg-secondary bg-opacity-40" 
                 style={{width: '100%', height: 'auto', filter: token ? 'none' : 'grayscale(100%)'}}
               />
-              <div className="role-text" style={{
-                position: 'absolute',
-                bottom: '0',
-                backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                color: 'white',
-                width: '100%',
-                textAlign: 'center',
-                opacity: '0',
-                transition: 'opacity 0.3s'
-              }}
-              onMouseEnter={(e) => { e.currentTarget.style.opacity = '1'; }}
-              onMouseLeave={(e) => { e.currentTarget.style.opacity = '0'; }}
-              >
-                <strong>Pine NFT {i+1}:</strong>
-                <span className={token ? "role-has" : "role-no"}>{token ? '✔️' : '❌'}</span>
-              </div>
             </div>
           );
         })}

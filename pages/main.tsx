@@ -49,8 +49,8 @@ const Main = () => {
                     <span className="navbar-toggler-icon" />
                 </button>
                 {/* Brand */}
-                <Link className="navbar-brand py-lg-2 mb-lg-5 px-lg-6 me-0" href="/">
-                    <img src="/img/logos/clever-primary.svg" alt="..." />
+                <Link className="navbar-brand py-lg-2 mb-lg-5 px-lg-6 me-0" href="https://storage.googleapis.com/pinedao/Pinehome1.html">
+                    <img src="/output-onlinepngtools.png" alt="..." style={{height: '39px'}} />
                 </Link>
                 {/* User menu (mobile) */}
                 <div className="navbar-user d-lg-none">
