@@ -170,29 +170,23 @@ const Main = () => {
                     {/* Row 1 */}
                     <div className="row g-6 mb-8">
                         <div className="col-xl col-sm-6 col-12">
-                            <div className="card">
-                                <div className="card shadow-4-hover">
-                                    <div className="card-body">
-                                        <DisplayPineBadges/> 
-                                    </div>
+                            <div className="card shadow-4-hover d-flex flex-column justify-content-center" style={{ minHeight: '350px' }}>
+                                <div className="card-body d-flex align-items-center justify-content-center" style={{ height: '100%' }}>
+                                    <DisplayPineBadges/> 
                                 </div>
                             </div>
                         </div>
                         <div className="col-xl col-sm-6 col-12">
-                            <div className="card">
-                                <div className="card shadow-4-hover">
-                                    <div className="card-body">
-                                        <DisplayPineNFT/>
-                                    </div>
+                            <div className="card shadow-4-hover d-flex flex-column justify-content-center" style={{ minHeight: '350px' }}>
+                                <div className="card-body d-flex align-items-center justify-content-center" style={{ height: '100%' }}>
+                                    <DisplayPineNFT/>
                                 </div>
                             </div>
                         </div>
                         <div className="col-xl col-sm-6 col-12">
-                            <div className="card">
-                                <div className="card shadow-4-hover">
-                                    <DisplayTwDs />
-                                </div>
-                            </div>
+                            <div className="card shadow-4-hover d-flex flex-column justify-content-center" style={{ minHeight: '350px' }}>
+                                <DisplayTwDs />
+                            </div> 
                         </div>
                     </div>
                     {/* Row 2 */}

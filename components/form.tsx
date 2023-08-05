@@ -3,7 +3,7 @@ import { useAccount } from 'wagmi';
 
 const CreateUserForm: React.FC = () => {
   const { address } = useAccount();
-  const [discord, setDiscord] = useState('');
+  const [discord, setDiscord] = useState(''); 
   const [twitter, setTwitter] = useState('');
   const [email, setEmail] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
