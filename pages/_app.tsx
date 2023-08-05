@@ -18,6 +18,7 @@ import {
   RainbowKitProvider,
   getDefaultWallets, 
   connectorsForWallets,
+  lightTheme 
 } from '@rainbow-me/rainbowkit'; 
 import { 
   argentWallet,
@@ -88,7 +89,13 @@ export default function MyApp({
     <WagmiConfig config={wagmiConfig}>
       <SessionProvider refetchInterval={0} session={pageProps.session}>
         <RainbowKitSiweNextAuthProvider>
-          <RainbowKitProvider appInfo={demoAppInfo} chains={chains}>
+          <RainbowKitProvider appInfo={demoAppInfo} chains={chains}  
+            theme={lightTheme({
+            accentColor: '#6ECC6E',
+            accentColorForeground: 'white',
+            borderRadius: 'large',
+            fontStack: 'system',
+          })} >
             <Component {...pageProps} />
           </RainbowKitProvider>
         </RainbowKitSiweNextAuthProvider>

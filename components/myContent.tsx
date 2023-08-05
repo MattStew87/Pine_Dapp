@@ -83,12 +83,15 @@ const MyContent: React.FC = () => {
                         />
                       </div>
                     </a>
-                    <p className="badge rounded-pill bg-primary text-white" style={{ 
+                    <p className="badge rounded-pill text-white" style={{ 
                       position: 'absolute', 
                       top: '10px', 
                       right: '10px', 
                       padding: '5px', 
-                      borderRadius: '5px' 
+                      borderRadius: '5px',
+                      backgroundColor: '#6ECC6E',
+                      color: '#FFFFFF',
+                      borderColor: '#6ECC6E' 
                     }}>
                       {contentType}
                     </p>

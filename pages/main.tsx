@@ -58,7 +58,7 @@ const Main = () => {
                     {/* Dropdown */}
                     <div className="dropdown">
                     {/* Toggle */}
-                        <Link href="#" id="sidebarAvatar" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <Link href="#" id="sidebarAvatar" role="button" aria-haspopup="true" aria-expanded="false">
                             <div className="avatar-parent-child">
                                 {/* Profile Goes here*/}
                                 <Profile/> 
@@ -70,13 +70,8 @@ const Main = () => {
                 {/* Collapse */}
                 <div className="collapse navbar-collapse" id="sidebarCollapse">
                     {/* Navigation */}
-                    <ul className="navbar-nav">
-                        <li className="nav-item">
-                            <a className="nav-link" href="https://storage.googleapis.com/pinedao/Pinehome1.html" role="button">
-                                <i className="bi bi-briefcase" /> Home
-                            </a>
-                        </li>
-                    </ul>
+
+                    {/* if you want items above the line on the nav-bar put them here */}
 
 
                     {/* Divider */}
@@ -106,7 +101,7 @@ const Main = () => {
                     {/* User menu */}
                     <div className="my-4 px-lg-6 position-relative">
                     <div className="dropup w-full">
-                        <button className="btn-primary d-flex w-full py-3 ps-3 pe-4 align-items-center shadow shadow-3-hover rounded-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <button className="btn-primary d-flex w-full py-3 ps-3 pe-4 align-items-center shadow shadow-3-hover rounded-3" type="button"  aria-expanded="false" style={{ backgroundColor: '#6ECC6E', color: '#FFFFFF', borderColor: '#6ECC6E' }} >
                         <span className="me-3">
                             {/* Profile Goes Here */}
                             <Profile/> 
@@ -144,7 +139,7 @@ const Main = () => {
                         <div className="col-md-6 col-12 mb-4 mb-sm-0">
                         {/* Title */}
                         <h1 className="h2 ls-tight">
-                            Pine Profile 🌲
+                            Profile 🌲
                         </h1>
                         </div>
                         {/* Actions */}
@@ -174,32 +169,32 @@ const Main = () => {
                 <div className="container-fluid">
                     {/* Row 1 */}
                     <div className="row g-6 mb-8">
-                    <div className="col-xl col-sm-6 col-12">
-                        <div className="card">
-                            <div className="card shadow-4-hover">
-                                <div className="card-body">
-                                    <DisplayPineBadges/> 
+                        <div className="col-xl col-sm-6 col-12">
+                            <div className="card">
+                                <div className="card shadow-4-hover">
+                                    <div className="card-body">
+                                        <DisplayPineBadges/> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-xl col-sm-6 col-12">
+                            <div className="card">
+                                <div className="card shadow-4-hover">
+                                    <div className="card-body">
+                                        <DisplayPineNFT/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-xl col-sm-6 col-12">
+                            <div className="card">
+                                <div className="card shadow-4-hover">
+                                    <DisplayTwDs />
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="col-xl col-sm-6 col-12">
-                        <div className="card">
-                            <div className="card shadow-4-hover">
-                                <div className="card-body">
-                                    <DisplayPineNFT/>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-xl col-sm-6 col-12">
-                        <div className="card">
-                            <div className="card shadow-4-hover">
-                                <DisplayTwDs />
-                            </div>
-                        </div>
-                    </div>
-                </div>
                     {/* Row 2 */}
 
 

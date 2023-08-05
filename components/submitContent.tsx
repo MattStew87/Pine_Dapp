@@ -142,6 +142,7 @@ const SubmitContentForm: React.FC = () => {
       <div className="text-end">
       {/* Submit Content Button*/}
       <a href="#" className="btn btn-sm btn-primary d-block d-md-inline-block ms-auto ms-md-0"
+        style={{ backgroundColor: '#6ECC6E', color: '#FFFFFF', borderColor: '#6ECC6E' }} 
         onClick={() => {
           if (!isCertified && isConnected) {
             return; 
