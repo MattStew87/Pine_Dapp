@@ -11,7 +11,7 @@ import LeaderBoard from '../components/LeaderBoard';
 import DisplayPineBadges from '../components/DisplayPineBadges';
 import DisplayPineNFT from '../components/DisplayPineNFT';
 import DisplayTwDs from '../components/DisplayTwDS';
-import SubmitContentForm from '../components/submitContent'
+
 import MyContent from '../components/myContent'
 import Questions from '../components/questions'
 
@@ -192,14 +192,13 @@ const Main = () => {
                     {/* Row 2 */}
 
 
-
                 <div className="d-flex align-items-center mb-5">
                     <div>
                         <h5 className="mb-0">My Content</h5>
                     </div>
                     {/* Submit content button and form */}
                     <div className="ms-auto">
-                        <SubmitContentForm />
+                        
                     </div>
                     
                 </div>

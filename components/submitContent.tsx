@@ -139,10 +139,11 @@ const SubmitContentForm: React.FC = () => {
 
   return (
     <div>
-      <div className="text-end">
-      {/* Submit Content Button*/}
-      <a href="#" className="btn btn-sm btn-primary d-block d-md-inline-block ms-auto ms-md-0"
-        style={{ backgroundColor: '#6ECC6E', color: '#FFFFFF', borderColor: '#6ECC6E' }} 
+     <div className="h-100 d-flex align-items-center justify-content-center"> {/* Adjusted flex properties */}
+       {/* Submit Content Button */}
+      <button 
+        className="btn w-100 h-100" 
+        style={{ backgroundColor: '#6ECC6E', color: '#FFFFFF', borderColor: '#6ECC6E', fontSize: 'medium' }} 
         onClick={() => {
           if (!isCertified && isConnected) {
             return; 
@@ -155,9 +156,9 @@ const SubmitContentForm: React.FC = () => {
         }}
       >
         Submit Content
-      </a>
-      {isHydrated && isConnected && !isCertified && <p style={{fontSize: 'small', color: 'red'}}>*Need Pine NFT to submit.</p>}
+      </button>
     </div>
+
   
       {/* Modal setup for Submit Content*/}
       {isModalOpen && (
