@@ -18,7 +18,11 @@ import Questions from '../components/questions'
 
 const Main = () => {
 
-    const { address } = useAccount();
+    const [showBadgeTooltip, setShowBadgeTooltip] = useState(false);
+    const [showNFTTooltip, setShowNFTTooltip] = useState(false);
+
+
+    const { address } = useAccount(); 
     const [shortAddress, setShortAddress] = useState('0x00...0000');   
 
     useEffect(() => {
@@ -174,12 +178,83 @@ const Main = () => {
                                 <div className="card-body d-flex align-items-center justify-content-center" style={{height: '100%' }}>
                                     <DisplayPineBadges/> 
                                 </div>
+                                {/* Info Icon Image with Tooltip */}
+                                <div 
+                                    className="info-icon-container" 
+                                    style={{ 
+                                        position: 'absolute', 
+                                        top: '6px', 
+                                        right: '6px', 
+                                        cursor: 'pointer' 
+                                    }}
+                                    onMouseEnter={() => setShowBadgeTooltip(true)}
+                                    onMouseLeave={() => setShowBadgeTooltip(false)}
+                                >
+                                    <img src="./info_icon.jpg" alt="Info Icon" style={{ width: '18px', height: '18px' }} />
+                                    {showBadgeTooltip && (
+                                        <div style={{
+                                            content: '"Description about Pine Badges"',
+                                            position: 'absolute',
+                                            bottom: '100%',
+                                            left: '50%',
+                                            transform: 'translateX(-50%)',
+                                            backgroundColor: '#333',
+                                            color: '#fff',
+                                            padding: '5px 10px',
+                                            borderRadius: '5px',
+                                            whiteSpace: 'nowrap',
+                                            fontSize: '12px',
+                                            zIndex: 1
+                                        }}>
+                                             This section displays users Pine badges. Pine badges <br />
+                                             are earned through various contributions and activities <br />
+                                             within the community. To learn more about these <br />
+                                             badges click the link <a href="https://wood-akubra-cdb.notion.site/Badges-9672542e181c45c69b5f07d7eb1bbf8d" target="_blank" rel="noopener noreferrer" style={{color: '#fff', textDecoration: 'underline'}}>here</a>.
+                                        </div>
+                                    )}
+                                </div>
                             </div>
                         </div>
                         <div className="col-xl col-sm-6 col-12">
                             <div className="card shadow-4-hover d-flex flex-column justify-content-center" style={{ minHeight: '350px', maxHeight: '350px' }}>
                                 <div className="card-body d-flex align-items-center justify-content-center" style={{height: '100%' }}>
                                     <DisplayPineNFT/>
+                                </div>
+                                {/* Info Icon Image with Tooltip */}
+                                <div 
+                                    className="info-icon-container" 
+                                    style={{ 
+                                        position: 'absolute', 
+                                        top: '6px', 
+                                        right: '6px', 
+                                        cursor: 'pointer' 
+                                    }}
+
+                                    onMouseEnter={() => setShowNFTTooltip(true)}
+                                    onMouseLeave={() => setShowNFTTooltip(false)}
+                                >
+                                    <img src="./info_icon.jpg" alt="Info Icon" style={{ width: '18px', height: '18px' }} />
+                                    {showNFTTooltip  && (
+                                        <div style={{
+                                            content: '"Description about Pine NFTs"',
+                                            position: 'absolute',
+                                            bottom: '100%',
+                                            left: '50%',
+                                            transform: 'translateX(-50%)',
+                                            backgroundColor: '#333',
+                                            color: '#fff',
+                                            padding: '5px 10px',
+                                            borderRadius: '5px',
+                                            whiteSpace: 'nowrap',
+                                            fontSize: '12px',
+                                            zIndex: 1
+                                        }}>
+                                            This section displays users Pine NFT Holdings. For each weekly <br />
+                                            contest, the winner will get a 1/1 Pine NFT. Holders <br />
+                                            of these NFTs are gated to review contests, content, <br />
+                                            and submit content.
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         </div>
