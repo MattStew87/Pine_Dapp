@@ -42,7 +42,7 @@ const MyContent: React.FC = () => {
       contenturl: '#',
       imageurl: '',
       contenttype: '',
-      createdat: '',
+      createdat: '', 
     });
   }
 

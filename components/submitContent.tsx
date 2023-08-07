@@ -176,6 +176,13 @@ const SubmitContentForm: React.FC = () => {
                 </div>
               </div>
             </div>
+
+            {/* Conditionally render the message */}
+            {!isCertified && isConnected && (
+            <p style={{ color: 'red', textAlign: 'left', marginTop: '10px' }}>
+              *Need Pine NFT to Submit Content
+            </p>
+            )}
         
   
       {/* Modal setup for Submit Content*/}
@@ -242,7 +249,7 @@ const SubmitContentForm: React.FC = () => {
                     opacity: isSubmitted ? 1 : 0,
                     transition: 'opacity 0.5s ease-in-out',
                     marginTop: '10px'
-                  }}>
+                 }}>
                     Form submitted successfully!
                   </div>
                 </form>
