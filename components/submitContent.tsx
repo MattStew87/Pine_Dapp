@@ -10,7 +10,12 @@ interface UserData {
   pine_holder: boolean;
 }
 
-const SubmitContentForm: React.FC = () => {
+interface Props {
+  isModalOpen: boolean;
+  setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const SubmitContentForm: React.FC<Props>  = ({ isModalOpen, setIsModalOpen }) => {
   // state variables
   const { address, isConnected } = useAccount();
   const [contentURL, setContentURL] = useState('');
@@ -22,7 +27,6 @@ const SubmitContentForm: React.FC = () => {
 
   const [isHydrated, setIsHydrated] = useState(false);
  
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const { openConnectModal } = useConnectModal();
 

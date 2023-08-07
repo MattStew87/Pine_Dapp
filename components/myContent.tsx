@@ -14,6 +14,8 @@ const MyContent: React.FC = () => {
   // state variables
   const [content, setContent] = useState<ContentItem[]>([]);
   const { address, isConnected } = useAccount();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
 
   // fetch users content from database
   useEffect(() => {
@@ -33,7 +35,7 @@ const MyContent: React.FC = () => {
     };
 
     fetchContent();
-  }, [isConnected, address]);
+  }, [isConnected, address, isModalOpen]);
 
   // If there are less than 3 content items, fill the rest with default values
   while (content.length < 3) {
@@ -51,7 +53,7 @@ const MyContent: React.FC = () => {
     <div className="row g-6 mb-8">
       {/* First card for SubmitContentForm */}
       <div className="col-xl-3 col-sm-6 col-12">
-            <SubmitContentForm />
+        <SubmitContentForm isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
       </div>
 
       {/* Next three cards for content */}
