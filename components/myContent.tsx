@@ -51,11 +51,7 @@ const MyContent: React.FC = () => {
     <div className="row g-6 mb-8">
       {/* First card for SubmitContentForm */}
       <div className="col-xl-3 col-sm-6 col-12">
-        <div className="card shadow-4-hover">
-          <div className="card-body d-flex justify-content-center align-items-center">
             <SubmitContentForm />
-          </div>
-        </div>
       </div>
 
       {/* Next three cards for content */}

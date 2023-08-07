@@ -137,28 +137,46 @@ const SubmitContentForm: React.FC = () => {
     }
   };
 
-  return (
-    <div>
-     <div className="h-100 d-flex align-items-center justify-content-center"> {/* Adjusted flex properties */}
-       {/* Submit Content Button */}
-      <button 
-        className="btn w-100 h-100" 
-        style={{ backgroundColor: '#6ECC6E', color: '#FFFFFF', borderColor: '#6ECC6E', fontSize: 'medium' }} 
-        onClick={() => {
-          if (!isCertified && isConnected) {
-            return; 
-          }
-          if (!isConnected) {
-            openConnectModal?.();
-          } else {
-            setIsModalOpen(true);
-          }
-        }}
-      >
-        Submit Content
-      </button>
-    </div>
+  // This function handles the card click
+  const handleCardClick = () => {
+    if (!isCertified && isConnected) {
+      return; 
+    }
+    if (!isConnected) {
+      openConnectModal?.();
+    } else {
+      setIsModalOpen(true);
+    }
+  };
 
+
+  return (
+      <div>
+          <div className="card shadow-4-hover" style={{ 
+                backgroundColor: '#6ECC6E', 
+                color: '#FFFFFF', 
+                borderColor: '#6ECC6E', 
+                fontSize: 'medium' }}
+                onClick={handleCardClick}>
+
+              <div className="card-body d-flex justify-content-center align-items-center">
+                
+                <div className="card-body d-flex justify-content-center align-items-center" style={{ height: '200px' }}>
+                  {/* Submit Content Button */}
+                  <button 
+                    className="btn w-100 h-100" 
+                    style={{ 
+                      backgroundColor: '#6ECC6E', 
+                      color: '#FFFFFF', 
+                      borderColor: '#6ECC6E', 
+                      fontSize: 'medium' 
+                    }}>
+                    Submit Content
+                  </button>
+                </div>
+              </div>
+            </div>
+        
   
       {/* Modal setup for Submit Content*/}
       {isModalOpen && (
