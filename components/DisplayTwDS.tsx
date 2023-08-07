@@ -79,7 +79,7 @@ const DisplayTwDs: React.FC = () => {
   // Displays Users Twitter, Discord, Email, and Pine_Holder Information
   // Allows User to Create/Edit there Profile. 
   return (
-    <div className="card-body pb-5">
+    <div className="card-body pb-5 " style={{ height: '100%' }}>
       <div className="d-flex justify-content-between align-items-center">
         <a href="#" className="avatar w-20 h-20 border border-body border-4 rounded-circle ">
           <Profile_Display /> 
