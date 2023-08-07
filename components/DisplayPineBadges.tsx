@@ -125,7 +125,7 @@ const renderTokenInfo = (
   
   // Return the JSX for the component
   return (
-      <div className="infoContainer">
+      <div className="infoContainer"  style={{ maxHeight: '340px'}}>
           {renderTokenInfo}
       </div>
   );

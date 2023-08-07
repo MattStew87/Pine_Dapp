@@ -171,14 +171,14 @@ const Main = () => {
                     <div className="row g-6 mb-8">
                         <div className="col-xl col-sm-6 col-12">
                             <div className="card shadow-4-hover d-flex flex-column justify-content-center" style={{ minHeight: '350px', maxHeight: '350px' }}>
-                                <div className="card-body d-flex align-items-center justify-content-center" style={{ maxHeight: '340px', height: '100%' }}>
+                                <div className="card-body d-flex align-items-center justify-content-center" style={{height: '100%' }}>
                                     <DisplayPineBadges/> 
                                 </div>
                             </div>
                         </div>
                         <div className="col-xl col-sm-6 col-12">
                             <div className="card shadow-4-hover d-flex flex-column justify-content-center" style={{ minHeight: '350px', maxHeight: '350px' }}>
-                                <div className="card-body d-flex align-items-center justify-content-center" style={{ maxHeight: '340px', height: '100%' }}>
+                                <div className="card-body d-flex align-items-center justify-content-center" style={{height: '100%' }}>
                                     <DisplayPineNFT/>
                                 </div>
                             </div>

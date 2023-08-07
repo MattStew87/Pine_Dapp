@@ -127,7 +127,7 @@ const DisplayPineNFT = () => {
 
 
   return (
-      <div className="infoContainer">
+      <div className="infoContainer" style={{ maxHeight: '340px'}}>
           {renderPineNFTs}
       </div>
   );
