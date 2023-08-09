@@ -1,4 +1,4 @@
-![Pine Analytics User Profile DApp](IMAGE_URL)
+![Pine Analytics User Profile DApp](IMG_URL)
 
 # Pine Analytics User Profile DApp
 

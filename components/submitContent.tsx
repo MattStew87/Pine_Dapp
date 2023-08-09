@@ -26,7 +26,6 @@ const SubmitContentForm: React.FC<Props>  = ({ isModalOpen, setIsModalOpen }) =>
   const [imageURLError, setImageURLError] = useState('');
 
   const [isHydrated, setIsHydrated] = useState(false);
- 
   const [isSubmitted, setIsSubmitted] = useState(false);
   const { openConnectModal } = useConnectModal();
 
@@ -182,7 +181,7 @@ const SubmitContentForm: React.FC<Props>  = ({ isModalOpen, setIsModalOpen }) =>
             </div>
 
             {/* Conditionally render the message */}
-            {!isCertified && isConnected && (
+            {!isCertified && isConnected && isHydrated && (
             <p style={{ color: 'red', textAlign: 'left', marginTop: '10px' }}>
               *Need Pine NFT to Submit Content
             </p>
